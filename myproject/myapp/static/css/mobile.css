@@ -146,15 +146,31 @@
   .single-hero-slider-item {
     height: 220px !important;
     min-height: 220px !important;
+    margin-bottom: 24px !important;
   }
   
   .home-five-hero-slider {
     height: 220px !important;
+    margin-bottom: 24px !important;
+  }
+  
+  /* Add spacing between hero and product sections */
+  section {
+    margin-bottom: 16px !important;
+  }
+  
+  .pb-12 {
+    padding-bottom: 24px !important;
+  }
+  
+  .pt-6 {
+    padding-top: 12px !important;
   }
   
   /* Reduce product card padding for compact layout */
   .product-card-1 {
     padding: 10px !important;
+    margin-bottom: 12px !important;
   }
   
   /* ========== Grids ========== */
