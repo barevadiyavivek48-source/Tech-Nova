@@ -210,23 +210,39 @@
   }
   
   .grid-cols-3 {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  
-  .grid-cols-4 {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  
-  .grid-cols-6 {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  
-  .grid-cols-12 {
     grid-template-columns: 1fr !important;
   }
   
-  .grid {
-    gap: 8px !important;
+  .grid-cols-4 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .grid-cols-6 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .col-span-1 {
+    grid-column: span 1 / span 1 !important;
+  }
+  
+  .col-span-6 {
+    grid-column: span 1 / span 1 !important;
+  }
+  
+  .col-span-12 {
+    grid-column: span 1 / span 1 !important;
+  }
+  
+  .col-start-1,
+  .col-start-2,
+  .col-start-3 {
+    grid-column-start: auto !important;
+  }
+  
+  .col-end-11,
+  .col-end-12,
+  .col-end-13 {
+    grid-column-end: auto !important;
   }
   
   /* ========== Flex/Layout ========== */
@@ -236,6 +252,36 @@
   
   .flex-col {
     flex-direction: column !important;
+  }
+  
+  .flex-row {
+    flex-direction: column !important;
+  }
+  
+  /* Ensure flex items are full width */
+  .flex > * {
+    width: 100% !important;
+  }
+  
+  .flex-row > * {
+    width: 100% !important;
+  }
+  
+  /* Product grid - always 1 column */
+  .product-container,
+  .products-grid,
+  .products-list {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  .product-wrapper {
+    width: 100% !important;
+  }
+  
+  /* Ensure w-1/2 and similar width constraints don't show 2 columns */
+  .w-1\/2 {
+    width: 100% !important;
   }
   
   /* ========== Price Display ========== */
@@ -396,12 +442,32 @@
   
   .w-\[350px\],
   .w-\[390px\],
-  .w-\[338px\] {
+  .w-\[338px\],
+  .w-\[350px\] {
+    width: 100% !important;
+  }
+  
+  .w-1\/2,
+  .w-1\/3 {
+    width: 100% !important;
+  }
+  
+  .w-\[45\%\],
+  .w-\[47\%\],
+  .w-\[95\%\],
+  .w-\[96\%\] {
     width: 100% !important;
   }
   
   .min-w-\[566px\] {
-    min-width: 100% !important;
+    min-width: auto !important;
+  }
+  
+  /* Image width constraints */
+  .w-full img,
+  .w-\[100%\] img {
+    width: 100% !important;
+    height: auto !important;
   }
   
   /* ========== Heights ========== */
