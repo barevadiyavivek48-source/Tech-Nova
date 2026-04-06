@@ -919,130 +919,135 @@ def invoice_pdf(request, order_id):
     from reportlab.lib import colors as rl_colors
     from reportlab.pdfgen import canvas as pdf_canvas
     pdf.setFillColor(rl_colors.HexColor('#2C3E50'))
-    pdf.rect(0, y - 60, width, 60, fill=1, stroke=0)
+    pdf.rect(0, height - 100, width, 100, fill=1, stroke=0)
     
     # Company Name - Styled
     pdf.setFont('Helvetica-Bold', 28)
     pdf.setFillColor(rl_colors.HexColor('#FFFFFF'))
-    pdf.drawString(40, y - 40, '🏪 TechNova')
+    pdf.drawString(40, height - 55, 'TechNova')
     
-    pdf.setFont('Helvetica', 9)
+    pdf.setFont('Helvetica', 10)
     pdf.setFillColor(rl_colors.HexColor('#ECF0F1'))
-    pdf.drawString(40, y - 52, 'Your Premium Online Store')
+    pdf.drawString(40, height - 75, 'Your Premium Online Store')
     
     # Invoice text on right
-    pdf.setFont('Helvetica-Bold', 16)
+    pdf.setFont('Helvetica-Bold', 20)
     pdf.setFillColor(rl_colors.HexColor('#FFFFFF'))
-    pdf.drawRightString(width - 40, y - 40, 'INVOICE')
+    pdf.drawRightString(width - 40, height - 55, 'INVOICE')
     
-    y -= 80
+    y = height - 130
     
     # Invoice Details - Left Column
     pdf.setFillColor(rl_colors.HexColor('#000000'))
     pdf.setFont('Helvetica-Bold', 11)
     pdf.drawString(40, y, 'INVOICE DETAILS')
     
-    pdf.setFont('Helvetica', 9)
-    y -= 15
+    pdf.setFont('Helvetica', 9.5)
+    y -= 18
     pdf.drawString(40, y, f"Invoice No.: #{order.id}")
-    y -= 12
+    y -= 14
     pdf.drawString(40, y, f"Date: {timezone.localtime(order.created_at).strftime('%d %b, %Y')}")
-    y -= 12
+    y -= 14
     pdf.drawString(40, y, f"Payment ID: {order.payment_id or 'N/A'}")
-    y -= 12
+    y -= 14
     pdf.drawString(40, y, f"Status: ✓ PAID")
     
     # Customer Details - Right Column
+    y_right = height - 130
     pdf.setFont('Helvetica-Bold', 11)
-    pdf.drawString(300, height - 180, 'BILL TO')
+    pdf.drawString(300, y_right, 'BILL TO')
     
-    pdf.setFont('Helvetica', 9)
-    y_right = height - 195
+    pdf.setFont('Helvetica', 9.5)
+    y_right -= 18
     pdf.drawString(300, y_right, f"Name: {uid.name}")
-    y_right -= 12
+    y_right -= 14
     pdf.drawString(300, y_right, f"Email: {uid.email}")
-    y_right -= 12
+    y_right -= 14
     if address and hasattr(address, 'phone_no'):
         pdf.drawString(300, y_right, f"Phone: {address.phone_no}")
-    y_right -= 12
+    y_right -= 14
     if address:
-        pdf.drawString(300, y_right, f"Address:")
-        pdf.drawString(300, y_right - 12, f"{address.address}, {address.state}")
-        pdf.drawString(300, y_right - 24, f"{address.country} - {address.zip_code}")
+        pdf.drawString(300, y_right, f"Address: {address.address}")
+        y_right -= 12
+        pdf.drawString(300, y_right, f"{address.state}, {address.country} - {address.zip_code}")
     
     # Divider Line
-    y = height - 270
+    y = height - 230
     pdf.setStrokeColor(rl_colors.HexColor('#BDC3C7'))
-    pdf.setLineWidth(2)
+    pdf.setLineWidth(1.5)
     pdf.line(40, y, width - 40, y)
     
     # Products Table
-    y -= 20
-    data = [['Product', 'Qty', 'Unit Price', 'Total']]
+    y -= 25
+    data = [['Product Name', 'Qty', 'Unit Price', 'Total']]
     for item in items:
-        data.append([item.get('name', ''), str(item.get('qty', 0)),
-                    f"₹ {item.get('price', 0)}", f"₹ {item.get('total_price', 0)}"])
+        product_name = item.get('name', '')[:30]  # Truncate long names
+        data.append([
+            product_name,
+            str(item.get('qty', 0)),
+            f"₹{item.get('price', 0)}",
+            f"₹{item.get('total_price', 0)}"
+        ])
 
-    table = Table(data, colWidths=[220, 60, 90, 90])
+    table = Table(data, colWidths=[200, 60, 100, 100])
     table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), rl_colors.HexColor('#34495E')),
         ('TEXTCOLOR', (0, 0), (-1, 0), rl_colors.white),
-        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('ALIGN', (0, 0), (0, -1), 'LEFT'),
+        ('ALIGN', (1, 0), (-1, -1), 'CENTER'),
         ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-        ('FONTSIZE', (0, 0), (-1, 0), 11),
-        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-        ('TOPPADDING', (0, 0), (-1, 0), 12),
-        ('BACKGROUND', (0, 1), (-1, -1), rl_colors.HexColor('#ECF0F1')),
-        ('GRID', (0, 0), (-1, -1), 1, rl_colors.HexColor('#BDC3C7')),
+        ('FONTSIZE', (0, 0), (-1, 0), 10),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 10),
+        ('TOPPADDING', (0, 0), (-1, 0), 10),
+        ('BACKGROUND', (0, 1), (-1, -1), rl_colors.HexColor('#FFFFFF')),
+        ('GRID', (0, 0), (-1, -1), 0.5, rl_colors.HexColor('#BDC3C7')),
         ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
-        ('FONTSIZE', (0, 1), (-1, -1), 10),
-        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [rl_colors.HexColor('#FFFFFF'), rl_colors.HexColor('#ECF0F1')]),
-        ('ALIGN', (1, 1), (-1, -1), 'CENTER'),
+        ('FONTSIZE', (0, 1), (-1, -1), 9),
+        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [rl_colors.HexColor('#FFFFFF'), rl_colors.HexColor('#F8F9FA')]),
+        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
     ]))
 
     table_width, table_height = table.wrap(0, 0)
     table.drawOn(pdf, 40, y - table_height)
-    y = y - table_height - 30
+    y = y - table_height - 25
 
     # Divider Line
     pdf.setStrokeColor(rl_colors.HexColor('#BDC3C7'))
     pdf.setLineWidth(1)
     pdf.line(40, y, width - 40, y)
     
-    y -= 20
+    y -= 25
     
     # Summary Box
+    summary_x = width - 250
     summary_y = y
-    pdf.setFillColor(rl_colors.HexColor('#ECF0F1'))
-    pdf.rect(280, summary_y - 90, 240, 90, fill=1, stroke=1)
-    pdf.setStrokeColor(rl_colors.HexColor('#34495E'))
-    pdf.setLineWidth(2)
     
     # Amount Details
     pdf.setFont('Helvetica', 10)
     pdf.setFillColor(rl_colors.HexColor('#000000'))
-    pdf.drawString(300, summary_y - 20, 'Subtotal:')
-    pdf.drawRightString(500, summary_y - 20, f"₹ {order.sub_total}")
+    pdf.drawString(summary_x, summary_y, 'Subtotal:')
+    pdf.drawRightString(width - 40, summary_y, f"₹ {order.sub_total}")
     
-    pdf.drawString(300, summary_y - 40, 'Shipping:')
-    pdf.drawRightString(500, summary_y - 40, f"₹ {order.shipping}")
+    summary_y -= 18
+    pdf.drawString(summary_x, summary_y, 'Shipping:')
+    pdf.drawRightString(width - 40, summary_y, f"₹ {order.shipping}")
     
     # Total Line
+    summary_y -= 12
     pdf.setLineWidth(1)
-    pdf.line(300, summary_y - 50, 500, summary_y - 50)
+    pdf.line(summary_x, summary_y, width - 40, summary_y)
     
-    pdf.setFont('Helvetica-Bold', 13)
+    summary_y -= 18
+    pdf.setFont('Helvetica-Bold', 12)
     pdf.setFillColor(rl_colors.HexColor('#E74C3C'))
-    pdf.drawString(300, summary_y - 70, 'Total Amount:')
-    pdf.drawRightString(500, summary_y - 70, f"₹ {order.total_amount}")
+    pdf.drawString(summary_x, summary_y, 'Total Amount:')
+    pdf.drawRightString(width - 40, summary_y, f"₹ {order.total_amount}")
     
     # Footer
     footer_y = 30
     pdf.setFont('Helvetica', 8)
     pdf.setFillColor(rl_colors.HexColor('#7F8C8D'))
     pdf.drawString(40, footer_y, 'Thank you for your purchase! | TechNova - Your Premium Online Store')
-    pdf.drawString(40, footer_y - 10, f'Invoice ID: TechNova-{order.id} | Generated on {timezone.now().strftime("%d-%m-%Y %H:%M")}')
-
     pdf.drawString(40, footer_y - 10, f'Invoice ID: TechNova-{order.id} | Generated on {timezone.now().strftime("%d-%m-%Y %H:%M")}')
 
     pdf.showPage()
