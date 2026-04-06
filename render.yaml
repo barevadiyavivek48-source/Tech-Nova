@@ -4,7 +4,7 @@ services:
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt && python myproject/manage.py collectstatic --noinput
-    startCommand: gunicorn --workers 2 --bind 0.0.0.0:8000 myproject.wsgi:application
+    startCommand: bash -c 'cd myproject && gunicorn --workers 2 --bind 0.0.0.0:8000 myproject.wsgi:application'
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.3
