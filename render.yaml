@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: tech-nova
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && python myproject/manage.py collectstatic --noinput
+    startCommand: gunicorn myproject.wsgi
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
