@@ -92,22 +92,44 @@
   .btn,
   .button,
   a.btn {
-    padding: 10px 16px !important;
+    padding: 12px 16px !important;
     font-size: 14px !important;
     border-radius: 20px !important;
-    min-height: 40px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  
+  /* Ensure buttons in flex containers take proper space */
+  form.flex-1 button {
+    width: 100% !important;
+    min-height: 48px !important;
+    font-size: 15px !important;
+    padding: 14px 16px !important;
   }
   
   .btn-lg,
   button.lg {
-    padding: 12px 20px !important;
+    padding: 14px 20px !important;
     font-size: 15px !important;
+    min-height: 48px !important;
   }
   
   .btn-sm,
   button.sm {
     padding: 8px 12px !important;
     font-size: 12px !important;
+  }
+  
+  /* ========== Background Images ========== */
+  /* Show background images on mobile */
+  .md\:bg-\[url\(.*hero-1.*\)\],
+  [class*="bg-\[url"] {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
   }
   
   /* ========== Cards/Product Cards ========== */
