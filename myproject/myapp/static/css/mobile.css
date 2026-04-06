@@ -120,48 +120,88 @@
   .product-card {
     margin-bottom: 12px !important;
     padding: 10px !important;
+    overflow: visible !important;
   }
   
   .product-item {
     padding: 8px !important;
+    overflow: visible !important;
+  }
+  
+  .card img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  .product-card img {
+    width: 100% !important;
+    height: auto !important;
   }
   
   /* ========== Images ========== */
   img {
     max-width: 100% !important;
     height: auto !important;
+    display: block !important;
   }
   
   .product-image {
-    max-height: 200px !important;
+    max-height: none !important;
     width: 100% !important;
-    height: 200px !important;
-    object-fit: cover !important;
+    height: auto !important;
+    object-fit: contain !important;
   }
   
   .product-img {
-    max-height: 200px !important;
-    height: 200px !important;
-    object-fit: cover !important;
+    max-height: none !important;
+    height: auto !important;
+    width: 100% !important;
+    object-fit: contain !important;
   }
   
   /* Product Details Page Specific */
   .product-detail-image,
   .product-details-img {
-    max-height: 220px !important;
-    height: 220px !important;
+    max-height: none !important;
+    height: auto !important;
     width: 100% !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
   }
   
   .product-gallery,
   .product-carousel {
-    max-height: 220px !important;
+    max-height: none !important;
+    height: auto !important;
   }
   
   .gallery-item,
   .carousel-item {
-    max-height: 220px !important;
+    max-height: none !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+  
+  /* Carousel/Banner Images */
+  .carousel,
+  .slider,
+  .banner {
+    max-height: 300px !important;
+    width: 100% !important;
+  }
+  
+  .carousel-image,
+  .slider-image,
+  .banner-image {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+  
+  .slick-slide img,
+  .swiper-slide img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
   }
   
   /* ========== Grids ========== */
@@ -367,15 +407,28 @@
   /* ========== Heights ========== */
   .h-\[600px\],
   .h-\[500px\],
-  .h-\[460px\] {
+  .h-\[460px\],
+  .h-\[400px\],
+  .h-\[380px\],
+  .h-\[360px\] {
     height: auto !important;
-    max-height: 400px !important;
+    max-height: none !important;
   }
   
   .min-h-\[844px\],
   .min-h-\[586px\],
-  .min-h-\[570px\] {
+  .min-h-\[570px\],
+  .min-h-\[520px\] {
     min-height: auto !important;
+  }
+  
+  .max-h-\[800px\],
+  .max-h-\[688px\],
+  .max-h-\[500px\],
+  .max-h-\[400px\],
+  .max-h-\[300px\],
+  .max-h-\[290px\] {
+    max-height: none !important;
   }
   
   /* ========== Flexbox Adjustments ========== */
@@ -392,6 +445,16 @@
   .overflow-x-auto {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+  
+  .overflow-hidden:has(img) {
+    overflow: visible !important;
+  }
+  
+  .overflow-hidden:has(.product-image),
+  .overflow-hidden:has(.carousel),
+  .overflow-hidden:has(.banner) {
+    overflow: visible !important;
   }
   
   /* ========== Line Clamping ========== */
