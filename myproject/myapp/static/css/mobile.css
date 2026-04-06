@@ -153,6 +153,13 @@
     height: 180px !important;
     margin-bottom: 32px !important;
   }
+
+  /* Separate hero banner from categories on mobile */
+  .home-category-section {
+    margin-top: 32px !important;
+    padding-top: 16px !important;
+    border-top: 1px solid #e5e7eb !important;
+  }
   
   /* Add spacing between hero and product sections */
   section {
