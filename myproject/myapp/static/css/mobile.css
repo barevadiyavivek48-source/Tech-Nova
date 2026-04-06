@@ -144,12 +144,12 @@
   
   /* ========== Hero Slider ========== */
   .single-hero-slider-item {
-    height: 350px !important;
-    min-height: 350px !important;
+    height: 220px !important;
+    min-height: 220px !important;
   }
   
   .home-five-hero-slider {
-    height: 350px !important;
+    height: 220px !important;
   }
   
   /* Reduce product card padding for compact layout */
