@@ -103,11 +103,30 @@
   }
   
   /* Ensure buttons in flex containers take proper space */
+  form.flex-1 {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+  
   form.flex-1 button {
     width: 100% !important;
     min-height: 48px !important;
     font-size: 15px !important;
     padding: 14px 16px !important;
+  }
+  
+  /* Fix product button section on mobile */
+  .product-add-to-cart-btn-section {
+    width: 100% !important;
+  }
+  
+  .product-add-to-cart-btn-section .flex {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  
+  .product-add-to-cart-btn-section form {
+    width: 100% !important;
   }
   
   .btn-lg,
@@ -263,6 +282,15 @@
   /* ========== Flex/Layout ========== */
   .flex-wrap {
     flex-wrap: wrap !important;
+  }
+  
+  /* Ensure gap applies to wrapped flex items on mobile */
+  .gap-x-4 {
+    gap: 12px !important;
+  }
+  
+  .gap-y-4 {
+    gap: 12px !important;
   }
   
   .flex-col {
