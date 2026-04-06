@@ -4,7 +4,11 @@ services:
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt && python myproject/manage.py collectstatic --noinput
-    startCommand: gunicorn -c gunicorn_config.py myproject.wsgi
+    startCommand: gunicorn --workers 2 --bind 0.0.0.0:8000 myproject.wsgi:application
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.3
+      - key: PYTHONUNBUFFERED
+        value: 1
+      - key: DJANGO_SETTINGS_MODULE
+        value: myproject.settings
