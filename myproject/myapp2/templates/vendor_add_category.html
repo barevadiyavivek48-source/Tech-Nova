@@ -1,0 +1,23 @@
+{% extends "vendor_dashboard.html" %}
+{% load static %}
+{% block content %}
+<div class="container py-12">
+  <h2 class="text-2xl font-bold mb-6">Add Category</h2>
+  <form method="post" action="{% url 'vendor:vendor_add_category' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-4">
+      <label for="name" class="block font-semibold mb-2">Category Name</label>
+      <input type="text" name="name" id="name" class="form-control w-full" required>
+    </div>
+    <div class="mb-4">
+      <label for="description" class="block font-semibold mb-2">Description</label>
+      <textarea name="description" id="description" class="form-control w-full"></textarea>
+    </div>
+    <div class="mb-4">
+      <label for="image" class="block font-semibold mb-2">Category Image</label>
+      <input type="file" name="image" id="image" class="form-control w-full">
+    </div>
+    <button type="submit" class="btn btn-primary">Add Category</button>
+  </form>
+</div>
+{% endblock %}

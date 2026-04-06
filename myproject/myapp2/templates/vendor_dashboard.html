@@ -1,0 +1,1346 @@
+
+{% extends "index.html" %}
+{% load static %}
+
+{# Override header section to remove user/customer links/text for vendor dashboard #}
+{% block header %}
+<header>
+  <div class="bg-primary header-top">
+    <div class="container">
+      <div class="flex items-center xl:justify-between justify-center">
+        <div class="xl:flex items-center gap-x-6 hidden">
+          <p class="flex items-center gap-x-2 text-white text-sm leading-[22px]">
+            <span><i class="hgi hgi-stroke hgi-customer-support text-xl text-white"></i></span>
+            Need Support ?
+            <span>Call Us</span>
+            <a href="#" class="bg-warning py-px px-2 text-xs leading-4.5 rounded-[60px] text-gray-800">9664729242</a>
+          </p>
+        </div>
+        <div class="text-center py-3.5">
+          <p class="flex items-center gap-x-[7px] text-white text-sm leading-[22px] font-dm-sans">
+            <span class="inline-flex items-center"><i class="hgi hgi-stroke hgi-discount-01 text-white text-xl"></i></span>
+            Vendor Dashboard
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- header-middle and header-bottom can be omitted or replaced with vendor-specific navigation if needed -->
+</header>
+{% endblock %}
+
+{% block content %}
+
+    <!-- ========== Breadcrumb Section Start ========== -->
+    <div class="container py-12">
+      <div class="breadcrumb">
+        <ul>
+          <li>
+            <a href='index.html'>
+              <span class="inline-flex items-center justify-center">
+                <i
+                  class="hgi hgi-stroke hgi-home-01 text-2xl leading-6"
+                ></i></span
+              >Home</a
+            >
+          </li>
+          <li class="text-light-disabled-text">&#8226;</li>
+          <li><span class="text-sm leading-[22px]">Sale Dashboard</span></li>
+        </ul>
+      </div>
+    </div>
+    <!-- ========== Breadcrumb Section End ========== -->
+
+    <!-- ========== My Account Section Start ========== -->
+    <section class="pb-[74px]">
+      <div class="container">
+        <div class="grid grid-cols-12 lg:gap-x-10 gap-y-6">
+          <div class="xl:col-span-3 lg:col-span-4 col-span-12">
+            <div class="sticky top-20">
+              <ul
+                class="flex flex-col gap-y-1 border border-gray-300 p-4 rounded-2xl my-account-menu"
+              >
+                <li class="group">
+                  <button
+                    type="button"
+                    data-tab="dashboard"
+                    class="w-full flex items-center gap-x-4 font-semibold p-4 group-hover:text-white active group-hover:bg-primary rounded-lg transition-colors ease-in-out duration-300 active"
+                  >
+                    <span class="inline-flex items-center justify-center"
+                      ><i
+                        class="hgi hgi-stroke hgi-dashboard-square-01 text-2xl leading-6 font-normal"
+                      ></i
+                    ></span>
+                    Dashboard
+                  </button>
+                </li>
+                <li class="group">
+                  <a href="{% url 'vendor:vendor_grid' %}" class="w-full flex items-center gap-x-4 font-semibold p-4 rounded-lg group-hover:text-white group-hover:bg-primary">
+                    <span class="inline-flex items-center justify-center">
+                      <i class="hgi hgi-stroke hgi-grid-01 text-2xl leading-6 font-normal"></i>
+                    </span>
+                    Vendor Grid
+                  </a>
+                </li>
+                <li class="group">
+                  <a href="{% url 'vendor:vendor_account' %}" class="w-full flex items-center gap-x-4 font-semibold p-4 rounded-lg group-hover:text-white group-hover:bg-primary">
+                    <span class="inline-flex items-center justify-center">
+                      <i class="hgi hgi-stroke hgi-user-01 text-2xl leading-6 font-normal"></i>
+                    </span>
+                    Vendor Account
+                  </a>
+                </li>
+                <li class="group">
+                  <button
+                    type="button"
+                    data-tab="products"
+                    class="w-full flex items-center gap-x-4 font-semibold p-4 rounded-lg group-hover:text-white group-hover:bg-primary"
+                  >
+                    <span class="inline-flex items-center justify-center"
+                      ><i
+                        class="hgi hgi-stroke hgi-delivery-box-01 text-2xl leading-6 font-normal"
+                      ></i
+                    ></span>
+                    Products
+                  </button>
+                </li>
+                <li class="group">
+                  <button
+                    type="button"
+                    data-tab="order"
+                    class="w-full flex items-center gap-x-4 font-semibold p-4 rounded-lg group-hover:text-white group-hover:bg-primary"
+                  >
+                    <span class="inline-flex items-center justify-center"
+                      ><i
+                        class="hgi hgi-stroke hgi-delete-01 text-2xl leading-6 font-normal"
+                      ></i
+                    ></span>
+                    Order
+                  </button>
+                </li>
+                <li class="group">
+                  <button
+                    data-tab="settings"
+                    class="w-full flex items-center gap-x-4 font-semibold p-4 group-hover:text-white group-hover:bg-primary rounded-lg transition-colors ease-in-out duration-300"
+                  >
+                    <span class="inline-flex items-center justify-center"
+                      ><i
+                        class="hgi hgi-stroke hgi-settings-01 text-2xl leading-6 font-normal"
+                      ></i
+                    ></span>
+                    Settings
+                  </button>
+                </li>
+                <li class="group">
+                  <a href="{% url 'vendor:vendor_add_category' %}" class="w-full flex items-center gap-x-4 font-semibold p-4 rounded-lg group-hover:text-white group-hover:bg-primary">
+                    <span class="inline-flex items-center justify-center">
+                      <i class="hgi hgi-stroke hgi-add-circle text-2xl leading-6 font-normal"></i>
+                    </span>
+                    Add Category
+                  </a>
+                </li>
+                <li class="group">
+                  <a href="{% url 'vendor:vendor_add_product' %}" class="w-full flex items-center gap-x-4 font-semibold p-4 rounded-lg group-hover:text-white group-hover:bg-primary">
+                    <span class="inline-flex items-center justify-center">
+                      <i class="hgi hgi-stroke hgi-add-circle text-2xl leading-6 font-normal"></i>
+                    </span>
+                    Add Product
+                  </a>
+                </li>
+                <li class="group">
+                  <form id="logout-form" method="post" action="{% url 'logout' %}" style="display:none;">
+                    {% csrf_token %}
+                  </form>
+                  <button
+                    type="button"
+                    class="w-full flex items-center gap-x-4 font-semibold p-4 group-hover:text-white group-hover:bg-primary rounded-lg transition-colors ease-in-out duration-300 logout-button"
+                    onclick="document.getElementById('logout-form').submit();"
+                  >
+                    <span class="inline-flex items-center justify-center"
+                      ><i
+                        class="hgi hgi-stroke hgi-login-circle-02 text-2xl leading-6 font-normal"
+                      ></i
+                    ></span>
+                    Log Out
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="xl:col-span-9 lg:col-span-8 col-span-12">
+            <div class="my-account-content tab-content">
+                            <!-- Vendor Profile Section Start -->
+                            <div class="mb-8 border border-gray-300 rounded-2xl p-6 bg-white">
+                              <h3 class="text-xl font-bold mb-4">Vendor Profile</h3>
+                              {% if profile %}
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                  <div>
+                                    <p class="font-semibold">Shop Name:</p>
+                                    <p class="mb-2">{{ profile.shop_name }}</p>
+                                    <p class="font-semibold">Owner Name:</p>
+                                    <p class="mb-2">{{ user_name }}</p>
+                                    <p class="font-semibold">Email:</p>
+                                    <p class="mb-2">{{ user_email }}</p>
+                                    <p class="font-semibold">Phone:</p>
+                                    <p class="mb-2">{{ profile.phone }}</p>
+                                  </div>
+                                  <div>
+                                    <p class="font-semibold">Address:</p>
+                                    <p class="mb-2">{{ profile.address }}</p>
+                                    <p class="font-semibold">Website:</p>
+                                    <p class="mb-2">{{ profile.website }}</p>
+                                    <p class="font-semibold">Role:</p>
+                                    <p class="mb-2">Vendor</p>
+                                  </div>
+                                </div>
+                              {% else %}
+                                <p>No profile details found.</p>
+                              {% endif %}
+                            </div>
+              <div class="menu-tab-pane" id="dashboard">
+                <div class="grid grid-cols-12 mb-6 gap-6">
+                  <div
+                    class="xl:col-span-4 lg:col-span-6 col-span-12 border border-gray-300 rounded-2xl p-6 flex items-center gap-x-6"
+                  >
+                    <div
+                      class="size-[72px] rounded-full bg-[rgba(145,158,171,0.08)] inline-flex justify-center items-center flex-none"
+                    >
+                      <i
+                        class="hgi hgi-stroke hgi-delivery-box-02 text-[32px] leading-8 text-light-primary-text"
+                      ></i>
+                    </div>
+                    <div class="flex flex-col gap-y-1">
+                      <p
+                        class="text-sm leading-[22px] text-light-disabled-text font-semibold"
+                      >
+                        Total Orders
+                      </p>
+                      <h4>18,765</h4>
+                    </div>
+                  </div>
+                  <div
+                    class="xl:col-span-4 lg:col-span-6 col-span-12 border border-gray-300 rounded-2xl p-6 flex items-center gap-x-6"
+                  >
+                    <div
+                      class="size-[72px] rounded-full bg-[rgba(145,158,171,0.08)] inline-flex justify-center items-center flex-none"
+                    >
+                      <i
+                        class="hgi hgi-stroke hgi-analytics-up text-[32px] leading-8 text-light-primary-text"
+                      ></i>
+                    </div>
+                    <div class="flex flex-col gap-y-1">
+                      <p
+                        class="text-sm leading-[22px] text-light-disabled-text font-semibold"
+                      >
+                        Total Sales
+                      </p>
+                      <h4>20,300</h4>
+                    </div>
+                  </div>
+                  <div
+                    class="xl:col-span-4 lg:col-span-6 col-span-12 border border-gray-300 rounded-2xl p-6 flex items-center gap-x-6"
+                  >
+                    <div
+                      class="size-[72px] rounded-full bg-[rgba(145,158,171,0.08)] inline-flex justify-center items-center flex-none"
+                    >
+                      <i
+                        class="hgi hgi-stroke hgi-hourglass text-[32px] leading-8 text-light-primary-text"
+                      ></i>
+                    </div>
+                    <div class="flex flex-col gap-y-1">
+                      <p
+                        class="text-sm leading-[22px] text-light-disabled-text font-semibold"
+                      >
+                        Order Pending
+                      </p>
+                      <h4>200</h4>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-y-6">
+                  <!-- Category Table Start -->
+                  <div class="grid grid-cols-12">
+                    <div class="col-span-12">
+                      <div class="wishlist-table-wrapper border-gray-300 rounded-2xl border overflow-x-auto p-6">
+                        <div>
+                          <h5 class="mb-6">Categories</h5>
+                        </div>
+                        <table class="w-full wishlist-table">
+                          <thead class="bg-primary-lighter">
+                            <tr class="rounded-full">
+                              <th class="text-left pl-4 py-4 font-semibold rounded-l-lg">Image</th>
+                              <th class="text-left pl-4 py-4 font-semibold">Name</th>
+                              <th class="text-left pl-4 py-4 font-semibold">Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for category in categories %}
+                            <tr class="py-4 border-b border-gray-300">
+                              <td class="py-3 lg:pl-4">
+                                {% if category.image %}
+                                  <img src="{{ category.image.url }}" alt="{{ category.name }}" class="rounded-2xl object-cover w-[60px] h-[60px]" />
+                                {% else %}
+                                  <span class="text-light-disabled-text">No Image</span>
+                                {% endif %}
+                              </td>
+                              <td class="py-3 lg:pl-4">{{ category.name }}</td>
+                              <td class="py-3 lg:pl-4">{{ category.description }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr><td colspan="3" class="text-center">No categories found.</td></tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Category Table End -->
+
+                  <!-- Product Table Start -->
+                  <div class="grid grid-cols-12">
+                    <div class="col-span-12">
+                      <div class="wishlist-table-wrapper border-gray-300 rounded-2xl border overflow-x-auto p-6">
+                        <div>
+                          <h5 class="mb-6">Products</h5>
+                        </div>
+                        <table class="w-full wishlist-table">
+                          <thead class="bg-primary-lighter">
+                            <tr class="rounded-full">
+                              <th class="text-left pl-4 py-4 font-semibold rounded-l-lg">Image</th>
+                              <th class="text-left pl-4 py-4 font-semibold">Name</th>
+                              <th class="text-left pl-4 py-4 font-semibold">Category</th>
+                              <th class="text-left pl-4 py-4 font-semibold">Price</th>
+                              <th class="text-left pl-4 py-4 font-semibold">Stock</th>
+                              <th class="text-left pl-4 py-4 font-semibold">Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for product in products %}
+                            <tr class="py-4 border-b border-gray-300">
+                              <td class="py-3 lg:pl-4">
+                                {% if product.image %}
+                                  <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-2xl object-cover w-[60px] h-[60px]" />
+                                {% else %}
+                                  <span class="text-light-disabled-text">No Image</span>
+                                {% endif %}
+                              </td>
+                              <td class="py-3 lg:pl-4">{{ product.name }}</td>
+                              <td class="py-3 lg:pl-4">{{ product.category.name }}</td>
+                              <td class="py-3 lg:pl-4">{{ product.price }}</td>
+                              <td class="py-3 lg:pl-4">{{ product.quantity }}</td>
+                              <td class="py-3 lg:pl-4">{{ product.description }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr><td colspan="6" class="text-center">No products found.</td></tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Product Table End -->
+                </div>
+              </div>
+              <div class="menu-tab-pane hidden" id="products">
+                <div class="flex flex-col gap-y-6">
+                  <h4 class="text-light-primary-text">All Product</h4>
+                  <div class="grid grid-cols-12">
+                    <div class="col-span-12">
+                      <div class="wishlist-table-wrapper border-gray-300 rounded-2xl border overflow-x-auto p-6">
+                        <table class="w-full wishlist-table">
+                          <thead class="bg-primary-lighter">
+                            <tr class="rounded-full">
+                              <th class="text-left pl-4 py-4 font-semibold product rounded-l-lg">Image</th>
+                              <th class="text-left pl-4 py-4 font-semibold">Name</th>
+                              <th class="text-left pl-4 py-4 font-semibold">Category</th>
+                              <th class="text-left pl-4 py-4 font-semibold">Price</th>
+                              <th class="text-left pl-4 py-4 font-semibold">Stock</th>
+                              <th class="text-left pl-4 py-4 font-semibold">Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for product in products %}
+                            <tr class="py-4 border-b border-gray-300">
+                              <td class="py-3 lg:pl-4">
+                                {% if product.image %}
+                                  <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-2xl object-cover w-[60px] h-[60px]" />
+                                {% else %}
+                                  <span class="text-light-disabled-text">No Image</span>
+                                {% endif %}
+                              </td>
+                              <td class="py-3 lg:pl-4">{{ product.name }}</td>
+                              <td class="py-3 lg:pl-4">{{ product.category.name }}</td>
+                              <td class="py-3 lg:pl-4">{{ product.price }}</td>
+                              <td class="py-3 lg:pl-4">{{ product.quantity }}</td>
+                              <td class="py-3 lg:pl-4">{{ product.description }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr><td colspan="6" class="text-center">No products found.</td></tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="menu-tab-pane hidden" id="order">
+                <div class="flex flex-col gap-y-6">
+                  <h4 class="text-light-primary-text">Order Product</h4>
+                  <div class="grid grid-cols-12">
+                    <div class="col-span-12">
+                      <div
+                        class="wishlist-table-wrapper border-gray-300 rounded-2xl border overflow-x-auto p-6"
+                      >
+                        <table class="w-full wishlist-table">
+                          <thead class="bg-primary-lighter rounded-lg">
+                            <tr class="rounded-lg">
+                              <th
+                                class="text-left pl-4 py-4 rounded-l-lg font-semibold order"
+                              >
+                                <p class="order-id">Order ID</p>
+                              </th>
+
+                              <th
+                                class="text-left pl-4 py-4 font-semibold order-date"
+                              >
+                                Order Date
+                              </th>
+                              <th
+                                class="text-left pl-4 py-4 font-semibold product"
+                              >
+                                Product
+                              </th>
+                              <th
+                                class="text-left pl-4 py-4 font-semibold product-price"
+                              >
+                                Price
+                              </th>
+                              <th
+                                class="text-left pl-4 py-4 font-semibold product-quantity"
+                              >
+                                Quantity
+                              </th>
+                              <th
+                                class="text-left pl-4 py-4 font-semibold product-total"
+                              >
+                                Total
+                              </th>
+                              <th
+                                class="text-left pl-4 py-4 font-semibold product-status"
+                              >
+                                Status
+                              </th>
+                              <th
+                                class="text-left pl-4 py-4 rounded-r-lg font-semibold product-action"
+                              >
+                                Action
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for o in orders %}
+                            <tr class="py-[15px] border-b border-gray-300">
+                              <td data-title="Order ID " class="py-[15px] lg:pl-4 product">
+                                <p class="font-semibold text-light-primary-text">
+                                  #{{ o.order.id }}
+                                </p>
+                              </td>
+                              <td data-title="Order Date " class="py-[15px] lg:pl-4 product">
+                                <p>{{ o.order.created_at|date:'d M, Y H:i' }}</p>
+                              </td>
+                              <td data-title="Product  " class="py-[15px] lg:pl-4 product">
+                                <a class='text-light-primary-text font-semibold hover:text-primary hover:underline transition-colors' href="#">{{ o.product.name }}</a>
+                              </td>
+                              <td data-title="Price " class="capitalize py-[15px] lg:pl-4 product-price">
+                                <span>${{ o.item.price }}</span>
+                              </td>
+                              <td data-title="Quantity " class="capitalize py-4 lg:pl-4 product-stock">
+                                <p>{{ o.item.qty }}</p>
+                              </td>
+                              <td data-title="Total " class="capitalize py-4 lg:pl-4 product-total">
+                                <p class="text-light-primary-text font-semibold">${{ o.item.total_price }}</p>
+                              </td>
+                              <td data-title="Status " class="capitalize py-4 lg:pl-4 product-status">
+                                <span class="inline-flex items-center justify-center bg-[rgba(255,193,7,0.16)] text-xs leading-[18px] text-warning-dark rounded-[100px] py-px px-2">
+                                  {{ o.order.status|title }}
+                                </span>
+                              </td>
+                              <td data-title="Action " class="capitalize py-4 lg:pl-4 product-action">
+                                <span class="text-xs">Customer: {{ o.customer.name }}<br>Email: {{ o.customer.email }}</span>
+                              </td>
+                            </tr>
+                            {% empty %}
+                            <tr><td colspan="8" class="text-center">No orders found for your products.</td></tr>
+                            {% endfor %}
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <div class="mt-4">
+                          <ul
+                            class="flex items-center md:justify-end justify-center gap-x-1.5 blog-pagination py-4"
+                          >
+                            <li class="group blog-pagination-item">
+                              <a
+                                href="#"
+                                class="inline-flex items-center justify-center size-8 rounded-[50px] bg-white cursor-pointer border border-transparent group-hover:font-semibold group-hover:border-primary group-hover:bg-[rgba(0,171,85,0.08)] transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="inline-flex items-center justify-center"
+                                >
+                                  <i
+                                    class="hgi hgi-stroke hgi-arrow-left-01 text-[20px] group-hover:font-semibold leading-5 text-light-primary-text group-hover:text-primary"
+                                  ></i
+                                ></span>
+                              </a>
+                            </li>
+                            <li class="group blog-pagination-item">
+                              <a
+                                href="#"
+                                class="inline-flex items-center justify-center size-8 rounded-[50px] active"
+                              >
+                                1
+                              </a>
+                            </li>
+                            <li class="group blog-pagination-item">
+                              <a
+                                href="#"
+                                class="inline-flex items-center justify-center size-8 rounded-[50px] text-base leading-6 text-light-primary-text group-hover:text-primary group-hover:font-semibold bg-white cursor-pointer border border-transparent group-hover:border-primary group-hover:bg-[rgba(0,171,85,0.08)] transition-colors duration-300 ease-in-out"
+                              >
+                                2
+                              </a>
+                            </li>
+                            <li class="group blog-pagination-item">
+                              <a
+                                href="#"
+                                class="inline-flex items-center justify-center size-8 rounded-[50px] text-base leading-6 text-light-primary-text group-hover:text-primary group-hover:font-semibold bg-white cursor-pointer border border-transparent group-hover:border-primary group-hover:bg-[rgba(0,171,85,0.08)] transition-colors duration-300 ease-in-out"
+                              >
+                                3
+                              </a>
+                            </li>
+                            <li class="group blog-pagination-item">
+                              <a
+                                href="#"
+                                class="inline-flex items-center justify-center size-8 rounded-[50px] text-base leading-6 text-light-primary-text group-hover:text-primary group-hover:font-semibold bg-white cursor-pointer border border-transparent group-hover:border-primary group-hover:bg-[rgba(0,171,85,0.08)] transition-colors duration-300 ease-in-out"
+                              >
+                                4
+                              </a>
+                            </li>
+                            <li class="group blog-pagination-item">
+                              <a
+                                href="#"
+                                class="inline-flex items-center justify-center size-8 rounded-[50px] text-base leading-6 text-light-primary-text group-hover:text-primary group-hover:font-semibold bg-white cursor-pointer border border-transparent group-hover:border-primary group-hover:bg-[rgba(0,171,85,0.08)] transition-colors duration-300 ease-in-out"
+                              >
+                                5
+                              </a>
+                            </li>
+                            <li class="blog-pagination-item">
+                              <a
+                                href="#"
+                                class="inline-flex items-center justify-center size-8 rounded-[50px] bg-white"
+                              >
+                                <span
+                                  class="inline-flex items-center justify-center"
+                                >
+                                  <i
+                                    class="hgi hgi-stroke hgi-more-horizontal text-[20px] leading-5 text-light-primary-text"
+                                  ></i
+                                ></span>
+                              </a>
+                            </li>
+                            <li class="group blog-pagination-item">
+                              <a
+                                href="#"
+                                class="inline-flex items-center justify-center size-8 rounded-[50px] group-hover:font-semibold bg-white cursor-pointer border border-transparent group-hover:border-primary group-hover:bg-[rgba(0,171,85,0.08)] transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="inline-flex items-center justify-center"
+                                >
+                                  <i
+                                    class="hgi hgi-stroke hgi-arrow-right-01 text-[20px] leading-5 group-hover:font-semibold text-light-primary-text group-hover:text-primary"
+                                  ></i
+                                ></span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="menu-tab-pane hidden" id="address">
+                <div class="border border-[rgba(145,158,171,0.24)] rounded-3xl">
+                  <div>
+                    <img
+                      src="{% static '/images/vendors-list/vendor-list-view-3.png' %}"
+                      alt="vendor banner"
+                      class="rounded-t-3xl w-full h-[200px] object-cover"
+                    />
+                  </div>
+                  <!-- content section -->
+                  <div class="md:px-6 px-4 pt-[92px] relative">
+                    <div
+                      class="flex items-center justify-center absolute top-[-76px] left-6"
+                    >
+                      <div
+                        class="w-36 h-36 flex items-center justify-center border-2 border-dashed border-gray-300 rounded-full hover:border-primary transition-all duration-300 ease-in-out"
+                      >
+                        <label
+                          class="flex flex-col items-center justify-center w-32 h-32 bg-[#F4F5F6] rounded-full cursor-pointer"
+                        >
+                          <input type="file" class="hidden" />
+                          <svg
+                            class="w-6 h-6"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M3 8C3 8.55 3.45 9 4 9C4.55 9 5 8.55 5 8V6H7C7.55 6 8 5.55 8 5C8 4.45 7.55 4 7 4H5V2C5 1.45 4.55 1 4 1C3.45 1 3 1.45 3 2V4H1C0.45 4 0 4.45 0 5C0 5.55 0.45 6 1 6H3V8Z"
+                              fill="#495057"
+                            />
+                            <circle cx="13" cy="14" r="3" fill="#495057" />
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M17.83 6H21C22.1 6 23 6.9 23 8V20C23 21.1 22.1 22 21 22H5C3.9 22 3 21.1 3 20V9.72C3.3 9.89 3.63 10 4 10C5.1 10 6 9.1 6 8V7H7C8.1 7 9 6.1 9 5C9 4.63 8.89 4.3 8.72 4H15.12C15.68 4 16.22 4.24 16.59 4.65L17.83 6ZM8 14C8 16.76 10.24 19 13 19C15.76 19 18 16.76 18 14C18 11.24 15.76 9 13 9C10.24 9 8 11.24 8 14Z"
+                              fill="#495057"
+                            />
+                          </svg>
+                          <span class="mt-1 text-xs leading-[18px]"
+                            >Upload photo</span
+                          >
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="relative">
+                      <div>
+                        <div class="mb-6 flex flex-col gap-y-2">
+                          <a href="#"
+                            ><h6 class="hover:text-primary">Company Name</h6></a
+                          >
+                          <p class="line-clamp-2">
+                            Fresh Produce, Fruits & Vegetables, Organic
+                            Groceries, Dairy Products, Breads & Bakery, Meat &
+                            Seafood
+                          </p>
+                        </div>
+                        <div
+                          class="flex flex-col gap-y-5 border-b border-b-[rgba(145,158,171,0.24)] pb-5"
+                        >
+                          <a href="#" class="flex items-center gap-x-2.5">
+                            <span
+                              class="inline-flex items-center justify-center"
+                              ><i
+                                class="hgi hgi-stroke hgi-call text-2xl leading-6"
+                              ></i
+                            ></span>
+                            <span class="text-light-primary-text"
+                              >(555) 123-4567</span
+                            >
+                          </a>
+                          <a href="#" class="flex items-center gap-x-2.5">
+                            <span
+                              class="inline-flex items-center justify-center"
+                            >
+                              <i
+                                class="hgi hgi-stroke hgi-mail-01 text-2xl leading-6"
+                              ></i>
+                            </span>
+
+                            <span class="text-light-primary-text"
+                              >alex@example.com
+                            </span>
+                          </a>
+                          <p
+                            class="flex items-center gap-x-2.5 text-light-primary-text"
+                          >
+                            <span
+                              class="inline-flex items-center justify-center"
+                              ><i
+                                class="hgi hgi-stroke hgi-location-06 text-2xl leading-6"
+                              ></i>
+                            </span>
+                            1234 Elm Street, Springfield, CA, 90210, United
+                            States
+                          </p>
+                        </div>
+                      </div>
+                      <div class="absolute -top-[60px] right-0">
+                        <button
+                          class="btn btn-default btn-large px-[22px] py-2.5 outline rounded-[80px] shadow-none edit-address-button"
+                        >
+                          <span class="inline-flex items-center justify-center"
+                            ><i
+                              class="hgi hgi-stroke hgi-edit-02 text-2xl leading-6 text-light-primary-text"
+                            ></i></span
+                          >Edit
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="menu-tab-pane hidden" id="settings">
+                <div class="mb-6">
+                  <h4 class="text-light-primary-text">Setting</h4>
+                </div>
+                <div
+                  class="wishlist-table-wrapper border-gray-300 rounded-2xl border overflow-x-auto px-6"
+                >
+                  <table class="w-full">
+                    <tbody>
+                      <tr class="border-b border-gray-300">
+                        <td>
+                          <div class="py-6">
+                            <div class="flex items-center gap-x-2.5">
+                              <span
+                                class="inline-flex items-center justify-center size-9 rounded-full bg-warning-light"
+                              >
+                                <i
+                                  class="hgi hgi-stroke hgi-notification-01 text-[20px] leading-5 text-light-primary-text"
+                                ></i
+                              ></span>
+                              <p class="font-semibold text-light-disabled-text">
+                                Notification
+                              </p>
+                            </div>
+                            <div class="flex flex-col gap-y-4 pl-11">
+                              <div>
+                                <label class="flex items-center cursor-pointer">
+                                  <!-- custom radio -->
+                                  <span
+                                    class="has-[input:checked]:hover:bg-[#00AB55]/8 flex items-center justify-center w-10 h-10 bg-transparent rounded-full hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                                  >
+                                    <span
+                                      class="relative inline-flex w-5 h-5 items-center justify-center"
+                                    >
+                                      <input
+                                        checked
+                                        type="radio"
+                                        name="notification"
+                                        class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-primary border-gray-300 rounded-full bg-white transition-all"
+                                      />
+
+                                      <!-- radio inner dot -->
+                                      <span
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary opacity-0 scale-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all"
+                                      ></span>
+                                    </span>
+                                  </span>
+
+                                  <!-- label text -->
+                                  <span
+                                    class="text-light-primary-text text-sm leading-[22px]"
+                                  >
+                                    Show Desktop Notifications
+                                  </span>
+                                </label>
+                              </div>
+                              <div>
+                                <label class="flex items-center cursor-pointer">
+                                  <!-- custom radio -->
+                                  <span
+                                    class="has-[input:checked]:hover:bg-[#00AB55]/8 flex items-center justify-center w-10 h-10 bg-transparent rounded-full hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                                  >
+                                    <span
+                                      class="relative inline-flex w-5 h-5 items-center justify-center"
+                                    >
+                                      <input
+                                        type="radio"
+                                        name="notification"
+                                        class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-primary border-gray-300 rounded-full bg-white transition-all"
+                                      />
+
+                                      <!-- radio inner dot -->
+                                      <span
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary opacity-0 scale-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all"
+                                      ></span>
+                                    </span>
+                                  </span>
+
+                                  <!-- label text -->
+                                  <span
+                                    class="text-light-primary-text text-sm leading-[22px]"
+                                  >
+                                    Enable Notifications
+                                  </span>
+                                </label>
+                              </div>
+                              <div>
+                                <label class="flex items-center cursor-pointer">
+                                  <!-- custom radio -->
+                                  <span
+                                    class="has-[input:checked]:hover:bg-[#00AB55]/8 flex items-center justify-center w-10 h-10 bg-transparent rounded-full hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                                  >
+                                    <span
+                                      class="relative inline-flex w-5 h-5 items-center justify-center"
+                                    >
+                                      <input
+                                        type="radio"
+                                        name="notification"
+                                        class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-primary border-gray-300 rounded-full bg-white transition-all"
+                                      />
+
+                                      <!-- radio inner dot -->
+                                      <span
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary opacity-0 scale-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all"
+                                      ></span>
+                                    </span>
+                                  </span>
+
+                                  <!-- label text -->
+                                  <span
+                                    class="text-light-primary-text text-sm leading-[22px]"
+                                  >
+                                    Get notification for my own activity
+                                  </span>
+                                </label>
+                              </div>
+                              <div>
+                                <label class="flex items-center cursor-pointer">
+                                  <!-- custom radio -->
+                                  <span
+                                    class="has-[input:checked]:hover:bg-[#00AB55]/8 flex items-center justify-center w-10 h-10 bg-transparent rounded-full hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                                  >
+                                    <span
+                                      class="relative inline-flex w-5 h-5 items-center justify-center"
+                                    >
+                                      <input
+                                        type="radio"
+                                        name="notification"
+                                        class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-primary border-gray-300 rounded-full bg-white transition-all"
+                                      />
+
+                                      <!-- radio inner dot -->
+                                      <span
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary opacity-0 scale-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all"
+                                      ></span>
+                                    </span>
+                                  </span>
+
+                                  <!-- label text -->
+                                  <span
+                                    class="text-light-primary-text text-sm leading-[22px]"
+                                  >
+                                    DND
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-gray-300">
+                        <td>
+                          <div class="py-6">
+                            <div class="flex items-center gap-x-2.5">
+                              <span
+                                class="inline-flex items-center justify-center size-9 rounded-full bg-warning-light"
+                              >
+                                <i
+                                  class="hgi hgi-stroke hgi-user text-[20px] leading-5 text-light-primary-text"
+                                ></i
+                              ></span>
+                              <p class="font-semibold text-light-disabled-text">
+                                Deactivate Account
+                              </p>
+                            </div>
+                            <div class="flex flex-col gap-y-4 pl-11">
+                              <div>
+                                <label class="flex items-center cursor-pointer">
+                                  <!-- custom radio -->
+                                  <span
+                                    class="has-[input:checked]:hover:bg-[#00AB55]/8 flex items-center justify-center w-10 h-10 bg-transparent rounded-full hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                                  >
+                                    <span
+                                      class="relative inline-flex w-5 h-5 items-center justify-center"
+                                    >
+                                      <input
+                                        checked
+                                        type="radio"
+                                        name="user"
+                                        class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-primary border-gray-300 rounded-full bg-white transition-all"
+                                      />
+
+                                      <!-- radio inner dot -->
+                                      <span
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary opacity-0 scale-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all"
+                                      ></span>
+                                    </span>
+                                  </span>
+
+                                  <!-- label text -->
+                                  <span
+                                    class="text-light-primary-text text-sm leading-[22px]"
+                                  >
+                                    I have a privacy concern
+                                  </span>
+                                </label>
+                              </div>
+                              <div>
+                                <label class="flex items-center cursor-pointer">
+                                  <!-- custom radio -->
+                                  <span
+                                    class="has-[input:checked]:hover:bg-[#00AB55]/8 flex items-center justify-center w-10 h-10 bg-transparent rounded-full hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                                  >
+                                    <span
+                                      class="relative inline-flex w-5 h-5 items-center justify-center"
+                                    >
+                                      <input
+                                        type="radio"
+                                        name="user"
+                                        class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-primary border-gray-300 rounded-full bg-white transition-all"
+                                      />
+
+                                      <!-- radio inner dot -->
+                                      <span
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary opacity-0 scale-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all"
+                                      ></span>
+                                    </span>
+                                  </span>
+
+                                  <!-- label text -->
+                                  <span
+                                    class="text-light-primary-text text-sm leading-[22px]"
+                                  >
+                                    This is temporary
+                                  </span>
+                                </label>
+                              </div>
+                              <div>
+                                <label class="flex items-center cursor-pointer">
+                                  <!-- custom radio -->
+                                  <span
+                                    class="has-[input:checked]:hover:bg-[#00AB55]/8 flex items-center justify-center w-10 h-10 bg-transparent rounded-full hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                                  >
+                                    <span
+                                      class="relative inline-flex w-5 h-5 items-center justify-center"
+                                    >
+                                      <input
+                                        type="radio"
+                                        name="user"
+                                        class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-primary border-gray-300 rounded-full bg-white transition-all"
+                                      />
+
+                                      <!-- radio inner dot -->
+                                      <span
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary opacity-0 scale-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all"
+                                      ></span>
+                                    </span>
+                                  </span>
+
+                                  <!-- label text -->
+                                  <span
+                                    class="text-light-primary-text text-sm leading-[22px]"
+                                  >
+                                    Other
+                                  </span>
+                                </label>
+                              </div>
+                              <div>
+                                <label class="flex items-center cursor-pointer">
+                                  <!-- custom radio -->
+                                  <span
+                                    class="has-[input:checked]:hover:bg-[#00AB55]/8 flex items-center justify-center w-10 h-10 bg-transparent rounded-full hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                                  >
+                                    <span
+                                      class="relative inline-flex w-5 h-5 items-center justify-center"
+                                    >
+                                      <input
+                                        type="radio"
+                                        name="user"
+                                        class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-primary border-gray-300 rounded-full bg-white transition-all"
+                                      />
+
+                                      <!-- radio inner dot -->
+                                      <span
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary opacity-0 scale-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all"
+                                      ></span>
+                                    </span>
+                                  </span>
+
+                                  <!-- label text -->
+                                  <span
+                                    class="text-light-primary-text text-sm leading-[22px]"
+                                  >
+                                    DND
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-gray-300">
+                        <td>
+                          <div class="py-6">
+                            <div class="flex items-center gap-x-2.5">
+                              <span
+                                class="inline-flex items-center justify-center size-9 rounded-full bg-warning-light"
+                              >
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 20 20"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M18.7999 13.5829L12.4083 2.98292C11.883 2.16125 10.9751 1.66406 9.99992 1.66406C9.02473 1.66406 8.11682 2.16125 7.59159 2.98292L1.19992 13.5829C0.740376 14.349 0.724492 15.302 1.15825 16.0829C1.6599 16.9622 2.59595 17.5034 3.60825 17.4996H16.3916C17.397 17.5103 18.3314 16.9827 18.8416 16.1162C19.2883 15.3268 19.2724 14.3573 18.7999 13.5829ZM9.99992 14.1662C9.53968 14.1662 9.16659 13.7932 9.16659 13.3329C9.16659 12.8727 9.53968 12.4996 9.99992 12.4996C10.4602 12.4996 10.8333 12.8727 10.8333 13.3329C10.8333 13.7932 10.4602 14.1662 9.99992 14.1662ZM9.99992 11.6662C10.4602 11.6662 10.8333 11.2932 10.8333 10.8329V7.49958C10.8333 7.03934 10.4602 6.66625 9.99992 6.66625C9.53968 6.66625 9.16659 7.03934 9.16659 7.49958V10.8329C9.16659 11.2932 9.53968 11.6662 9.99992 11.6662Z"
+                                    fill="#212529"
+                                  />
+                                </svg>
+                              </span>
+                              <p class="font-semibold text-light-disabled-text">
+                                Delete Account
+                              </p>
+                            </div>
+                            <div class="flex flex-col gap-y-4 pl-11">
+                              <div>
+                                <label class="flex items-center cursor-pointer">
+                                  <!-- custom radio -->
+                                  <span
+                                    class="has-[input:checked]:hover:bg-[#00AB55]/8 flex items-center justify-center w-10 h-10 bg-transparent rounded-full hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                                  >
+                                    <span
+                                      class="relative inline-flex w-5 h-5 items-center justify-center"
+                                    >
+                                      <input
+                                        checked
+                                        type="radio"
+                                        name="account"
+                                        class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-primary border-gray-300 rounded-full bg-white transition-all"
+                                      />
+
+                                      <!-- radio inner dot -->
+                                      <span
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary opacity-0 scale-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all"
+                                      ></span>
+                                    </span>
+                                  </span>
+
+                                  <!-- label text -->
+                                  <span
+                                    class="text-light-primary-text text-sm leading-[22px]"
+                                  >
+                                    No longer usable
+                                  </span>
+                                </label>
+                              </div>
+                              <div>
+                                <label class="flex items-center cursor-pointer">
+                                  <!-- custom radio -->
+                                  <span
+                                    class="has-[input:checked]:hover:bg-[#00AB55]/8 flex items-center justify-center w-10 h-10 bg-transparent rounded-full hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                                  >
+                                    <span
+                                      class="relative inline-flex w-5 h-5 items-center justify-center"
+                                    >
+                                      <input
+                                        type="radio"
+                                        name="account"
+                                        class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-primary border-gray-300 rounded-full bg-white transition-all"
+                                      />
+
+                                      <!-- radio inner dot -->
+                                      <span
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary opacity-0 scale-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all"
+                                      ></span>
+                                    </span>
+                                  </span>
+
+                                  <!-- label text -->
+                                  <span
+                                    class="text-light-primary-text text-sm leading-[22px]"
+                                  >
+                                    Want to switch on other account
+                                  </span>
+                                </label>
+                              </div>
+                              <div>
+                                <label class="flex items-center cursor-pointer">
+                                  <!-- custom radio -->
+                                  <span
+                                    class="has-[input:checked]:hover:bg-[#00AB55]/8 flex items-center justify-center w-10 h-10 bg-transparent rounded-full hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                                  >
+                                    <span
+                                      class="relative inline-flex w-5 h-5 items-center justify-center"
+                                    >
+                                      <input
+                                        type="radio"
+                                        name="account"
+                                        class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-primary border-gray-300 rounded-full bg-white transition-all"
+                                      />
+
+                                      <!-- radio inner dot -->
+                                      <span
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary opacity-0 scale-0 peer-checked:opacity-100 peer-checked:scale-100 transition-all"
+                                      ></span>
+                                    </span>
+                                  </span>
+
+                                  <!-- label text -->
+                                  <span
+                                    class="text-light-primary-text text-sm leading-[22px]"
+                                  >
+                                    Other
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="menu-tab-pane hidden" id="edit-address">
+                <div class="flex items-center gap-x-6 mb-6">
+                  <button
+                    class="btn btn-default outline size-12 rounded-full shadow-none add-new-address-back-button"
+                  >
+                    <i
+                      class="hgi hgi-stroke hgi-arrow-left-02 text-2xl leading-6"
+                    ></i>
+                  </button>
+                  <h4 class="text-light-primary-text">Edit Profile</h4>
+                </div>
+                <!-- EDIT Profile Start -->
+                <div class="border border-gray-300 rounded-2xl">
+                  <div class="px-6 py-6">
+                    <form class="flex flex-col gap-y-6">
+                      <div class="relative w-full">
+                        <input
+                          type="text"
+                          id="company_name"
+                          class="peer form-control input-group medium rounded-[80px] px-3.5 placeholder-transparent focus:placeholder-transparent focus:outline-none"
+                          placeholder="Company Name *"
+                        />
+
+                        <label
+                          for="company_name"
+                          class="absolute left-[14px] top-1/2 -translate-y-1/2 text-xs leading-[18px] transition-all peer-placeholder-shown:text-light-disabled-text peer-focus:text-light-disabled-text peer-placeholder-shown:text-[16px] peer-placeholder-shown:top-1/2 peer-focus:text-[12px] peer-focus:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:top-0 bg-white peer-focus:px-1 peer-[:not(:placeholder-shown)]:px-1"
+                        >
+                          Company Name *
+                        </label>
+                      </div>
+
+                      <div
+                        class="grid xl:grid-cols-2 md:grid-cols-2 grid-cols-1 md:gap-x-4 gap-x-0 gap-y-6"
+                      >
+                        <div class="xl:col-span-1 md:col-span-1 col-span-1">
+                          <div class="relative w-full">
+                            <input
+                              type="text"
+                              id="owner_name"
+                              class="peer form-control input-group medium rounded-[80px] px-3.5 placeholder-transparent focus:placeholder-transparent focus:outline-none"
+                              placeholder="Owner Name *"
+                            />
+
+                            <label
+                              for="owner_name"
+                              class="absolute left-[14px] top-1/2 -translate-y-1/2 text-xs leading-[18px] transition-all peer-placeholder-shown:text-light-disabled-text peer-focus:text-light-disabled-text peer-placeholder-shown:text-[16px] peer-placeholder-shown:top-1/2 peer-focus:text-[12px] peer-focus:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:top-0 bg-white peer-focus:px-1 peer-[:not(:placeholder-shown)]:px-1"
+                            >
+                              Owner Name *
+                            </label>
+                          </div>
+                        </div>
+                        <div class="xl:col-span-1 md:col-span-1 col-span-1">
+                          <div class="relative w-full">
+                            <input
+                              type="email"
+                              id="company_email"
+                              class="peer form-control input-group medium rounded-[80px] px-3.5 placeholder-transparent focus:placeholder-transparent focus:outline-none"
+                              placeholder="Email *"
+                            />
+
+                            <label
+                              for="company_email"
+                              class="absolute left-[14px] top-1/2 -translate-y-1/2 text-xs leading-[18px] transition-all peer-placeholder-shown:text-light-disabled-text peer-focus:text-light-disabled-text peer-placeholder-shown:text-[16px] peer-placeholder-shown:top-1/2 peer-focus:text-[12px] peer-focus:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:top-0 bg-white peer-focus:px-1 peer-[:not(:placeholder-shown)]:px-1"
+                            >
+                              Email *
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="grid xl:grid-cols-2 md:grid-cols-2 grid-cols-1 md:gap-x-4 gap-x-0 gap-y-6"
+                      >
+                        <div class="xl:col-span-1 md:col-span-1 col-span-1">
+                          <div class="relative w-full">
+                            <input
+                              type="text"
+                              id="phone_number"
+                              class="peer form-control input-group medium rounded-[80px] px-3.5 placeholder-transparent focus:placeholder-transparent focus:outline-none"
+                              placeholder="Phone Number *"
+                            />
+
+                            <label
+                              for="phone_number"
+                              class="absolute left-[14px] top-1/2 -translate-y-1/2 text-xs leading-[18px] transition-all peer-placeholder-shown:text-light-disabled-text peer-focus:text-light-disabled-text peer-placeholder-shown:text-[16px] peer-placeholder-shown:top-1/2 peer-focus:text-[12px] peer-focus:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:top-0 bg-white peer-focus:px-1 peer-[:not(:placeholder-shown)]:px-1"
+                            >
+                              Phone Number *
+                            </label>
+                          </div>
+                        </div>
+                        <div class="xl:col-span-1 md:col-span-1 col-span-1">
+                          <select class="address-select">
+                            <option value="">Category</option>
+                            <option value="1">Grocery</option>
+                            <option value="2">Dairy</option>
+                            <option value="3">Bakery</option>
+                            <option value="4">Beauty</option>
+                            <option value="5">Medical</option>
+                            <option value="5">Electronics</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div
+                        class="grid xl:grid-cols-2 md:grid-cols-2 grid-cols-1 md:gap-x-4 gap-x-0 gap-y-6"
+                      >
+                        <div class="xl:col-span-1 md:col-span-1 col-span-1">
+                          <select class="address-select">
+                            <option value="">Country / Region</option>
+                            <option value="1">United States</option>
+                            <option value="2">Canada</option>
+                            <option value="3">United Kingdom</option>
+                            <option value="4">Australia</option>
+                            <option value="5">New Zealand</option>
+                            <option value="6">South Africa</option>
+                            <option value="7">India</option>
+                            <option value="8">Pakistan</option>
+                            <option value="9">Bangladesh</option>
+                            <option value="10">Sri Lanka</option>
+                          </select>
+                        </div>
+                        <div class="xl:col-span-1 md:col-span-1 col-span-1">
+                          <div class="relative w-full">
+                            <input
+                              type="text"
+                              id="city"
+                              class="peer form-control input-group medium rounded-[80px] px-3.5 placeholder-transparent focus:placeholder-transparent focus:outline-none"
+                              placeholder="City *"
+                            />
+
+                            <label
+                              for="city"
+                              class="absolute left-[14px] top-1/2 -translate-y-1/2 text-xs leading-[18px] transition-all peer-placeholder-shown:text-light-disabled-text peer-focus:text-light-disabled-text peer-placeholder-shown:text-[16px] peer-placeholder-shown:top-1/2 peer-focus:text-[12px] peer-focus:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:top-0 bg-white peer-focus:px-1 peer-[:not(:placeholder-shown)]:px-1"
+                            >
+                              City *
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="grid xl:grid-cols-2 md:grid-cols-2 grid-cols-1 md:gap-x-4 gap-x-0 gap-y-6"
+                      >
+                        <div class="xl:col-span-1 md:col-span-1 col-span-1">
+                          <select class="address-select">
+                            <option value="">State</option>
+                            <option value="1">United States</option>
+                            <option value="2">Canada</option>
+                            <option value="3">United Kingdom</option>
+                            <option value="4">Australia</option>
+                            <option value="5">New Zealand</option>
+                            <option value="6">South Africa</option>
+                            <option value="7">India</option>
+                            <option value="8">Pakistan</option>
+                            <option value="9">Bangladesh</option>
+                            <option value="10">Sri Lanka</option>
+                          </select>
+                        </div>
+                        <div class="xl:col-span-1 md:col-span-1 col-span-1">
+                          <div class="relative w-full">
+                            <input
+                              type="text"
+                              id="zip_code"
+                              class="peer form-control input-group medium rounded-[80px] px-3.5 placeholder-transparent focus:placeholder-transparent focus:outline-none"
+                              placeholder="Zip Code *"
+                            />
+
+                            <label
+                              for="zip_code"
+                              class="absolute left-[14px] top-1/2 -translate-y-1/2 text-xs leading-[18px] transition-all peer-placeholder-shown:text-light-disabled-text peer-focus:text-light-disabled-text peer-placeholder-shown:text-[16px] peer-placeholder-shown:top-1/2 peer-focus:text-[12px] peer-focus:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:top-0 bg-white peer-focus:px-1 peer-[:not(:placeholder-shown)]:px-1"
+                            >
+                              Zip Code *
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Button -->
+                      <div class="text-end">
+                        <button
+                          class="btn btn-primary btn-large md:w-1/2 w-full py-[11px] rounded-[100px]"
+                        >
+                          Save
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <!-- EDIT Profile End -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== My Account Section End ========== -->
+
+    <!-- ========== Subscribe Section Start ========== -->
+    <section
+      class="px-4 md:px-0 max-w-[932px] mx-auto text-center lg:pb-6 pb-[70px] lg:rounded-[164px] -mb-[100px] relative z-10 bg-white xl:before:absolute xl:before:bottom-0 xl:before:left-[-23px] xl:before:h-[100px] xl:before:w-[145px] xl:before:bg-[url('images/footer-left-shape.html')] xl:before:bg-no-repeat xl:before:z-11 xl:after:absolute xl:after:bottom-0 xl:after:right-[-23px] xl:after:h-[100px] xl:after:w-[145px] xl:after:bg-[url('images/footer-right-shape.html')] xl:after:bg-no-repeat xl:after:z-11"
+    >
+      <h3
+        class="mb-4 wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Subscribe to our newsletter
+      </h3>
+      <p
+        class="mb-6 text-dark-secondary-text wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Stay updated! Subscribe to our mailing list for news, updates, and
+        exclusive offers.
+      </p>
+      <div
+        class="input-group medium w-full md:max-w-[420px] mx-auto pl-4 py-1.5 pr-2.5 rounded-[100px] wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        <div
+          class="input-group-addon inline-flex items-center"
+          data-align="inline-start"
+        >
+          <i class="hgi hgi-stroke hgi-mail-02 text-2xl"></i>
+        </div>
+        <input
+          type="text"
+          class="peer form-control placeholder-transparent focus:placeholder-transparent"
+          placeholder="Enter your email"
+          name="email"
+          id="email"
+        />
+        <label
+          class="absolute left-12 peer-focus:left-[14px] top-1/2 -translate-y-1/2 text-xs leading-[18px] transition-all peer-placeholder-shown:text-light-disabled-text peer-placeholder-shown:text-[16px] peer-placeholder-shown:top-1/2 peer-focus:text-[12px] peer-focus:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:left-[14px] bg-white peer-focus:px-1 peer-[:not(:placeholder-shown)]:px-1"
+          for="email"
+          >Enter your email</label
+        >
+        <div class="input-group-addon" data-align="inline-end">
+          <button class="btn btn-primary btn-medium rounded-3xl">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Subscribe Section End ========== -->
+{% endblock %}

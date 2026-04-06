@@ -1,0 +1,908 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+    <!-- ========== Breadcrumb Section Start ========== -->
+    <div class="py-12">
+      <div class="container">
+        <div class="breadcrumb">
+          <ul>
+            <li>
+              <a href='index.html'>
+                <span>
+                  <i class="hgi hgi-stroke hgi-home-01 text-[20px]"></i>
+                </span>
+                Home
+              </a>
+            </li>
+            <li class="text-light-disabled-text">&#8226;</li>
+            <li><span>About Us</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- ========== Breadcrumb Section End ========== -->
+
+    <!-- ========== Hero Section Start ========== -->
+    <section class="pb-[70px]">
+      <div class="container">
+        <div class="grid grid-cols-12 gap-x-[30px]">
+          <div class="xl:col-span-8 col-span-12">
+            <div class="md:flex justify-between">
+              <div
+                class="lg:w-[644px] md:w-[400px] w-full md:pt-[56px] pb-10 order-2 md:order-1"
+              >
+                <h2
+                  class="pb-6 wow animate__animated animate__fadeInUp"
+                  data-wow-delay=".2s"
+                >
+                  Revolutionizing Electronics Shopping Experience
+                </h2>
+                <div
+                  class="pb-4 wow animate__animated animate__fadeInUp"
+                  data-wow-delay=".3s"
+                >
+                  <h5 class="pb-3">Our Mission</h5>
+                  <p>
+                    To deliver cutting-edge electronics and smart devices at
+                    unbeatable prices, making technology accessible to
+                    everyone. We are committed to providing genuine, high-quality
+                    tech products with exceptional customer service and fast,
+                    reliable delivery.
+                  </p>
+                </div>
+                <div
+                  class="wow animate__animated animate__fadeInUp"
+                  data-wow-delay=".4s"
+                >
+                  <h5 class="pb-3">Our Vision</h5>
+                  <p>
+                    To become India's most trusted online electronics retailer
+                    by offering the latest gadgets, smartphones, laptops, and
+                    accessories with unmatched customer satisfaction and
+                    competitive pricing.
+                  </p>
+                </div>
+              </div>
+              {% comment %} <div
+                class="md:w-[255px] lg:max-h-[340px] order-1 md:order-2 wow animate__animated animate__fadeInUp"
+                data-wow-delay=".2s"
+              >
+                <img
+                  src="{% static '/images/about/man-woman.jpg' %}"
+                  alt="Man & Woman"
+                  class="rounded-2xl h-full object-cover"
+                />
+              </div> {% endcomment %}
+            </div>
+            <div
+              class="md:flex justify-between lg:p-10 p-4 border border-gray-300 rounded-2xl lg:mt-0 mt-10 lg:mb-[53px] mb-10"
+            >
+              <div
+                class="md:pb-0 pb-2 md:border-none border-b border-gray-300 xl:pr-0 lg:pr-6 md:pr-4 wow animate__animated animate__fadeInUp"
+                data-wow-delay=".2s"
+              >
+                <div class="flex items-center justify-center">
+                  <h3 class="about-us-counter">15</h3>
+                  <h3>+</h3>
+                </div>
+                <p class="text-center">Years of Tech Excellence</p>
+              </div>
+              <div
+                class="border-r border-gray-300 wow animate__animated animate__fadeInUp"
+                data-wow-delay=".3s"
+              ></div>
+              <div
+                class="md:pb-0 pb-2 md:pt-0 pt-2 md:border-none border-b border-gray-300 xl:px-0 lg:px-6 md:px-4 wow animate__animated animate__fadeInUp"
+                data-wow-delay=".4s"
+              >
+                <div class="flex items-center justify-center">
+                  <h3 class="about-us-counter">50</h3>
+                  <h3>K+</h3>
+                </div>
+                <p class="text-center">Products Sold Successfully</p>
+              </div>
+              <div
+                class="border-r border-gray-300 wow animate__animated animate__fadeInUp"
+                data-wow-delay=".5s"
+              ></div>
+              <div
+                class="md:pb-0 pb-2 md:pt-0 pt-2 md:border-none border-b border-gray-300 xl:px-0 lg:px-6 md:px-4 wow animate__animated animate__fadeInUp"
+                data-wow-delay=".6s"
+              >
+                <div class="flex items-center justify-center">
+                  <h3 class="about-us-counter">100</h3>
+                  <h3>K+</h3>
+                </div>
+                <p class="text-center">Happy Tech Enthusiasts</p>
+              </div>
+              <div
+                class="border-r border-gray-300 wow animate__animated animate__fadeInUp"
+                data-wow-delay=".7s"
+              ></div>
+              <div
+                class="md:pt-0 pt-2 xl:pl-0 lg:pl-6 md:pl-4 wow animate__animated animate__fadeInUp"
+                data-wow-delay=".8s"
+              >
+                <div class="flex items-center justify-center">
+                  <h3 class="about-us-counter">98</h3>
+                  <h3>%</h3>
+                </div>
+                <p class="text-center">Customer Satisfaction Rate</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="xl:col-span-4 col-span-12 wow animate__animated animate__fadeInUp"
+            data-wow-delay=".2s"
+          >
+            <img
+              src="{% static '/images/about/two-women.png' %}"
+              alt="Two Women"
+              class="rounded-2xl xl:h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Hero Section End ========== -->
+
+    <!-- ========== Quality Section Start ========== -->
+    <section class="mb-[70px]">
+      <div
+        class="lg:bg-white bg-[#FFD6EF] py-12 lg:pt-0 lg:pb-[23px] text-center lg:max-w-[704px] mx-auto lg:rounded-[164px] lg:-mb-[103px] relative z-10 lg:before:bg-[#FFD6EF] lg:after:bg-[#FFD6EF] lg:before:absolute lg:before:bottom-0 lg:before:left-0 lg:before:h-full lg:before:w-[145px] lg:before:bg-[url('images/slider-left-shape.html')] lg:before:bg-no-repeat lg:before:z-11 lg:after:absolute lg:after:bottom-0 lg:after:right-0 lg:after:h-full lg:after:w-[145px] lg:after:bg-[url('images/slider-right-shape.html')] lg:after:bg-no-repeat lg:after:z-11"
+      >
+        <h4
+          class="mb-2 wow animate__animated animate__fadeInUp"
+          data-wow-delay=".2s"
+        >
+          Quality & Authenticity is our priority
+        </h4>
+        <p class="wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+          100% Genuine products with manufacturer warranty.
+        </p>
+      </div>
+      <div
+        class="xl:max-w-[1728px] w-full mx-auto relative bg-[#FFD6EF] xl:rounded-5xl pb-12 lg:pt-[172px]"
+      >
+        <div class="container">
+          <div
+            class="flex flex-wrap lg:flex-nowrap items-center justify-center gap-x-6 gap-y-6"
+          >
+            <div
+              class="p-6 border-gray-300 border bg-white rounded-2xl text-center lg:w-[390px] w-full wow animate__animated animate__fadeInUp"
+              data-wow-delay=".2s"
+            >
+              <span
+                class="inline-flex items-center justify-center size-14 bg-warning-lighter rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-container-truck text-3xl text-light-primary-text"
+                ></i>
+              </span>
+              <h5 class="pt-3 pb-0.5">Free & Fast Shipping</h5>
+              <p>On all electronics and gadgets with same-day delivery available</p>
+            </div>
+            <div
+              class="p-6 border-gray-300 border bg-white rounded-2xl text-center lg:w-[390px] w-full wow animate__animated animate__fadeInUp"
+              data-wow-delay=".3s"
+            >
+              <span
+                class="inline-flex items-center justify-center size-14 bg-warning-lighter rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-customer-support text-3xl text-light-primary-text"
+                ></i>
+              </span>
+              <h5 class="pt-3 pb-0.5">Expert 24x7 Support</h5>
+              <p>Technical assistance and customer support anytime you need it</p>
+            </div>
+            <div
+              class="p-6 border-gray-300 border bg-white rounded-2xl text-center lg:w-[390px] w-full wow animate__animated animate__fadeInUp"
+              data-wow-delay=".4s"
+            >
+              <span
+                class="inline-flex items-center justify-center size-14 bg-warning-lighter rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-delivery-return-02 text-3xl text-light-primary-text"
+                ></i>
+              </span>
+              <h5 class="pt-3 pb-0.5">Hassle-Free Returns</h5>
+              <p>
+                Easy product returns and exchanges within 30 days, no questions asked
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Quality Section End ========== -->
+
+    <!-- ========== Faster Section Start ========== -->
+    <section class="pb-[70px]">
+      <div class="container">
+        <div class="grid grid-cols-12 items-center lg:gap-x-[70px]">
+          <div
+            class="col-span-12 lg:col-span-6 lg:max-w-[762px] row-start-1 lg:row-start-auto"
+          >
+            <div
+              class="wow animate__animated animate__fadeInUp"
+              data-wow-delay=".2s"
+            >
+              <p
+                class="text-primary bg-[#00AB5514] py-0.5 px-3 inline-flex gap-x-2.5 items-center rounded-full font-semibold"
+              >
+                <span class="w-[15px] h-[15px] rounded-full bg-primary"> </span>
+                Features
+              </p>
+            </div>
+            <h3
+              class="pt-4 pb-10 wow animate__animated animate__fadeInUp"
+              data-wow-delay=".3s"
+            >
+              Latest Electronics at Best Prices
+            </h3>
+            <p
+              class="pb-6 wow animate__animated animate__fadeInUp"
+              data-wow-delay=".4s"
+            >
+              Discover our exclusive collection of cutting-edge electronics and smart devices—from smartphones and laptops to accessories and gadgets. We bring you the latest technology with unbeatable prices, warranty coverage, and expert support. Shop with confidence knowing you're getting genuine products delivered fast and safe.
+            </p>
+            <ul
+              class="pb-6 space-y-4 wow animate__animated animate__fadeInUp"
+              data-wow-delay=".5s"
+            >
+              <li class="flex gap-x-4">
+                <span
+                  class="inline-flex flex-none items-center justify-center size-6 bg-primary text-white rounded-full"
+                >
+                  <i class="hgi hgi-stroke hgi-tick-02"></i>
+                </span>
+                <p>
+                  Widest Selection: Premium smartphones, laptops, tablets, smartwatches, and more
+                </p>
+              </li>
+              <li class="flex gap-x-4">
+                <span
+                  class="inline-flex flex-none items-center justify-center size-6 bg-primary text-white rounded-full"
+                >
+                  <i class="hgi hgi-stroke hgi-tick-02"></i>
+                </span>
+                <p>
+                  Best Prices: Price match guarantee with exclusive deals and discounts
+                </p>
+              </li>
+              <li class="flex gap-x-4">
+                <span
+                  class="inline-flex flex-none items-center justify-center size-6 bg-primary text-white rounded-full"
+                >
+                  <i class="hgi hgi-stroke hgi-tick-02"></i>
+                </span>
+                <p>
+                  Manufacturer Warranty: All products come with original warranty coverage
+                </p>
+              </li>
+              <li class="flex gap-x-4">
+                <span
+                  class="inline-flex flex-none items-center justify-center size-6 bg-primary text-white rounded-full"
+                >
+                  <i class="hgi hgi-stroke hgi-tick-02"></i>
+                </span>
+                <p>
+                  Express Delivery: Same-day or next-day delivery in major cities
+                </p>
+              </li>
+            </ul>
+            <p
+              class="wow animate__animated animate__fadeInUp"
+              data-wow-delay=".6s"
+            >
+              Join thousands of tech enthusiasts who trust Tech Nova for their electronics needs. Experience the perfect blend of quality, affordability, and exceptional service.
+            </p>
+          </div>
+          <div class="col-span-12 lg:col-span-6 row-start-2 lg:row-start-auto">
+            <div class="xl:flex items-center gap-x-6">
+              <img
+                src="{% static '/images/about/woman-on-phone.jpg' %}"
+                alt="Woman on Phone"
+                class="rounded-2xl lg:max-w-[450px] w-full min-h-[570px] object-cover xl:mb-0 mb-6 lg:mt-0 mt-6 wow animate__animated animate__fadeInUp"
+                data-wow-delay=".2s"
+              />
+              {% comment %} <div>
+                <img
+                  src="{% static '/images/about/woman-bg.png' %}"
+                  alt="Woman Standing"
+                  class="rounded-2xl w-full xl:max-w-[306px] min-h-[414px] object-cover xl:object-left wow animate__animated animate__fadeInUp"
+                  data-wow-delay=".3s"
+                />
+              </div> {% endcomment %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Faster Section End ========== -->
+
+    <!-- ========== Testimonial Section Start ========== -->
+    <section class="pb-[70px]">
+      <div
+        class="lg:bg-white bg-[#A0E2E0] py-12 lg:pt-0 lg:pb-[23px] text-center lg:max-w-[704px] mx-auto lg:rounded-[164px] lg:-mb-[103px] relative z-10 lg:before:bg-[#A0E2E0] lg:after:bg-[#A0E2E0] lg:before:absolute lg:before:bottom-0 lg:before:left-0 lg:before:h-full lg:before:w-[145px] lg:before:bg-[url('images/slider-left-shape.html')] lg:before:bg-no-repeat lg:before:z-11 lg:after:absolute lg:after:bottom-0 lg:after:right-0 lg:after:h-full lg:after:w-[145px] lg:after:bg-[url('images/slider-right-shape.html')] lg:after:bg-no-repeat lg:after:z-11"
+      >
+        <h3
+          class="mb-2 wow animate__animated animate__fadeInUp"
+          data-wow-delay=".2s"
+        >
+          Trusted by Customers
+        </h3>
+        <p class="wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+          Join thousands of happy customers around the globe.
+        </p>
+      </div>
+      <div
+        class="xl:max-w-[1728px] w-full mx-auto relative bg-[#A0E2E0] xl:rounded-5xl pb-[70px] lg:pt-[172px]"
+      >
+        <div class="container">
+          <div class="about-us-testimonial-wrapper grid grid-cols-12">
+            <div
+              class="about-us-testimonial-slider -mx-3 col-start-2 col-end-12 sellzy-slider"
+              data-slick='{"slidesToShow": 2, "slidesToScroll": 1, "loop": true, "arrows": true, "infinite": true, "appendArrows": ".about-us-testimonial-slider-nav", "responsive": [{"breakpoint": 1441, "settings": {"slidesToShow": 2}}, {"breakpoint": 1025, "settings": {"slidesToShow": 1}}]}'
+            >
+              <div
+                class="bg-white rounded-3xl p-10 mx-3 wow animate__animated animate__fadeInUp"
+                data-wow-delay=".2s"
+              >
+                <div class="flex items-center gap-x-4 pb-6">
+                  <img
+                    src="{% static '/images/vendors-list/vendor-profile.png' %}"
+                    alt="Vendor Profile"
+                    class="rounded-full size-12 flex-none"
+                  />
+                  <div class="flex-1">
+                    <p class="pb-1 font-semibold text-light-primary-text">
+                      Robert Fox
+                    </p>
+                    <p class="text-sm text-light-secondary-text leading-[22px]">
+                      12:40PM, 14 Nov, 2026
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center pb-3">
+                  <div
+                    class="rating-section flex items-center border-r border-gray-300 pr-3"
+                  >
+                    <div
+                      class="bg-[url('../images/star-icon.png')] w-[90px] h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                    >
+                      <div
+                        style="width: 80%"
+                        class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                      ></div>
+                    </div>
+                    <span
+                      class="text-sm leading-[22px] font-normal inline-flex ml-2 text-light-primary-text mt-1"
+                      >4.5</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-x-1 pl-3">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.5269 3.13379L13.9331 3.67969L13.7065 6.13965L15.3335 8L13.7065 9.86035L13.9331 12.3203L11.5269 12.8662L10.2661 14.9932L7.99951 14.0195L5.73291 15L4.47314 12.873L2.06689 12.3271L2.29346 9.86035L0.666504 8L2.29346 6.13379L2.06689 3.66699L4.47314 3.12695L5.73291 1L7.99951 1.97363L10.2661 1L11.5269 3.13379ZM6.72607 9.17285L5.18018 7.62012L4.19287 8.60645L6.72607 11.1465L11.6128 6.24707L10.6265 5.25977L6.72607 9.17285Z"
+                        fill="#088178"
+                      />
+                    </svg>
+                    <p class="text-primary text-sm leading-[22px]">
+                      Verified purchase
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  I was honestly surprised at how fast the delivery was. The
+                  product came well-packaged and exactly as described. Great
+                  quality, and the free fast shipping made the experience even
+                  better!
+                </p>
+              </div>
+              <div
+                class="bg-white rounded-3xl p-10 mx-3 wow animate__animated animate__fadeInUp"
+                data-wow-delay=".3s"
+              >
+                <div class="flex items-center gap-x-4 pb-6">
+                  <img
+                    src="{% static '/images/vendors-list/vendor-profile.png' %}"
+                    alt="Vendor Profile"
+                    class="rounded-full size-12 flex-none"
+                  />
+                  <div class="flex-1">
+                    <p class="pb-1 font-semibold text-light-primary-text">
+                      James Smith
+                    </p>
+                    <p class="text-sm text-light-secondary-text leading-[22px]">
+                      12:40PM, 14 Nov, 2026
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center pb-3">
+                  <div
+                    class="rating-section flex items-center border-r border-gray-300 pr-3"
+                  >
+                    <div
+                      class="bg-[url('../images/star-icon.png')] w-[90px] h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                    >
+                      <div
+                        style="width: 80%"
+                        class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                      ></div>
+                    </div>
+                    <span
+                      class="text-sm leading-[22px] font-normal inline-block ml-2 text-light-primary-text mt-1"
+                      >4.5</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-x-1 pl-3">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.5269 3.13379L13.9331 3.67969L13.7065 6.13965L15.3335 8L13.7065 9.86035L13.9331 12.3203L11.5269 12.8662L10.2661 14.9932L7.99951 14.0195L5.73291 15L4.47314 12.873L2.06689 12.3271L2.29346 9.86035L0.666504 8L2.29346 6.13379L2.06689 3.66699L4.47314 3.12695L5.73291 1L7.99951 1.97363L10.2661 1L11.5269 3.13379ZM6.72607 9.17285L5.18018 7.62012L4.19287 8.60645L6.72607 11.1465L11.6128 6.24707L10.6265 5.25977L6.72607 9.17285Z"
+                        fill="#088178"
+                      />
+                    </svg>
+                    <p class="text-primary text-sm leading-[22px]">
+                      Verified purchase
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  From browsing to checkout, everything was super easy. Loved
+                  how I didn&apos;t have to pay anything extra for shipping, and
+                  my item arrived the next day. Highly recommend!
+                </p>
+              </div>
+              <div
+                class="bg-white rounded-3xl p-10 mx-3 wow animate__animated animate__fadeInUp"
+                data-wow-delay=".4s"
+              >
+                <div class="flex items-center gap-x-4 pb-6">
+                  <img
+                    src="{% static '/images/vendors-list/vendor-profile.png' %}"
+                    alt="Vendor Profile"
+                    class="rounded-full size-12 flex-none"
+                  />
+                  <div class="flex-1">
+                    <p class="pb-1 font-semibold text-light-primary-text">
+                      James Smith
+                    </p>
+                    <p class="text-sm text-light-secondary-text leading-[22px]">
+                      12:40PM, 14 Nov, 2026
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center pb-3">
+                  <div
+                    class="rating-section flex items-center border-r border-gray-300 pr-3"
+                  >
+                    <div
+                      class="bg-[url('../images/star-icon.png')] w-[90px] h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                    >
+                      <div
+                        style="width: 80%"
+                        class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                      ></div>
+                    </div>
+                    <span
+                      class="text-sm leading-[22px] font-normal inline-block ml-2 text-light-primary-text mt-1"
+                      >4.5</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-x-1 pl-3">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.5269 3.13379L13.9331 3.67969L13.7065 6.13965L15.3335 8L13.7065 9.86035L13.9331 12.3203L11.5269 12.8662L10.2661 14.9932L7.99951 14.0195L5.73291 15L4.47314 12.873L2.06689 12.3271L2.29346 9.86035L0.666504 8L2.29346 6.13379L2.06689 3.66699L4.47314 3.12695L5.73291 1L7.99951 1.97363L10.2661 1L11.5269 3.13379ZM6.72607 9.17285L5.18018 7.62012L4.19287 8.60645L6.72607 11.1465L11.6128 6.24707L10.6265 5.25977L6.72607 9.17285Z"
+                        fill="#088178"
+                      />
+                    </svg>
+                    <p class="text-primary text-sm leading-[22px]">
+                      Verified purchase
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  From browsing to checkout, everything was super easy. Loved
+                  how I didn&apos;t have to pay anything extra for shipping, and
+                  my item arrived the next day. Highly recommend!
+                </p>
+              </div>
+            </div>
+            <div
+              class="about-us-testimonial-slider-nav mt-12 flex items-center justify-center gap-x-6 col-span-12 wow animate__animated animate__fadeInUp"
+              data-wow-delay=".2s"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Testimonial Section End ========== -->
+
+    <!-- ========== Focus Section Start ========== -->
+    <section class="pb-[70px]">
+      <div class="container">
+        <div class="grid grid-cols-12 items-center lg:gap-x-[70px]">
+          <div
+            class="col-span-12 lg:col-span-6 row-start-2 lg:row-start-auto relative wow animate__animated animate__fadeInUp"
+            data-wow-delay=".2s"
+          >
+            <img
+              src="{% static '/images/about/female-green-bg.png' %}"
+              alt="Woman Standing"
+              class="rounded-3xl w-full min-h-[570px] object-cover xl:mb-0 mb-6 lg:mt-0 mt-6"
+            />
+            <span
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+            >
+              {% comment %} <a
+                class="about-us-popup-youtube"
+                href="https://www.youtube.com/watch?v=rkpzYNB6xks"
+                ><i
+                  class="hgi hgi-stroke hgi-play-circle text-white text-[86px]"
+                ></i
+              ></a> {% endcomment %}
+            </span>
+          </div>
+          <div
+            class="col-span-12 lg:col-span-6 lg:max-w-[762px] row-start-1 lg:row-start-auto"
+          >
+            <div
+              class="wow animate__animated animate__fadeInUp"
+              data-wow-delay=".2s"
+            >
+              <p
+                class="text-primary bg-[#00AB5514] py-0.5 px-3 inline-flex gap-x-2.5 items-center rounded-full font-semibold"
+              >
+                <span class="w-[15px] h-[15px] rounded-full bg-primary"> </span>
+                Features
+              </p>
+            </div>
+            <h3
+              class="pt-4 pb-10 wow animate__animated animate__fadeInUp"
+              data-wow-delay=".3s"
+            >
+              Focus on Customer Satisfaction
+            </h3>
+            <p
+              class="pb-6 wow animate__animated animate__fadeInUp"
+              data-wow-delay=".4s"
+            >
+              Experience the ultimate convenience with our Faster Free Delivery
+              service—designed to bring your orders to your doorstep quickly and
+              without any extra cost. Whether you&apos;re ordering essentials or
+              gifts, we make sure you get them faster than ever. Why You'll Love
+              It:
+            </p>
+            <ul
+              class="pb-6 space-y-4 wow animate__animated animate__fadeInUp"
+              data-wow-delay=".5s"
+            >
+              <li class="flex gap-x-4">
+                <span
+                  class="inline-flex flex-none items-center justify-center size-6 bg-primary text-white rounded-full"
+                >
+                  <i class="hgi hgi-stroke hgi-tick-02"></i>
+                </span>
+                <p>
+                  Absolutely Free: No delivery fees, no hidden charges—just
+                  fast, reliable service.
+                </p>
+              </li>
+              <li class="flex gap-x-4">
+                <span
+                  class="inline-flex flex-none items-center justify-center size-6 bg-primary text-white rounded-full"
+                >
+                  <i class="hgi hgi-stroke hgi-tick-02"></i>
+                </span>
+                <p>
+                  Real-Time Tracking: Stay updated every step of the way with
+                  live order tracking.
+                </p>
+              </li>
+              <li class="flex gap-x-4">
+                <span
+                  class="inline-flex flex-none items-center justify-center size-6 bg-primary text-white rounded-full"
+                >
+                  <i class="hgi hgi-stroke hgi-tick-02"></i>
+                </span>
+                <p>
+                  Reliable Delivery Partners: We&apos;ve partnered with trusted
+                  couriers to ensure your packages
+                </p>
+              </li>
+            </ul>
+            <p
+              class="wow animate__animated animate__fadeInUp"
+              data-wow-delay=".6s"
+            >
+              Say goodbye to long waits and shipping fees. With Faster Free
+              Delivery, we&apos;re raising the standard—fast, seamless, and 100%
+              free.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Focus Section End ========== -->
+
+    {% comment %} <!-- ========== Meet Section Start ========== -->
+    <section class="pb-[70px]">
+      <div class="container">
+        <div
+          class="pb-10 text-center wow animate__animated animate__fadeInUp"
+          data-wow-delay=".2s"
+        >
+          <h3 class="pb-3">Meet Our Team</h3>
+          <p>Join thousands of happy customers from around the globe.</p>
+        </div>
+        <div class="grid grid-cols-12 gap-x-[25px] gap-y-[25px]">
+          <div
+            class="xl:col-span-3 md:col-span-6 col-span-12 px-[21px] pt-[21px] pb-[27px] border border-gray-300 rounded-3xl wow animate__animated animate__fadeInUp"
+            data-wow-delay=".2s"
+          >
+            <img
+              src="{% static '/images/about/team-person-1.png' %}"
+              alt="Team Person"
+              class="mb-6 rounded-3xl"
+            />
+            <div class="text-center pb-4">
+              <h4 class="pb-2 font-semibold text-black leading-8">
+                Jenny Wilson
+              </h4>
+              <p
+                class="font-medium text-[18px] leading-7 text-light-secondary-text font-urbanist"
+              >
+                Managing Director
+              </p>
+            </div>
+            <div class="flex gap-x-6 justify-center">
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-linkedin-01 text-2xl text-white"
+                ></i>
+              </a>
+
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-facebook-01 text-2xl text-white"
+                ></i>
+              </a>
+
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i class="hgi hgi-stroke hgi-instagram text-2xl text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i class="hgi hgi-stroke hgi-twitter text-2xl text-white"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="xl:col-span-3 md:col-span-6 col-span-12 px-[21px] pt-[21px] pb-[27px] border border-gray-300 rounded-3xl wow animate__animated animate__fadeInUp"
+            data-wow-delay=".3s"
+          >
+            <img
+              src="{% static '/images/about/team-person-2.png' %}"
+              alt="Team Person"
+              class="mb-6 rounded-3xl"
+            />
+            <div class="text-center pb-4">
+              <h4 class="pb-2 font-semibold text-black leading-8">
+                Jenny Wilson
+              </h4>
+              <p
+                class="font-medium text-[18px] leading-7 text-light-secondary-text font-urbanist"
+              >
+                Managing Director
+              </p>
+            </div>
+            <div class="flex gap-x-6 justify-center">
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-linkedin-01 text-2xl text-white"
+                ></i>
+              </a>
+
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-facebook-01 text-2xl text-white"
+                ></i>
+              </a>
+
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i class="hgi hgi-stroke hgi-instagram text-2xl text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i class="hgi hgi-stroke hgi-twitter text-2xl text-white"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="xl:col-span-3 md:col-span-6 col-span-12 px-[21px] pt-[21px] pb-[27px] border border-gray-300 rounded-3xl wow animate__animated animate__fadeInUp"
+            data-wow-delay=".4s"
+          >
+            <img
+              src="{% static '/images/about/team-person-3.png' %}"
+              alt="Team Person"
+              class="mb-6 rounded-3xl"
+            />
+            <div class="text-center pb-4">
+              <h4 class="pb-2 font-semibold text-black leading-8">
+                Jenny Wilson
+              </h4>
+              <p
+                class="font-medium text-[18px] leading-7 text-light-secondary-text font-urbanist"
+              >
+                Managing Director
+              </p>
+            </div>
+            <div class="flex gap-x-6 justify-center">
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-linkedin-01 text-2xl text-white"
+                ></i>
+              </a>
+
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-facebook-01 text-2xl text-white"
+                ></i>
+              </a>
+
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i class="hgi hgi-stroke hgi-instagram text-2xl text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i class="hgi hgi-stroke hgi-twitter text-2xl text-white"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="xl:col-span-3 md:col-span-6 col-span-12 px-[21px] pt-[21px] pb-[27px] border border-gray-300 rounded-3xl wow animate__animated animate__fadeInUp"
+            data-wow-delay=".5s"
+          >
+            <img
+              src="{% static '/images/about/team-person-4.png' %}"
+              alt="Team Person"
+              class="mb-6 rounded-3xl"
+            />
+            <div class="text-center pb-4">
+              <h4 class="pb-2 font-semibold text-black leading-8">
+                Jenny Wilson
+              </h4>
+              <p
+                class="font-medium text-[18px] leading-7 text-light-secondary-text font-urbanist"
+              >
+                Managing Director
+              </p>
+            </div>
+            <div class="flex gap-x-6 justify-center">
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-linkedin-01 text-2xl text-white"
+                ></i>
+              </a>
+
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-facebook-01 text-2xl text-white"
+                ></i>
+              </a>
+
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i class="hgi hgi-stroke hgi-instagram text-2xl text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="inline-flex items-center justify-center size-12 bg-primary hover:bg-primary-darker transition-all duration-300 rounded-full"
+              >
+                <i class="hgi hgi-stroke hgi-twitter text-2xl text-white"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> {% endcomment %}
+    <!-- ========== Meet Section End ========== -->
+
+    <!-- ========== Subscribe Section Start ========== -->
+    <section
+      class="px-4 md:px-0 max-w-[932px] mx-auto text-center lg:pb-6 pb-[70px] lg:rounded-[164px] -mb-[100px] relative z-10 bg-white xl:before:absolute xl:before:bottom-0 xl:before:left-[-23px] xl:before:h-[100px] xl:before:w-[145px] xl:before:bg-[url('images/footer-left-shape.html')] xl:before:bg-no-repeat xl:before:z-11 xl:after:absolute xl:after:bottom-0 xl:after:right-[-23px] xl:after:h-[100px] xl:after:w-[145px] xl:after:bg-[url('images/footer-right-shape.html')] xl:after:bg-no-repeat xl:after:z-11"
+    >
+      <h3
+        class="mb-4 wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Subscribe to our newsletter
+      </h3>
+      <p
+        class="mb-6 text-dark-secondary-text wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Stay updated! Subscribe to our mailing list for news, updates, and
+        exclusive offers.
+      </p>
+      <form method="POST" action="{% url 'subscribe_newsletter' %}" class="wow animate__animated animate__fadeInUp flex flex-col md:flex-row gap-3 items-center justify-center" data-wow-delay=".2s">
+        {% csrf_token %}
+        <div class="relative w-full md:w-auto">
+          <input
+            type="email"
+            class="w-full md:w-[280px] px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:border-blue-500"
+            placeholder="Enter your email"
+            name="email"
+            id="email"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-medium rounded-3xl px-8 py-3 whitespace-nowrap">
+          Subscribe
+        </button>
+      </form>
+    </section>
+    <!-- ========== Subscribe Section End ========== -->
+{% endblock %}

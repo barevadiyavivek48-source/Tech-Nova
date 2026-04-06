@@ -1,0 +1,379 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+    <!-- ========== Breadcrumb Section Start ========== -->
+    <div class="py-12">
+      <div class="container">
+        <div class="breadcrumb">
+          <ul>
+            <li>
+              <a href='index.html'>
+                <span>
+                  <i class="hgi hgi-stroke hgi-home-01 text-[20px]"></i>
+                </span>
+                Home
+              </a>
+            </li>
+            <li class="text-light-disabled-text">&#8226;</li>
+            <li><span>Contact us</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- ========== Breadcrumb Section End ========== -->
+
+    <!-- ========== Happy To Assist Section Start ========== -->
+    <section class="pb-[70px]">
+      <div class="container">
+        <div class="text-center">
+          <h3
+            class="pb-3 wow animate__animated animate__fadeInUp"
+            data-wow-delay=".2s"
+          >
+            We are happy to assist you
+          </h3>
+          <p
+            class="pb-10 wow animate__animated animate__fadeInUp"
+            data-wow-delay=".2s"
+          >
+            Here to help, anytime you need us.
+          </p>
+        </div>
+        <div class="grid grid-cols-12 gap-6">
+          <div
+            class="md:col-span-6 col-span-12 xl:col-span-3 border-gray-300 border p-6 rounded-2xl wow animate__animated animate__fadeInUp"
+            data-wow-delay=".2s"
+          >
+            <div>
+              <span
+                class="inline-flex items-center justify-center size-12 bg-[#919EAB14] rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-mail-02 text-2xl text-light-primary-text"
+                ></i>
+              </span>
+              <p class="pt-4 pb-0.5 font-semibold text-light-primary-text">
+                Email
+              </p>
+              <p>barevadiyavivek48@gmail.com</p>
+            </div>
+          </div>
+          <div
+            class="md:col-span-6 col-span-12 xl:col-span-3 p-6 border-gray-300 border rounded-2xl wow animate__animated animate__fadeInUp"
+            data-wow-delay=".3s"
+          >
+            <div>
+              <span
+                class="inline-flex items-center justify-center size-12 bg-[#919EAB14] rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-customer-support text-2xl text-light-primary-text"
+                ></i>
+              </span>
+              <p class="pt-4 pb-0.5 font-semibold text-light-primary-text">
+                Phone
+              </p>
+              <p>9664729242</p>
+            </div>
+          </div>
+          <div
+            class="md:col-span-6 col-span-12 xl:col-span-3 p-6 border-gray-300 border rounded-2xl wow animate__animated animate__fadeInUp"
+            data-wow-delay=".4s"
+          >
+            <div>
+              <span
+                class="inline-flex items-center justify-center size-12 bg-[#919EAB14] rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-location-06 text-2xl text-light-primary-text"
+                ></i>
+              </span>
+              <p class="pt-4 pb-0.5 font-semibold text-light-primary-text">
+                Address
+              </p>
+              <p>
+                123 Innovation Street, Suite 456, San Francisco, CA 94107, USA
+              </p>
+            </div>
+          </div>
+          <div
+            class="md:col-span-6 col-span-12 xl:col-span-3 p-6 border-gray-300 border rounded-2xl wow animate__animated animate__fadeInUp"
+            data-wow-delay=".5s"
+          >
+            <div>
+              <span
+                class="inline-flex items-center justify-center size-12 bg-[#919EAB14] rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-internet text-2xl text-light-primary-text"
+                ></i>
+              </span>
+              <p class="pt-4 pb-0.5 font-semibold text-light-primary-text">
+                Website
+              </p>
+              <p>www.createuiux.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Happy To Assist Section End ========== -->
+
+    <!-- ========== Contact Form Section Start ========== -->
+    <section class="mb-[70px]">
+      <div
+        class="lg:bg-white bg-[#9EE872] py-12 lg:pt-0 lg:pb-[23px] text-center lg:max-w-[704px] mx-auto lg:rounded-[164px] lg:-mb-[103px] relative z-10"
+      >
+        <h3 class="mb-2">Contact Us</h3>
+        <p>We'd love to hear from you!</p>
+      </div>
+
+      <div class="xl:max-w-[1728px] w-full mx-auto relative bg-[#9EE872] xl:rounded-5xl pb-12 lg:pt-[172px]">
+        <div class="container">
+          <div class="grid grid-cols-12 gap-6">
+            <div class="lg:col-start-2 col-start-1 xl:col-end-12 col-end-13 bg-white rounded-2xl">
+              <div class="lg:p-10 p-5">
+
+                <!-- ✅ START FORM -->
+                <form action="{% url 'contact' %}" method="POST">
+                  {% csrf_token %}
+
+                  <!-- First & Last Name -->
+                  <div class="md:flex gap-x-4 pb-6">
+                    <div class="md:w-1/2 w-full">
+                      <div class="relative w-full">
+                        <input type="text" name="first_name" required
+                          class="peer form-control rounded-[80px] px-3.5"
+                          placeholder="First Name" />
+                      </div>
+                    </div>
+
+                    <div class="md:w-1/2 w-full pt-6 md:pt-0">
+                      <div class="relative w-full">
+                        <input type="text" name="last_name" required
+                          class="peer form-control rounded-[80px] px-3.5"
+                          placeholder="Last Name" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Phone & Email -->
+                  <div class="md:flex gap-x-4 pb-6">
+                    <div class="md:w-1/2 w-full">
+                      <input type="tel" name="phone"
+                        class="form-control rounded-[80px] px-3.5"
+                        placeholder="Phone Number" />
+                    </div>
+
+                    <div class="md:w-1/2 w-full pt-6 md:pt-0">
+                      <input type="email" name="email" required
+                        class="form-control rounded-[80px] px-3.5"
+                        placeholder="Email Address" />
+                    </div>
+                  </div>
+
+                  <!-- Subject -->
+                  <div class="w-full pb-6">
+                    <input type="text" name="subject"
+                      class="form-control rounded-[80px] px-3.5"
+                      placeholder="Subject" />
+                  </div>
+
+                  <!-- Message -->
+                  <div class="w-full pb-10">
+                    <textarea name="message" rows="4" required
+                      class="form-control rounded-[20px] px-3.5"
+                      placeholder="Write your message"></textarea>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <div class="flex justify-end">
+                    <button type="submit"
+                      class="btn btn-large btn-primary rounded-[100px] px-[35px] py-[11px]">
+                      Send Your Message
+                    </button>
+                  </div>
+
+                </form>
+                <!-- ✅ END FORM -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Contact Form Section End ========== -->
+
+    <!-- ========== FAQ Section Start ========== -->
+    <section class="mb-[70px]">
+      <div class="container">
+        <div class="text-center">
+          <h3
+            class="pb-3 wow animate__animated animate__fadeInUp"
+            data-wow-delay=".2s"
+          >
+            Frequently Asked Questions
+          </h3>
+          <p
+            class="pb-12 wow animate__animated animate__fadeInUp"
+            data-wow-delay=".2s"
+          >
+            Find quick answers to common questions.
+          </p>
+        </div>
+        <div class="grid grid-cols-12">
+          <div
+            class="lg:col-start-2 md:col-start-2 col-start-1 xl:col-end-12 md:col-end-12 col-end-13"
+          >
+            <div class="accordion">
+              <div
+                class="accordion-item wow animate__animated animate__fadeInUp"
+                data-wow-delay=".2s"
+              >
+                <div class="accordion-header active">
+                  <h6>1. What payment methods do you accept?</h6>
+                  <i class="hgi hgi-stroke hgi-minus-sign"></i>
+                  <i class="hgi hgi-stroke hgi-plus-sign"></i>
+                </div>
+                <div class="accordion-body">
+                  <p>
+                    We're always here to help you. Whether you have a question,
+                    need support, or just want to learn more about our services,
+                    our team is ready to assist you every step of the way.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="accordion-item wow animate__animated animate__fadeInUp"
+                data-wow-delay=".2s"
+              >
+                <div class="accordion-header">
+                  <h6>2. How can I track my order?</h6>
+                  <i class="hgi hgi-stroke hgi-minus-sign"></i>
+                  <i class="hgi hgi-stroke hgi-plus-sign"></i>
+                </div>
+                <div class="accordion-body">
+                  <p>
+                    We're always here to help you. Whether you have a question,
+                    need support, or just want to learn more about our services,
+                    our team is ready to assist you every step of the way.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="accordion-item wow animate__animated animate__fadeInUp"
+                data-wow-delay=".2s"
+              >
+                <div class="accordion-header">
+                  <h6>3. How long will it take to receive my order?</h6>
+                  <i class="hgi hgi-stroke hgi-minus-sign"></i>
+                  <i class="hgi hgi-stroke hgi-plus-sign"></i>
+                </div>
+                <div class="accordion-body">
+                  <p>
+                    We're always here to help you. Whether you have a question,
+                    need support, or just want to learn more about our services,
+                    our team is ready to assist you every step of the way.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="accordion-item wow animate__animated animate__fadeInUp"
+                data-wow-delay=".2s"
+              >
+                <div class="accordion-header">
+                  <h6>4. Do you ship internationally?</h6>
+                  <i class="hgi hgi-stroke hgi-minus-sign"></i>
+                  <i class="hgi hgi-stroke hgi-plus-sign"></i>
+                </div>
+                <div class="accordion-body">
+                  <p>
+                    We're always here to help you. Whether you have a question,
+                    need support, or just want to learn more about our services,
+                    our team is ready to assist you every step of the way.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="accordion-item wow animate__animated animate__fadeInUp"
+                data-wow-delay=".2s"
+              >
+                <div class="accordion-header">
+                  <h6>5. Can I cancel or modify my order?</h6>
+                  <i class="hgi hgi-stroke hgi-minus-sign"></i>
+                  <i class="hgi hgi-stroke hgi-plus-sign"></i>
+                </div>
+                <div class="accordion-body">
+                  <p>
+                    We're always here to help you. Whether you have a question,
+                    need support, or just want to learn more about our services,
+                    our team is ready to assist you every step of the way.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="accordion-item wow animate__animated animate__fadeInUp"
+                data-wow-delay=".2s"
+              >
+                <div class="accordion-header">
+                  <h6>6. Do I need an account to place an order?</h6>
+                  <i class="hgi hgi-stroke hgi-minus-sign"></i>
+                  <i class="hgi hgi-stroke hgi-plus-sign"></i>
+                </div>
+                <div class="accordion-body">
+                  <p>
+                    We're always here to help you. Whether you have a question,
+                    need support, or just want to learn more about our services,
+                    our team is ready to assist you every step of the way.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== FAQ Section End ========== -->
+
+    <!-- ========== Subscribe Section Start ========== -->
+    <section
+      class="px-4 md:px-0 max-w-[932px] mx-auto text-center lg:pb-6 pb-[70px] lg:rounded-[164px] -mb-[100px] relative z-10 bg-white xl:before:absolute xl:before:bottom-0 xl:before:left-[-23px] xl:before:h-[100px] xl:before:w-[145px] xl:before:bg-[url('images/footer-left-shape.html')] xl:before:bg-no-repeat xl:before:z-11 xl:after:absolute xl:after:bottom-0 xl:after:right-[-23px] xl:after:h-[100px] xl:after:w-[145px] xl:after:bg-[url('images/footer-right-shape.html')] xl:after:bg-no-repeat xl:after:z-11"
+    >
+      <h3
+        class="mb-4 wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Subscribe to our newsletter
+      </h3>
+      <p
+        class="mb-6 text-dark-secondary-text wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Stay updated! Subscribe to our mailing list for news, updates, and
+        exclusive offers.
+      </p>
+      <form method="POST" action="{% url 'subscribe_newsletter' %}" class="wow animate__animated animate__fadeInUp flex flex-col md:flex-row gap-3 items-center justify-center" data-wow-delay=".2s">
+        {% csrf_token %}
+        <div class="relative w-full md:w-auto">
+          <input
+            type="email"
+            class="w-full md:w-[280px] px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:border-blue-500"
+            placeholder="Enter your email"
+            name="email"
+            id="email"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-medium rounded-3xl px-8 py-3 whitespace-nowrap">
+          Subscribe
+        </button>
+      </form>
+    </section>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Subscribe Section End ========== -->
+
+{% endblock %}

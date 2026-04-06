@@ -1,0 +1,234 @@
+{% extends "index.html" %}
+{% load static %}
+
+{# Override header section to remove user/customer links/text for vendor pages #}
+{% block header %}
+<header>
+  <div class="bg-primary header-top">
+    <div class="container">
+      <div class="flex items-center xl:justify-between justify-center">
+        <div class="xl:flex items-center gap-x-6 hidden">
+          <p class="flex items-center gap-x-2 text-white text-sm leading-[22px]">
+            <span><i class="hgi hgi-stroke hgi-customer-support text-xl text-white"></i></span>
+            Need Support ?
+            <span>Call Us</span>
+            <a href="#" class="bg-warning py-px px-2 text-xs leading-4.5 rounded-[60px] text-gray-800">9664729242</a>
+          </p>
+        </div>
+        <div class="text-center py-3.5">
+          <p class="flex items-center gap-x-[7px] text-white text-sm leading-[22px] font-dm-sans">
+            <span class="inline-flex items-center"><i class="hgi hgi-stroke hgi-discount-01 text-white text-xl"></i></span>
+            Vendor Grid
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- header-middle and header-bottom can be omitted or replaced with vendor-specific navigation if needed -->
+</header>
+{% endblock %}
+
+{% block content %}
+    <!-- ========== Breadcrumb Section Start ========== -->
+    <div class="container py-12">
+      <div class="breadcrumb">
+        <ul>
+          <li>
+            <a href='index.html'>
+              <span class="inline-flex items-center justify-center">
+                <i
+                  class="hgi hgi-stroke hgi-home-01 text-2xl leading-6"
+                ></i></span
+              >Home</a
+            >
+          </li>
+          <li class="text-light-disabled-text">&#8226;</li>
+          <li><span class="text-sm leading-[22px]">Seller Grid</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ========== Breadcrumb Section End ========== -->
+
+    <!-- ========== Vendor Grid Section START ========== -->
+
+    <div class="pb-[70px]">
+      <div class="container">
+        <div
+          class="flex items-center justify-between pb-6 wow animate__animated animate__fadeInUp"
+          data-wow-delay=".2s"
+        >
+          <div class="flex items-center gap-x-4 shrink-0 justify-start">
+            <!-- vendor-filter-button -->
+            <div class="flex items-center gap-x-4">
+              <a class='w-10 h-10 rounded-full inline-flex items-center justify-center bg-white border border-[rgba(145,158,171,0.24)] cursor-pointer' href='vendors-list.html'>
+                <span class="inline-flex items-center justify-center">
+                  <i
+                    class="hgi hgi-stroke hgi-left-to-right-list-bullet text-2xl leading-6"
+                  ></i>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full inline-flex items-center justify-center btn-primary cursor-pointer"
+              >
+                <span class="inline-flex items-center justify-center"
+                  ><i
+                    class="hgi hgi-stroke hgi-more-01 text-2xl leading-6 text-white"
+                  ></i
+                ></span>
+              </a>
+            </div>
+            <div class="lg:flex hidden">
+              <p class="text-light-secondary-text">
+                Showing 1-12 of 16 results
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-x-4 flex-1 justify-end">
+            <div
+              class="input-group medium max-w-[345px] pl-4 py-2 pr-2.5 rounded-[100px] flex-1 lg:flex hidden"
+            >
+              <div
+                class="input-group-addon inline-flex items-center justify-center leading-6"
+                data-align="inline-start"
+              >
+                <span class="inline-flex items-center justify-center">
+                  <i
+                    class="hgi hgi-stroke hgi-search-01 text-2xl leading-6 text-light-disabled-text"
+                  ></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="peer form-control placeholder-transparent focus:placeholder-transparent"
+                id="search-company"
+                placeholder="Search Company"
+              />
+              <label
+                for="search-company"
+                class="absolute left-12 peer-focus:left-[14px] top-1/2 -translate-y-1/2 text-xs leading-[18px] transition-all peer-placeholder-shown:text-light-disabled-text peer-placeholder-shown:text-[16px] peer-placeholder-shown:top-1/2 peer-focus:text-[12px] peer-focus:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:left-[14px] bg-white peer-focus:px-1 peer-[:not(:placeholder-shown)]:px-1"
+                >Search Company</label
+              >
+            </div>
+
+            <!-- Sorting -->
+            <div class="relative min-w-[100px]">
+              <select id="sorting" class="filter-select label">
+                <option value="popularity" selected>Popularity</option>
+                <option value="low-to-high-price">Low to High Price</option>
+                <option value="high-to-low-price">High to Low Price</option>
+                <option value="avarage-rating">Avarage Rating</option>
+                <option value="a-z-order">A-Z Order</option>
+                <option value="z-a-order">Z-A Order</option>
+              </select>
+              <label for="sorting" class="nice-select-label">Sorting</label>
+            </div>
+          </div>
+        </div>
+        <!-- ========== Vendor-grid-view Start ========== -->
+        <div class="grid grid-cols-12 gap-6">
+          {% for profile in profiles %}
+          <div class="xl:col-span-4 md:col-span-6 col-span-12">
+            <div class="border border-[rgba(145,158,171,0.24)] border-t-0 rounded-3xl wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+              <div class="w-full h-[150px] md:h-[180px] xl:h-full">
+                <img src="{% static '/images/vendors-list/vendor-1.png' %}" alt="vendor banner" class="rounded-t-2xl w-full h-full object-cover" />
+              </div>
+              <!-- content section -->
+              <div class="px-6 pt-[42px] pb-6 relative">
+                <div class="absolute -top-8 left-6 w-16 h-16 items-center justify-center rounded-full">
+                  {% if profile.user.profile_pic %}
+                    <img src="{{ profile.user.profile_pic.url }}" alt="profile-pic" class="w-full border-[3px] border-white rounded-full" />
+                  {% else %}
+                    <img src="{% static '/images/vendors-list/vendor-profile.png' %}" alt="vendor-profile" class="w-full border-[3px] border-white rounded-full" />
+                  {% endif %}
+                </div>
+                <div class="flex items-center justify-between mb-5">
+                  <h6 class="hover:text-primary">{{ profile.shop_name }}</h6>
+                </div>
+                <div class="flex flex-col gap-y-5 border-b border-[rgba(145,158,171,0.24)] pb-5">
+                  <div class="flex items-center gap-x-2.5">
+                    <span class="inline-flex items-center justify-center"><i class="hgi hgi-stroke hgi-call text-2xl leading-6"></i></span>
+                    <span class="text-light-primary-text">{{ profile.phone }}</span>
+                  </div>
+                  <div class="flex items-center gap-x-2.5">
+                    <span class="inline-flex items-center justify-center"><i class="hgi hgi-stroke hgi-mail-01 text-2xl leading-6"></i></span>
+                    <span class="text-light-primary-text">{{ profile.user.email }}</span>
+                  </div>
+                  <div class="flex items-center gap-x-2.5 text-light-primary-text">
+                    <span class="inline-flex items-center justify-center"><i class="hgi hgi-stroke hgi-location-06 text-2xl leading-6"></i></span>
+                    {{ profile.address }}
+                  </div>
+                </div>
+                <!-- button -->
+                <div class="flex items-center xl:gap-x-6 gap-x-2 md:gap-x-4 pt-5">
+                  <button class="btn btn-large btn-default shadow-none w-[47%] outline rounded-[100px] py-2.5">
+                    <span class="inline-flex items-center justify-center"><i class="hgi hgi-stroke hgi-wechat text-2xl leading-6"></i></span>
+                    Message
+                  </button>
+                  <button class="btn btn-large btn-primary w-[47%] rounded-[100px] py-[11px]">
+                    <span class="inline-flex items-center justify-center"><i class="hgi hgi-stroke hgi-store-01 text-2xl leading-6"></i></span>
+                    Visit Store
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% empty %}
+          <div class="col-span-12 text-center">No vendors found.</div>
+          {% endfor %}
+        </div>
+        <!-- ========== Vendor-grid-view End ========== -->
+      </div>
+    </div>
+    <!-- ========== Vendor Grid Section END ========== -->
+
+    <!-- ========== Subscribe Section Start ========== -->
+    <section
+      class="px-4 md:px-0 max-w-[932px] mx-auto text-center lg:pb-6 pb-[70px] lg:rounded-[164px] -mb-[100px] relative z-10 bg-white xl:before:absolute xl:before:bottom-0 xl:before:left-[-23px] xl:before:h-[100px] xl:before:w-[145px] xl:before:bg-[url('images/footer-left-shape.html')] xl:before:bg-no-repeat xl:before:z-11 xl:after:absolute xl:after:bottom-0 xl:after:right-[-23px] xl:after:h-[100px] xl:after:w-[145px] xl:after:bg-[url('images/footer-right-shape.html')] xl:after:bg-no-repeat xl:after:z-11"
+    >
+      <h3
+        class="mb-4 wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Subscribe to our newsletter
+      </h3>
+      <p
+        class="mb-6 text-dark-secondary-text wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Stay updated! Subscribe to our mailing list for news, updates, and
+        exclusive offers.
+      </p>
+      <div
+        class="input-group medium w-full md:max-w-[420px] mx-auto pl-4 py-1.5 pr-2.5 rounded-[100px] wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        <div
+          class="input-group-addon inline-flex items-center"
+          data-align="inline-start"
+        >
+          <i class="hgi hgi-stroke hgi-mail-02 text-2xl"></i>
+        </div>
+        <input
+          type="text"
+          class="peer form-control placeholder-transparent focus:placeholder-transparent"
+          placeholder="Enter your email"
+          name="email"
+          id="email"
+        />
+        <label
+          class="absolute left-12 peer-focus:left-[14px] top-1/2 -translate-y-1/2 text-xs leading-[18px] transition-all peer-placeholder-shown:text-light-disabled-text peer-placeholder-shown:text-[16px] peer-placeholder-shown:top-1/2 peer-focus:text-[12px] peer-focus:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:left-[14px] bg-white peer-focus:px-1 peer-[:not(:placeholder-shown)]:px-1"
+          for="email"
+          >Enter your email</label
+        >
+        <div class="input-group-addon" data-align="inline-end">
+          <button class="btn btn-primary btn-medium rounded-3xl">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Subscribe Section End ========== -->
+{% endblock %}

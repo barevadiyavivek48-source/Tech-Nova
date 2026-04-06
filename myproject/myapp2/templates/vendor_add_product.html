@@ -1,0 +1,40 @@
+{% extends "vendor_dashboard.html" %}
+{% load static %}
+{% block content %}
+<div class="container py-12">
+  <h2 class="mb-6">Add Product</h2>
+  <form method="post" action="{% url 'vendor:vendor_add_product' %}" enctype="multipart/form-data" class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow">
+    {% csrf_token %}
+    <div class="mb-4">
+      <label for="name" class="block font-semibold mb-1">Product Name</label>
+      <input type="text" name="name" id="name" class="form-control" required>
+    </div>
+    <div class="mb-4">
+      <label for="description" class="block font-semibold mb-1">Description</label>
+      <textarea name="description" id="description" class="form-control"></textarea>
+    </div>
+    <div class="mb-4">
+      <label for="price" class="block font-semibold mb-1">Price</label>
+      <input type="number" name="price" id="price" class="form-control" step="0.01" required>
+    </div>
+    <div class="mb-4">
+      <label for="stock" class="block font-semibold mb-1">Stock</label>
+      <input type="number" name="stock" id="stock" class="form-control" min="0" required>
+    </div>
+    <div class="mb-4">
+      <label for="category" class="block font-semibold mb-1">Category</label>
+      <select name="category" id="category" class="form-control">
+        <option value="">Select Category</option>
+        {% for cat in categories %}
+          <option value="{{ cat.id }}">{{ cat.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="mb-4">
+      <label for="image" class="block font-semibold mb-1">Image</label>
+      <input type="file" name="image" id="image" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary w-full">Add Product</button>
+  </form>
+</div>
+{% endblock %}

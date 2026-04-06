@@ -1,0 +1,2060 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+    <!-- ========== Breadcrumb Section Start ========== -->
+    <div class="container py-12">
+      <div class="breadcrumb">
+        <ul>
+          <li>
+            <a href='index.html'>
+              <span class="inline-flex items-center justify-center">
+                <i
+                  class="hgi hgi-stroke hgi-home-01 text-2xl leading-6"
+                ></i></span
+              >Home</a
+            >
+          </li>
+          <li class="text-light-disabled-text">&#8226;</li>
+          <li><span class="text-sm leading-[22px]">Categories</span></li>
+        </ul>
+      </div>
+    </div>
+    <!-- ========== Breadcrumb Section End ========== -->
+
+    <!-- ========== Hero Section Start ========== -->
+    {% comment %} <section>
+      <div class="container">
+        <div class="relative">
+          <div
+            data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "loop": true, "arrows": true, "infinite": true, "dots": true, "appendArrows": ".banner-left-sidebar-slider-nav", "autoplay": true, "autoplaySpeed": 7000, "fade": true, "responsive": [{"breakpoint": 1025, "settings": {"arrows": false}}]}'
+            class="banner-left-sidebar-slider rounded-3xl relative md:bg-transparent bg-[#DBFFF0] sellzy-slider"
+          >
+            <div
+              class="lg:p-0 p-8 pb-15 md:bg-[url('images/banner-horizontal-filter/banner-4.html')] bg-center bg-no-repeat bg-cover rounded-3xl xl:pl-[116px] lg:pl-20 single-hero-slider-item flex! items-center md:h-[600px]! h-[500px]!"
+            >
+              <!-- Content Section -->
+              <div class="single-hero-slider-content relative">
+                <h2 class="max-w-[670px]">
+                  Seasonal Offers You&apos;ll Love 🍂
+                </h2>
+                <span
+                  class="absolute lg:top-[58px] md:top-[41px] top-[43px] lg:right-[230px] md:right-[300px] right-[30px]"
+                >
+                  <svg
+                    width="113"
+                    height="7"
+                    viewBox="0 0 113 7"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M68.9065 0.0540253C73.9562 -0.0978374 78.998 0.103468 84.0398 0.251799C90.1651 0.431915 96.2903 0.686216 102.412 1.02173C105.782 1.20537 109.089 1.8552 112.351 2.64983C112.627 2.71693 113.023 2.73813 112.999 3.05245C112.967 3.45153 112.527 3.38442 112.223 3.37736C109.317 3.34204 106.434 3.01007 103.551 2.74166C100.664 2.47325 97.7657 2.33905 94.871 2.2119C85.3712 1.79517 75.8714 1.44906 66.3596 1.66096C59.5066 1.81282 52.6617 2.09535 45.8247 2.52974C40.687 2.85466 35.5532 3.20077 30.4195 3.5716C24.4901 3.99893 18.5887 4.6629 12.6954 5.39396C8.7451 5.88487 4.76287 6.17798 0.860601 6.96908C0.560734 7.02912 0.268853 7.02207 0.0889331 6.76072C-0.126971 6.44287 0.0889439 6.19918 0.324839 6.0014C0.82062 5.58466 1.45633 5.42927 2.10404 5.33744C6.0423 4.7759 9.98856 4.2285 13.9268 3.66696C19.0885 2.93237 24.2542 2.24368 29.4599 1.82694C33.2183 1.52675 36.9766 1.22655 40.7389 1.01112C46.9642 0.65442 53.1934 0.318901 59.4267 0.0752145C62.5813 -0.0483946 65.7439 0.0540253 68.9065 0.0540253Z"
+                      fill="#212529"
+                    />
+                  </svg>
+                </span>
+                <h4 class="pt-3 pb-6 max-w-[642px]">
+                  Elevate your everyday look with our curated collection of
+                  essentials.
+                </h4>
+                <a class='btn btn-primary btn-large rounded-[60px] group py-2 px-[17px]' href='shop-left-sidebar-3col.html'>
+                  Shop Now
+                  <span
+                    class="size-8 bg-white inline-flex items-center justify-center rounded-full rotate-[-40deg] transform group-hover:rotate-0 transition-all duration-300"
+                  >
+                    <i
+                      class="hgi hgi-stroke hgi-arrow-right-02 text-2xl leading-6 text-light-primary-text"
+                    ></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="lg:p-0 p-8 pb-15 md:bg-[url('images/banner-horizontal-filter/banner-1.html')] bg-center bg-no-repeat bg-cover rounded-3xl xl:pl-[116px] lg:pl-20 single-hero-slider-item flex! items-center md:h-[600px]! h-[500px]!"
+            >
+              <!-- Content Section -->
+              <div class="single-hero-slider-content max-w-[480px] relative">
+                <h2>Flash Sale On Now!</h2>
+                <span
+                  class="absolute lg:top-[58px] md:top-[41px] top-[43px] lg:right-[62px] md:right-[100px] right-[30px]"
+                >
+                  <svg
+                    width="113"
+                    height="7"
+                    viewBox="0 0 113 7"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M68.9065 0.0540253C73.9562 -0.0978374 78.998 0.103468 84.0398 0.251799C90.1651 0.431915 96.2903 0.686216 102.412 1.02173C105.782 1.20537 109.089 1.8552 112.351 2.64983C112.627 2.71693 113.023 2.73813 112.999 3.05245C112.967 3.45153 112.527 3.38442 112.223 3.37736C109.317 3.34204 106.434 3.01007 103.551 2.74166C100.664 2.47325 97.7657 2.33905 94.871 2.2119C85.3712 1.79517 75.8714 1.44906 66.3596 1.66096C59.5066 1.81282 52.6617 2.09535 45.8247 2.52974C40.687 2.85466 35.5532 3.20077 30.4195 3.5716C24.4901 3.99893 18.5887 4.6629 12.6954 5.39396C8.7451 5.88487 4.76287 6.17798 0.860601 6.96908C0.560734 7.02912 0.268853 7.02207 0.0889331 6.76072C-0.126971 6.44287 0.0889439 6.19918 0.324839 6.0014C0.82062 5.58466 1.45633 5.42927 2.10404 5.33744C6.0423 4.7759 9.98856 4.2285 13.9268 3.66696C19.0885 2.93237 24.2542 2.24368 29.4599 1.82694C33.2183 1.52675 36.9766 1.22655 40.7389 1.01112C46.9642 0.65442 53.1934 0.318901 59.4267 0.0752145C62.5813 -0.0483946 65.7439 0.0540253 68.9065 0.0540253Z"
+                      fill="#212529"
+                    />
+                  </svg>
+                </span>
+                <h4 class="pt-3 pb-6">
+                  Limited-time discounts across all categories.
+                </h4>
+                <a class='btn btn-primary btn-large rounded-[60px] group py-2 px-[17px]' href='shop-left-sidebar-3col.html'>
+                  Shop Now
+                  <span
+                    class="size-8 bg-white inline-flex items-center justify-center rounded-full rotate-[-40deg] transform group-hover:rotate-0 transition-all duration-300"
+                  >
+                    <i
+                      class="hgi hgi-stroke hgi-arrow-right-02 text-2xl leading-6 text-light-primary-text"
+                    ></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="lg:p-0 p-8 pb-15 md:bg-[url('images/banner-horizontal-filter/banner-2.html')] bg-center bg-no-repeat bg-cover rounded-3xl xl:pl-[116px] lg:pl-20 single-hero-slider-item flex! items-center md:h-[600px]! h-[500px]!"
+            >
+              <!-- Content Section -->
+              <div class="single-hero-slider-content relative">
+                <h2 class="max-w-[540px]">Exclusive Online Sale 🛍️</h2>
+                <span
+                  class="absolute lg:top-[58px] md:top-[41px] top-[43px] lg:right-[120px] md:right-[150px] right-[30px]"
+                >
+                  <svg
+                    width="113"
+                    height="7"
+                    viewBox="0 0 113 7"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M68.9065 0.0540253C73.9562 -0.0978374 78.998 0.103468 84.0398 0.251799C90.1651 0.431915 96.2903 0.686216 102.412 1.02173C105.782 1.20537 109.089 1.8552 112.351 2.64983C112.627 2.71693 113.023 2.73813 112.999 3.05245C112.967 3.45153 112.527 3.38442 112.223 3.37736C109.317 3.34204 106.434 3.01007 103.551 2.74166C100.664 2.47325 97.7657 2.33905 94.871 2.2119C85.3712 1.79517 75.8714 1.44906 66.3596 1.66096C59.5066 1.81282 52.6617 2.09535 45.8247 2.52974C40.687 2.85466 35.5532 3.20077 30.4195 3.5716C24.4901 3.99893 18.5887 4.6629 12.6954 5.39396C8.7451 5.88487 4.76287 6.17798 0.860601 6.96908C0.560734 7.02912 0.268853 7.02207 0.0889331 6.76072C-0.126971 6.44287 0.0889439 6.19918 0.324839 6.0014C0.82062 5.58466 1.45633 5.42927 2.10404 5.33744C6.0423 4.7759 9.98856 4.2285 13.9268 3.66696C19.0885 2.93237 24.2542 2.24368 29.4599 1.82694C33.2183 1.52675 36.9766 1.22655 40.7389 1.01112C46.9642 0.65442 53.1934 0.318901 59.4267 0.0752145C62.5813 -0.0483946 65.7439 0.0540253 68.9065 0.0540253Z"
+                      fill="#212529"
+                    />
+                  </svg>
+                </span>
+                <h4 class="pt-3 pb-6 max-w-[452px]">
+                  Elevate your everyday look with our curated collection of
+                  essentials.
+                </h4>
+                <a class='btn btn-primary btn-large rounded-[60px] group py-2 px-[17px]' href='shop-left-sidebar-3col.html'>
+                  Shop Now
+                  <span
+                    class="size-8 bg-white inline-flex items-center justify-center rounded-full rotate-[-40deg] transform group-hover:rotate-0 transition-all duration-300"
+                  >
+                    <i
+                      class="hgi hgi-stroke hgi-arrow-right-02 text-2xl leading-6 text-light-primary-text"
+                    ></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="lg:p-0 p-8 pb-15 md:bg-[url('images/banner-horizontal-filter/banner-3.html')] bg-center bg-no-repeat bg-cover rounded-3xl xl:pl-[116px] lg:pl-20 single-hero-slider-item flex! items-center md:h-[600px]! h-[500px]!"
+            >
+              <!-- Content Section -->
+              <div
+                class="single-hero-slider-content relative ml-auto xl:pr-[139px] lg:pr-[30px]"
+              >
+                <h2 class="max-w-[550px]">Buy More, Save More 💸</h2>
+                <span
+                  class="absolute lg:top-[58px] md:top-[41px] top-[43px] lg:right-[260px] md:right-[200px] right-[100px]"
+                >
+                  <svg
+                    width="113"
+                    height="7"
+                    viewBox="0 0 113 7"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M68.9065 0.0540253C73.9562 -0.0978374 78.998 0.103468 84.0398 0.251799C90.1651 0.431915 96.2903 0.686216 102.412 1.02173C105.782 1.20537 109.089 1.8552 112.351 2.64983C112.627 2.71693 113.023 2.73813 112.999 3.05245C112.967 3.45153 112.527 3.38442 112.223 3.37736C109.317 3.34204 106.434 3.01007 103.551 2.74166C100.664 2.47325 97.7657 2.33905 94.871 2.2119C85.3712 1.79517 75.8714 1.44906 66.3596 1.66096C59.5066 1.81282 52.6617 2.09535 45.8247 2.52974C40.687 2.85466 35.5532 3.20077 30.4195 3.5716C24.4901 3.99893 18.5887 4.6629 12.6954 5.39396C8.7451 5.88487 4.76287 6.17798 0.860601 6.96908C0.560734 7.02912 0.268853 7.02207 0.0889331 6.76072C-0.126971 6.44287 0.0889439 6.19918 0.324839 6.0014C0.82062 5.58466 1.45633 5.42927 2.10404 5.33744C6.0423 4.7759 9.98856 4.2285 13.9268 3.66696C19.0885 2.93237 24.2542 2.24368 29.4599 1.82694C33.2183 1.52675 36.9766 1.22655 40.7389 1.01112C46.9642 0.65442 53.1934 0.318901 59.4267 0.0752145C62.5813 -0.0483946 65.7439 0.0540253 68.9065 0.0540253Z"
+                      fill="#212529"
+                    />
+                  </svg>
+                </span>
+                <h4 class="pt-3 pb-6 max-w-[452px]">
+                  Elevate your everyday look with our curated collection of
+                  essentials.
+                </h4>
+                <a class='btn btn-primary btn-large rounded-[60px] group py-2 px-[17px]' href='shop-left-sidebar-3col.html'>
+                  Shop Now
+                  <span
+                    class="size-8 bg-white inline-flex items-center justify-center rounded-full rotate-[-40deg] transform group-hover:rotate-0 transition-all duration-300"
+                  >
+                    <i
+                      class="hgi hgi-stroke hgi-arrow-right-02 text-2xl leading-6 text-light-primary-text"
+                    ></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="lg:p-0 p-8 pb-15 md:bg-[url('images/banner-horizontal-filter/banner-1.html')] bg-center bg-no-repeat bg-cover rounded-3xl xl:pl-[116px] lg:pl-20 single-hero-slider-item flex! items-center md:h-[600px]! h-[500px]!"
+            >
+              <!-- Content Section -->
+              <div class="single-hero-slider-content max-w-[480px] relative">
+                <h2>Flash Sale On Now!</h2>
+                <span
+                  class="absolute lg:top-[58px] md:top-[41px] top-[43px] lg:right-[62px] md:right-[100px] right-[30px]"
+                >
+                  <svg
+                    width="113"
+                    height="7"
+                    viewBox="0 0 113 7"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M68.9065 0.0540253C73.9562 -0.0978374 78.998 0.103468 84.0398 0.251799C90.1651 0.431915 96.2903 0.686216 102.412 1.02173C105.782 1.20537 109.089 1.8552 112.351 2.64983C112.627 2.71693 113.023 2.73813 112.999 3.05245C112.967 3.45153 112.527 3.38442 112.223 3.37736C109.317 3.34204 106.434 3.01007 103.551 2.74166C100.664 2.47325 97.7657 2.33905 94.871 2.2119C85.3712 1.79517 75.8714 1.44906 66.3596 1.66096C59.5066 1.81282 52.6617 2.09535 45.8247 2.52974C40.687 2.85466 35.5532 3.20077 30.4195 3.5716C24.4901 3.99893 18.5887 4.6629 12.6954 5.39396C8.7451 5.88487 4.76287 6.17798 0.860601 6.96908C0.560734 7.02912 0.268853 7.02207 0.0889331 6.76072C-0.126971 6.44287 0.0889439 6.19918 0.324839 6.0014C0.82062 5.58466 1.45633 5.42927 2.10404 5.33744C6.0423 4.7759 9.98856 4.2285 13.9268 3.66696C19.0885 2.93237 24.2542 2.24368 29.4599 1.82694C33.2183 1.52675 36.9766 1.22655 40.7389 1.01112C46.9642 0.65442 53.1934 0.318901 59.4267 0.0752145C62.5813 -0.0483946 65.7439 0.0540253 68.9065 0.0540253Z"
+                      fill="#212529"
+                    />
+                  </svg>
+                </span>
+                <h4 class="pt-3 pb-6">
+                  Limited-time discounts across all categories.
+                </h4>
+                <a class='btn btn-primary btn-large rounded-[60px] group py-2 px-[17px]' href='shop-left-sidebar-3col.html'>
+                  Shop Now
+                  <span
+                    class="size-8 bg-white inline-flex items-center justify-center rounded-full rotate-[-40deg] transform group-hover:rotate-0 transition-all duration-300"
+                  >
+                    <i
+                      class="hgi hgi-stroke hgi-arrow-right-02 text-2xl leading-6 text-light-primary-text"
+                    ></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="banner-left-sidebar-slider-nav absolute top-1/2 -translate-y-1/2 right-0 w-full flex items-center justify-between px-6"
+          ></div>
+        </div>
+      </div>
+    </section> {% endcomment %}
+    <!-- ========== Hero Section End ========== -->
+
+    <!-- ========== Banner with filter Section Start ========== -->
+    {% comment %} <div class="py-12">
+      <div class="container">
+        <div
+          class="flex justify-between wow animate__animated animate__fadeInUp"
+          data-wow-delay=".2s"
+        >
+          <!-- Banner Filter for large screen -->
+          <div
+            class="2xl:flex items-center flex-wrap gap-y-4 md:gap-x-4 gap-x-1 hidden"
+          >
+            <!-- category filter start -->
+            <div class="relative filter-dropdown">
+              <button
+                class="btn btn-default outline shadow-none text-[13px] leading-[22px] text-light-disabled-text font-normal py-[7px] px-[15px] rounded-[100px] filter-button"
+                data-state="close"
+              >
+                <span class="inline-flex items-center justify-center">
+                  <i
+                    class="hgi hgi-stroke hgi-archive-01 text-2xl leading-6 text-light-disabled-text"
+                  ></i>
+                </span>
+                Category
+                <span class="inline-flex items-center justify-center"
+                  ><i
+                    class="hgi hgi-stroke hgi-arrow-down-01 text-2xl leading-6 text-light-disabled-text filter-dropdown-icon"
+                  ></i>
+                </span>
+              </button>
+
+              <div
+                class="filter-dropdown-menu bg-white hide shadow-dark-z-24 rounded-3xl mt-5 px-6 py-6 z-40 transform origin-top transition-all duration-300 ease-in-out absolute left-0 top-full w-[390px]"
+              >
+                <div class="flex flex-col gap-y-6">
+                  <div
+                    class="flex items-center justify-between widget-category-title"
+                  >
+                    <h6>Category</h6>
+                    <a
+                      href="#"
+                      class="text-base leading-6 hover:underline hover:text-primary transition-colors duration-300 ease-in-out"
+                      >Reset</a
+                    >
+                  </div>
+                  <div
+                    class="input-group medium pl-4 py-2 pr-2.5 rounded-[100px] widget-category-search relative w-full"
+                  >
+                    <div
+                      class="input-group-addon inline-flex items-center justify-center leading-6"
+                      data-align="inline-start"
+                    >
+                      <span class="inline-flex items-center justify-center">
+                        <i
+                          class="hgi hgi-stroke hgi-search-01 text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </span>
+                    </div>
+
+                    <input
+                      type="text"
+                      id="search"
+                      class="peer form-control placeholder-transparent focus:placeholder-transparent focus:outline-none"
+                      placeholder="Search"
+                    />
+
+                    <label
+                      for="search"
+                      class="absolute left-[48px] top-1/2 -translate-y-1/2 text-xs leading-[18px] transition-all peer-placeholder-shown:text-light-disabled-text peer-focus:text-light-disabled-text peer-placeholder-shown:text-[16px] peer-placeholder-shown:top-1/2 peer-focus:left-[14px] peer-focus:text-[12px] peer-focus:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:left-[14px] bg-white peer-focus:px-1 peer-[:not(:placeholder-shown)]:px-1"
+                    >
+                      Search
+                    </label>
+                  </div>
+                  <div class="widget-category-content-list">
+                    <div
+                      class="max-h-[170px] overflow-y-auto pr-2.5 category-scroll"
+                    >
+                      <ul class="flex flex-col gap-y-2">
+                        <li class="widget-category-content-list-items">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                Thermometers
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (29)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="widget-category-content-list-items">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                Oximeters
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (5)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="widget-category-content-list-items">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                BP Monitors
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (1)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="widget-category-content-list-items">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                Personal Care
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (1)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="widget-category-content-list-items">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                Personal Care
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (1)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="widget-category-content-list-items">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                Personal Care
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (1)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="widget-category-content-list-items">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                Personal Care
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (1)
+                            </span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary btn-large rounded-lg flex-1">
+                    Apply Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- category filter end -->
+            <!-- price range filter start -->
+            <div class="relative filter-dropdown">
+              <button
+                class="btn btn-default outline shadow-none text-[13px] leading-[22px] text-light-disabled-text font-normal py-[7px] px-[15px] rounded-[100px] filter-button"
+                data-state="close"
+              >
+                <span class="inline-flex items-center justify-center">
+                  <i
+                    class="hgi hgi-stroke hgi-bitcoin-money-02 text-2xl leading-6 text-light-disabled-text"
+                  ></i>
+                </span>
+                Price Range
+                <span class="inline-flex items-center justify-center"
+                  ><i
+                    class="hgi hgi-stroke hgi-arrow-down-01 text-2xl leading-6 text-light-disabled-text filter-dropdown-icon"
+                  ></i>
+                </span>
+              </button>
+
+              <div
+                class="filter-dropdown-menu bg-white hide shadow-dark-z-24 rounded-3xl mt-5 px-6 py-6 z-40 transform origin-top transition-all duration-300 ease-in-out absolute left-0 top-full w-[390px]"
+              >
+                <div class="widget-price-range">
+                  <div class="flex flex-col gap-y-6">
+                    <div class="flex items-center justify-between">
+                      <h6>Price Range</h6>
+                      <a
+                        href="#"
+                        class="text-base leading-6 hover:underline hover:text-primary transition-colors duration-300 ease-in-out"
+                        >Reset</a
+                      >
+                    </div>
+                    <div id="filter-price-range-slider"></div>
+                    <div
+                      class="price-range-values flex items-center justify-between"
+                    >
+                      <div
+                        class="input-group medium max-w-[147px] w-full rounded-[80px] py-2 px-3.5"
+                      >
+                        <div
+                          class="input-group-addon inline-flex items-center justify-center leading-6"
+                          data-align="inline-start"
+                        >
+                          $
+                        </div>
+                        <input
+                          class="filter-price-range-min-value form-control"
+                          readonly
+                          type="text"
+                          value="0"
+                        />
+                      </div>
+                      <span
+                        class="text-sm leading-[22px] text-light-disabled-text"
+                        >To</span
+                      >
+                      <div
+                        class="input-group medium max-w-[147px] w-full rounded-[80px] py-2 px-3.5"
+                      >
+                        <div
+                          class="input-group-addon inline-flex items-center justify-center leading-6"
+                          data-align="inline-start"
+                        >
+                          $
+                        </div>
+                        <input
+                          class="filter-price-range-max-value form-control"
+                          readonly
+                          type="text"
+                          value="100"
+                        />
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-large rounded-lg flex-1">
+                      Apply Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- price range filter end -->
+            <!-- rating filter start -->
+            <div class="relative filter-dropdown">
+              <button
+                class="btn btn-default outline shadow-none text-[13px] leading-[22px] text-light-disabled-text font-normal py-[7px] px-[15px] rounded-[100px] filter-button"
+                data-state="close"
+              >
+                <span class="inline-flex items-center justify-center">
+                  <i
+                    class="hgi hgi-stroke hgi-star text-2xl leading-6 text-light-disabled-text"
+                  ></i>
+                </span>
+                Rating
+                <span class="inline-flex items-center justify-center"
+                  ><i
+                    class="hgi hgi-stroke hgi-arrow-down-01 text-2xl leading-6 text-light-disabled-text filter-dropdown-icon"
+                  ></i>
+                </span>
+              </button>
+
+              <div
+                class="filter-dropdown-menu bg-white hide shadow-dark-z-24 rounded-2xl mt-5 px-6 py-6 z-40 transform origin-top transition-all duration-300 ease-in-out absolute left-0 top-full w-[390px]"
+              >
+                <div class="flex flex-col gap-y-6">
+                  <div
+                    class="flex items-center justify-between widget-rating-title"
+                  >
+                    <h6>Rating</h6>
+                    <a
+                      href="#"
+                      class="text-base leading-[26px] hover:underline hover:text-primary transition-colors duration-300 ease-in-out"
+                      >Reset</a
+                    >
+                  </div>
+                  <div class="widget-rating">
+                    <ul class="flex items-center flex-wrap gap-3">
+                      <li>
+                        <a
+                          href="#"
+                          class="btn btn-default outline shadow-none gap-x-1.5 items-center text-base leading-6 px-2.5 py-1.5 rounded-[80px] {% if selected_rating == '5' %}active bg-primary text-white{% endif %}"
+                          >5
+                          <div
+                            class="bg-[url('../images/star-icon.png')] w-5 h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                          >
+                            <div
+                              style="width: 100%"
+                              class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                            ></div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="btn btn-default outline shadow-none gap-x-1.5 items-center text-base leading-6 px-2.5 py-1.5 rounded-[80px] {% if selected_rating == '4' %}active bg-primary text-white{% endif %}"
+                          >4
+                          <div
+                            class="bg-[url('../images/star-icon.png')] w-5 h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                          >
+                            <div
+                              style="width: 100%"
+                              class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                            ></div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="btn btn-default outline shadow-none gap-x-1.5 items-center text-base leading-6 px-2.5 py-1.5 rounded-[80px] {% if selected_rating == '3' %}active bg-primary text-white{% endif %}"
+                          >3
+                          <div
+                            class="bg-[url('../images/star-icon.png')] w-5 h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                          >
+                            <div
+                              style="width: 100%"
+                              class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                            ></div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="btn btn-default outline shadow-none gap-x-1.5 items-center text-base leading-6 px-2.5 py-1.5 rounded-[80px] {% if selected_rating == '2' %}active bg-primary text-white{% endif %}"
+                          >2
+                          <div
+                            class="bg-[url('../images/star-icon.png')] w-5 h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                          >
+                            <div
+                              style="width: 100%"
+                              class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                            ></div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="btn btn-default outline shadow-none gap-x-1.5 items-center text-base leading-6 px-2.5 py-1.5 rounded-[80px] {% if selected_rating == '1' %}active bg-primary text-white{% endif %}"
+                          >1
+                          <div
+                            class="bg-[url('../images/star-icon.png')] w-5 h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                          >
+                            <div
+                              style="width: 100%"
+                              class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                            ></div>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <button class="btn btn-primary btn-large rounded-lg flex-1">
+                    Apply Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- rating filter end -->
+            <!-- color filter start -->
+            <div class="relative filter-dropdown">
+              <button
+                class="btn btn-default outline shadow-none text-[13px] leading-[22px] text-light-disabled-text font-normal py-[7px] px-[15px] rounded-[100px] filter-button"
+                data-state="close"
+              >
+                <span class="inline-flex items-center justify-center">
+                  <i
+                    class="hgi hgi-stroke hgi-cleaning-bucket text-2xl leading-6 text-light-disabled-text"
+                  ></i>
+                </span>
+                Colors
+                <span class="inline-flex items-center justify-center"
+                  ><i
+                    class="hgi hgi-stroke hgi-arrow-down-01 text-2xl leading-6 text-light-disabled-text filter-dropdown-icon"
+                  ></i>
+                </span>
+              </button>
+
+              <div
+                class="filter-dropdown-menu bg-white hide shadow-dark-z-24 rounded-2xl mt-5 px-6 py-6 z-40 transform origin-top transition-all duration-300 ease-in-out absolute left-0 top-full w-[390px]"
+              >
+                <div class="widget-color-picker">
+                  <div class="flex flex-col gap-y-6">
+                    <div
+                      class="flex items-center justify-between widget-color-title"
+                    >
+                      <h6>Color</h6>
+                      <a
+                        href="#"
+                        class="text-base leading-[26px] hover:underline hover:text-primary transition-colors duration-300 ease-in-out"
+                        >Reset</a
+                      >
+                    </div>
+                    <div class="colors">
+                      <ul class="flex items-center flex-wrap gap-5">
+                        <li class="inline-flex items-center justify-center">
+                          <button
+                            class="w-5 h-5 inline-flex items-center justify-center bg-primary rounded-full"
+                          ></button>
+                        </li>
+                        <li class="inline-flex items-center justify-center">
+                          <button
+                            class="w-5 h-5 inline-flex items-center justify-center bg-info rounded-full"
+                          ></button>
+                        </li>
+                        <li class="inline-flex items-center justify-center">
+                          <button
+                            class="w-5 h-5 inline-flex items-center justify-center bg-info-darker rounded-full"
+                          ></button>
+                        </li>
+                        <li class="inline-flex items-center justify-center">
+                          <button
+                            class="w-5 h-5 inline-flex items-center justify-center bg-warning rounded-full"
+                          ></button>
+                        </li>
+                        <li class="inline-flex items-center justify-center">
+                          <button
+                            class="w-5 h-5 inline-flex items-center justify-center bg-error-light rounded-full"
+                          ></button>
+                        </li>
+                        <li class="inline-flex items-center justify-center">
+                          <button
+                            class="w-5 h-5 inline-flex items-center justify-center bg-error-dark rounded-full"
+                          ></button>
+                        </li>
+                      </ul>
+                    </div>
+                    <button class="btn btn-primary btn-large rounded-lg flex-1">
+                      Apply Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- color filter end -->
+            <!-- Size filter Start -->
+            <div class="relative filter-dropdown">
+              <button
+                class="btn btn-default outline shadow-none text-[13px] leading-[22px] text-light-disabled-text font-normal py-[7px] px-[15px] rounded-[100px] filter-button"
+                data-state="close"
+              >
+                <span class="inline-flex items-center justify-center">
+                  <i
+                    class="hgi hgi-stroke hgi-tape-measure text-2xl leading-6 text-light-disabled-text"
+                  ></i>
+                </span>
+                Size
+                <span class="inline-flex items-center justify-center"
+                  ><i
+                    class="hgi hgi-stroke hgi-arrow-down-01 text-2xl leading-6 text-light-disabled-text filter-dropdown-icon"
+                  ></i>
+                </span>
+              </button>
+
+              <div
+                class="filter-dropdown-menu bg-white hide shadow-dark-z-24 rounded-2xl mt-5 px-6 py-6 z-40 transform origin-top transition-all duration-300 ease-in-out absolute left-0 top-full w-[390px]"
+              >
+                <div class="flex flex-col gap-y-6">
+                  <div
+                    class="flex items-center justify-between widget-size-title"
+                  >
+                    <h6>Size</h6>
+                    <a
+                      href="#"
+                      class="text-base leading-[26px] hover:underline hover:text-primary transition-colors duration-300 ease-in-out"
+                      >Reset</a
+                    >
+                  </div>
+                  <div class="sizes">
+                    <ul class="flex items-center flex-wrap gap-3">
+                      <li>
+                        <button
+                          class="btn btn-default outline shadow-none py-[7px] px-[15px] rounded-[80px]"
+                        >
+                          S
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          class="btn btn-default outline shadow-none py-[7px] px-[15px] rounded-[80px]"
+                        >
+                          M
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          class="btn btn-default outline shadow-none py-[7px] px-[15px] rounded-[80px]"
+                        >
+                          L
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          class="btn btn-default outline shadow-none py-[7px] px-[15px] rounded-[80px]"
+                        >
+                          XL
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          class="btn btn-default outline shadow-none py-[7px] px-[15px] rounded-[80px]"
+                        >
+                          XXL
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          class="btn btn-default outline shadow-none py-[7px] px-[15px] rounded-[80px]"
+                        >
+                          XXXL
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                  <button class="btn btn-primary btn-large rounded-lg flex-1">
+                    Apply Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Size filter end -->
+
+            <!-- Brand filter Start -->
+            <div class="relative filter-dropdown">
+              <button
+                class="btn btn-default outline shadow-none text-[13px] leading-[22px] text-light-disabled-text font-normal py-[7px] px-[15px] rounded-[100px] filter-button"
+                data-state="close"
+              >
+                <span class="inline-flex items-center justify-center">
+                  <i
+                    class="hgi hgi-stroke hgi-honor text-2xl leading-6 text-light-disabled-text"
+                  ></i>
+                </span>
+                Brand
+                <span class="inline-flex items-center justify-center"
+                  ><i
+                    class="hgi hgi-stroke hgi-arrow-down-01 text-2xl leading-6 text-light-disabled-text filter-dropdown-icon"
+                  ></i>
+                </span>
+              </button>
+
+              <div
+                class="filter-dropdown-menu bg-white hide shadow-dark-z-24 rounded-2xl mt-5 px-6 py-6 z-40 transform origin-top transition-all duration-300 ease-in-out absolute left-0 top-full w-[390px]"
+              >
+                <div class="flex flex-col gap-y-6">
+                  <div
+                    class="flex items-center justify-between widget-brand-title"
+                  >
+                    <h6>Brand</h6>
+                    <a
+                      href="#"
+                      class="text-base leading-[26px] hover:underline hover:text-primary transition-colors duration-300 ease-in-out"
+                      >Reset</a
+                    >
+                  </div>
+                  <div class="brand-content-list">
+                    <div
+                      class="max-h-[170px] overflow-y-auto pr-2.5 category-scroll"
+                    >
+                      <ul class="flex flex-col gap-y-2">
+                        <li class="brand-list-item">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                Mediguard
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (8)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="brand-list-item">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                HealthPlus
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (7)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="brand-list-item">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                BioCare
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (3)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="brand-list-item">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                SmartAid
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (1)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="brand-list-item">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                Personal Care
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (1)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="brand-list-item">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                SmartAid
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (3)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="brand-list-item">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                Personal Care
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (1)
+                            </span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary btn-large rounded-lg flex-1">
+                    Apply Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Brand filter end -->
+
+            <!-- discount filter Start -->
+            <div class="relative filter-dropdown">
+              <button
+                class="btn btn-default outline shadow-none text-[13px] leading-[22px] text-light-disabled-text font-normal py-[7px] px-[15px] rounded-[100px] filter-button"
+                data-state="close"
+              >
+                <span class="inline-flex items-center justify-center">
+                  <i
+                    class="hgi hgi-stroke hgi-discount-01 text-2xl leading-6 text-light-disabled-text"
+                  ></i>
+                </span>
+                Discount
+                <span class="inline-flex items-center justify-center"
+                  ><i
+                    class="hgi hgi-stroke hgi-arrow-down-01 text-2xl leading-6 text-light-disabled-text filter-dropdown-icon"
+                  ></i>
+                </span>
+              </button>
+
+              <div
+                class="filter-dropdown-menu bg-white hide shadow-dark-z-24 rounded-2xl mt-5 px-6 py-6 z-40 transform origin-top transition-all duration-300 ease-in-out absolute left-0 top-full w-[390px]"
+              >
+                <div class="flex flex-col gap-y-6">
+                  <div
+                    class="flex items-center justify-between widget-brand-title"
+                  >
+                    <h6>Discount</h6>
+                    <a
+                      href="#"
+                      class="text-base leading-[26px] hover:underline hover:text-primary transition-colors duration-300 ease-in-out"
+                      >Reset</a
+                    >
+                  </div>
+                  <div class="brand-content-list">
+                    <div
+                      class="max-h-[170px] overflow-y-auto pr-2.5 category-scroll"
+                    >
+                      <ul class="flex flex-col gap-y-2">
+                        <li class="brand-list-item">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                Mediguard
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (8)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="brand-list-item">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                HealthPlus
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (7)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="brand-list-item">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                BioCare
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (3)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="brand-list-item">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                SmartAid
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (1)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="brand-list-item">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                Personal Care
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (1)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="brand-list-item">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                SmartAid
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (3)
+                            </span>
+                          </label>
+                        </li>
+                        <li class="brand-list-item">
+                          <label
+                            class="group flex items-center justify-between w-full cursor-pointer"
+                          >
+                            <span class="flex items-center gap-x-2">
+                              <!-- custom checkbox wrapper -->
+                              <span
+                                class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                              >
+                                <span
+                                  class="relative inline-flex w-5 h-5 items-center justify-center"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                  />
+
+                                  <!-- checkbox tick icon -->
+                                  <span
+                                    class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                  >
+                                    <i
+                                      class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                    ></i>
+                                  </span>
+                                </span>
+                              </span>
+                              <span
+                                class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                              >
+                                Personal Care
+                              </span>
+                            </span>
+                            <span
+                              class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              (1)
+                            </span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary btn-large rounded-lg flex-1">
+                    Apply Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- discount filter End -->
+            <!-- Packsize filter Start -->
+            <div class="relative filter-dropdown">
+              <button
+                class="btn btn-default outline shadow-none text-[13px] leading-[22px] text-light-disabled-text font-normal py-[7px] px-[15px] rounded-[100px] filter-button"
+                data-state="close"
+              >
+                <span class="inline-flex items-center justify-center">
+                  <i
+                    class="hgi hgi-stroke hgi-package-moving text-2xl leading-6 text-light-disabled-text"
+                  ></i>
+                </span>
+                Pack Size
+                <span class="inline-flex items-center justify-center"
+                  ><i
+                    class="hgi hgi-stroke hgi-arrow-down-01 text-2xl leading-6 text-light-disabled-text filter-dropdown-icon"
+                  ></i>
+                </span>
+              </button>
+
+              <div
+                class="filter-dropdown-menu bg-white hide shadow-dark-z-24 rounded-2xl mt-5 px-6 py-6 z-40 transform origin-top transition-all duration-300 ease-in-out absolute left-0 top-full w-[390px]"
+              >
+                <div class="flex flex-col gap-y-6">
+                  <div class="flex items-center justify-between">
+                    <h6>Pack Size</h6>
+                    <a
+                      href="#"
+                      class="text-base leading-[26px] hover:underline hover:text-primary transition-colors duration-300 ease-in-out"
+                      >Reset</a
+                    >
+                  </div>
+                  <div class="pack-size-lists">
+                    <ul class="flex flex-col gap-y-2">
+                      <li class="pack-size-list-item">
+                        <label
+                          class="group flex items-center justify-between w-full cursor-pointer"
+                        >
+                          <span class="flex items-center gap-x-2">
+                            <!-- custom checkbox wrapper -->
+                            <span
+                              class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                            >
+                              <span
+                                class="relative inline-flex w-5 h-5 items-center justify-center"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                />
+
+                                <!-- checkbox tick icon -->
+                                <span
+                                  class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                >
+                                  <i
+                                    class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                  ></i>
+                                </span>
+                              </span>
+                            </span>
+                            <span
+                              class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              400 to 500 g
+                            </span>
+                          </span>
+                          <span
+                            class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                          >
+                            (40)
+                          </span>
+                        </label>
+                      </li>
+                      <li class="pack-size-list-item">
+                        <label
+                          class="group flex items-center justify-between w-full cursor-pointer"
+                        >
+                          <span class="flex items-center gap-x-2">
+                            <!-- custom checkbox wrapper -->
+                            <span
+                              class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                            >
+                              <span
+                                class="relative inline-flex w-5 h-5 items-center justify-center"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                />
+
+                                <!-- checkbox tick icon -->
+                                <span
+                                  class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                >
+                                  <i
+                                    class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                  ></i>
+                                </span>
+                              </span>
+                            </span>
+                            <span
+                              class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              500 to 700 g
+                            </span>
+                          </span>
+                          <span
+                            class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                          >
+                            (20)
+                          </span>
+                        </label>
+                      </li>
+                      <li class="pack-size-list-item">
+                        <label
+                          class="group flex items-center justify-between w-full cursor-pointer"
+                        >
+                          <span class="flex items-center gap-x-2">
+                            <!-- custom checkbox wrapper -->
+                            <span
+                              class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                            >
+                              <span
+                                class="relative inline-flex w-5 h-5 items-center justify-center"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                />
+
+                                <!-- checkbox tick icon -->
+                                <span
+                                  class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                >
+                                  <i
+                                    class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                  ></i>
+                                </span>
+                              </span>
+                            </span>
+                            <span
+                              class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              700 to 1 kg
+                            </span>
+                          </span>
+                          <span
+                            class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                          >
+                            (32)
+                          </span>
+                        </label>
+                      </li>
+                      <li class="pack-size-list-item">
+                        <label
+                          class="group flex items-center justify-between w-full cursor-pointer"
+                        >
+                          <span class="flex items-center gap-x-2">
+                            <!-- custom checkbox wrapper -->
+                            <span
+                              class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                            >
+                              <span
+                                class="relative inline-flex w-5 h-5 items-center justify-center"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                />
+
+                                <!-- checkbox tick icon -->
+                                <span
+                                  class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                >
+                                  <i
+                                    class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                  ></i>
+                                </span>
+                              </span>
+                            </span>
+                            <span
+                              class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              120 - 150 g
+                            </span>
+                          </span>
+                          <span
+                            class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                          >
+                            (20)
+                          </span>
+                        </label>
+                      </li>
+                      <li class="pack-size-list-item">
+                        <label
+                          class="group flex items-center justify-between w-full cursor-pointer"
+                        >
+                          <span class="flex items-center gap-x-2">
+                            <!-- custom checkbox wrapper -->
+                            <span
+                              class="group-has-[input:checked]:group-hover:bg-[#00AB55]/8 flex items-center justify-center w-9 h-9 bg-transparent rounded-full group-hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                            >
+                              <span
+                                class="relative inline-flex w-5 h-5 items-center justify-center"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="peer appearance-none w-full h-full border-2 focus:outline-none checked:border-none border-gray-300 rounded-sm bg-white checked:bg-primary transition-all duration-300 ease-in-out"
+                                />
+
+                                <!-- checkbox tick icon -->
+                                <span
+                                  class="absolute inset-0 inline-flex items-center justify-center text-white opacity-0 peer-checked:opacity-100 transition-all"
+                                >
+                                  <i
+                                    class="hgi hgi-stroke hgi-tick-02 text-[18px] leading-[18px]"
+                                  ></i>
+                                </span>
+                              </span>
+                            </span>
+                            <span
+                              class="text-light-primary-text group-hover:text-primary transition-colors duration-300 ease-in-out"
+                            >
+                              1 pc
+                            </span>
+                          </span>
+                          <span
+                            class="group-hover:text-primary transition-colors duration-300 ease-in-out"
+                          >
+                            (09)
+                          </span>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <button class="btn btn-primary btn-large rounded-lg flex-1">
+                    Apply Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Packsize filter End -->
+          </div>
+          <!-- Banner Filter for Small screen -->
+          <div class="block 2xl:hidden">
+            <button
+              id="filter-menu-btn"
+              class="btn btn-default outline shadow-none text-[13px] leading-[22px] text-light-disabled-text font-normal py-[7px] px-[15px] rounded-[100px]"
+              data-state="close"
+            >
+              <span class="inline-flex items-center justify-center">
+                <i
+                  class="hgi hgi-stroke hgi-filter text-2xl leading-6 text-light-disabled-text"
+                ></i>
+              </span>
+              Filter
+            </button>
+          </div>
+          <div class="flex items-center gap-x-4">
+            <div class="order-2 2xl:order-1 relative min-w-[100px]">
+              <select id="sorting" class="shop-filter-select label">
+                <option value="popularity" selected>Popularity</option>
+                <option value="low-to-high-price">Low to High Price</option>
+                <option value="high-to-low-price">High to Low Price</option>
+                <option value="avarage-rating">Avarage Rating</option>
+                <option value="a-z-order">A-Z Order</option>
+                <option value="z-a-order">Z-A Order</option>
+              </select>
+              <label for="sorting" class="nice-select-label">Sorting</label>
+            </div>
+            <div class="order-1 2xl:order-2 hidden md:block">
+              <!-- vendor-filter-button -->
+              <div class="flex items-center gap-x-4">
+                <a class='w-10 h-10 rounded-full inline-flex items-center justify-center bg-white border border-[rgba(145,158,171,0.24)] cursor-pointer' href='banner-list-without-sidebar-2col.html'>
+                  <span class="inline-flex items-center justify-center">
+                    <i
+                      class="hgi hgi-stroke hgi-left-to-right-list-bullet text-2xl leading-6"
+                    ></i>
+                  </span>
+                </a>
+                <button
+                  class="w-10 h-10 rounded-full inline-flex items-center justify-center btn-primary cursor-pointer"
+                >
+                  <span class="inline-flex items-center justify-center"
+                    ><i
+                      class="hgi hgi-stroke hgi-more-01 text-2xl leading-6 text-white"
+                    ></i
+                  ></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> {% endcomment %}
+    <!-- ========== Banner with filter Section End ========== -->
+
+    <!-- ========== Banner Product Section start ========== -->
+    <div class="pb-[70px]">
+      <div class="container">
+        <div class="grid 2xl:grid-cols-6 grid-cols-12 gap-6 pb-12">
+          <!-- products -->
+           {% for product in all_products%}
+          <div
+            class="2xl:col-span-1 xl:col-span-3 lg:col-span-4 md:col-span-6 col-span-12"
+          >
+            <div
+              class="border border-gray-300 rounded-2xl product-card-1 p-4 group wow animate__animated animate__fadeInUp"
+              data-wow-delay=".2s"
+            >
+              <div class="product-image-container relative">
+                <div
+                  class="product-image rounded-xl xl:h-[220px] mb-4 overflow-hidden"
+                >
+                  <a href="{% url 'product_details' product.id %}">
+                    <img
+                      src="{{product.image.url}}"
+                      alt="product-image"
+                      class="group-hover:scale-110 transition-all w-full h-full object-cover transform group-hover:-rotate-3 ease-in-out duration-300"
+                    />
+                  </a>
+                </div>
+                {% comment %} <div
+                  class="product-btn-actions absolute bottom-0 right-0 left-0 flex justify-center z-9 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 group-hover:bottom-3"
+                >
+                  <ul class="flex items-center gap-x-px">
+                    <li>
+                      <a aria-label='Add to Wishlist' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tl-sm rounded-bl-sm before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5' href="{% url 'add_to_wishlist' product.id %}">
+                        <i
+                          class="hgi hgi-stroke hgi-favourite text-2xl leading-6 text-light-secondary-text"
+                        ></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a aria-label='Compare' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5' href='compare.html'>
+                        <i
+                          class="hgi hgi-stroke hgi-reload text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        aria-label="Quick view"
+                        class="quick-view-sidebar-btn product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tr-sm rounded-br-sm before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5"
+                        href="#"
+                      >
+                        <i
+                          class="hgi hgi-stroke hgi-view text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div> {% endcomment %}
+              </div>
+
+              <div class="product-content">
+                <h5 class="text-base leading-6 font-semibold font-dm-sans mb-4">
+                  <a href="{% url 'product_details' product.id %}">{{product.name}}</a
+                  >
+                </h5>
+                <div class="rating-section flex items-center mb-4">
+                  <div
+                    class="bg-[url('../images/star-icon.png')] w-[90px] h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                  >
+                    <div
+                      style="width: 80%"
+                      class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                    ></div>
+                  </div>
+                  <span
+                    class="text-sm leading-[22px] font-normal inline-block ml-1"
+                    >(189)</span
+                  >
+                </div>
+                <div class="price-section flex items-center gap-x-3 mb-2">
+                  <span
+                    class="current-price text-base font-semibold text-light-primary-text"
+                    >₹{{product.price}}</span
+                  >
+                </div>
+                <div class="btn-section flex items-center gap-x-4">
+                  <a class='size-11 flex flex-none items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-300' href="{% url 'add_to_wishlist' product.id %}">
+                    <i
+                      class="hgi hgi-stroke hgi-favourite text-xl text-light-secondary-text"
+                    ></i>
+                  </a>
+                  <a class='btn btn-primary rounded-full font-semibold text-sm leading-6 px-6.5 py-2 flex-1' href="{% url 'add_to_cart' product.id %}">
+                    <i
+                      class="hgi hgi-stroke hgi-shopping-cart-02 text-xl text-white"
+                    ></i>
+                    <span>Add to Cart</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <!-- ========== Banner Product Section End ========== -->
+
+    <!-- ========== Subscribe Section Start ========== -->
+    <section
+      class="px-4 md:px-0 max-w-[932px] mx-auto text-center lg:pb-6 pb-[70px] lg:rounded-[164px] -mb-[100px] relative z-10 bg-white xl:before:absolute xl:before:bottom-0 xl:before:left-[-23px] xl:before:h-[100px] xl:before:w-[145px] xl:before:bg-[url('images/footer-left-shape.html')] xl:before:bg-no-repeat xl:before:z-11 xl:after:absolute xl:after:bottom-0 xl:after:right-[-23px] xl:after:h-[100px] xl:after:w-[145px] xl:after:bg-[url('images/footer-right-shape.html')] xl:after:bg-no-repeat xl:after:z-11"
+    >
+      <h3
+        class="mb-4 wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Subscribe to our newsletter
+      </h3>
+      <p
+        class="mb-6 text-dark-secondary-text wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Stay updated! Subscribe to our mailing list for news, updates, and
+        exclusive offers.
+      </p>
+      <form method="POST" action="{% url 'subscribe_newsletter' %}" class="wow animate__animated animate__fadeInUp flex flex-col md:flex-row gap-3 items-center justify-center" data-wow-delay=".2s">
+        {% csrf_token %}
+        <div class="relative w-full md:w-auto">
+          <input
+            type="email"
+            class="w-full md:w-[280px] px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:border-blue-500"
+            placeholder="Enter your email"
+            name="email"
+            id="email"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-medium rounded-3xl px-8 py-3 whitespace-nowrap">
+          Subscribe
+        </button>
+      </form>
+    </section>
+      </div>
+    </section>
+    <!-- ========== Subscribe Section End ========== -->
+
+  {% endblock %}

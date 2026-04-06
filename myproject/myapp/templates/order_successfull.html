@@ -1,0 +1,1199 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+    <!-- ========== Breadcrumb Section Start ========== -->
+    <div class="container py-12">
+      <div class="breadcrumb">
+        <ul>
+          <li>
+            <a href='index.html'>
+              <span class="inline-flex items-center justify-center">
+                <i
+                  class="hgi hgi-stroke hgi-home-01 text-2xl leading-6"
+                ></i></span
+              >Home</a
+            >
+          </li>
+          <li class="text-light-disabled-text">&#8226;</li>
+          <li><span class="text-sm leading-[22px]">Checkout</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ========== Breadcrumb Section End ========== -->
+    <!-- ========== Order Success Section Start ========== -->
+    <section class="pb-[70px]">
+      <div class="container">
+        <div class="flex items-center justify-center flex-col">
+          <div class="mb-10">
+            <img
+              src="{% static '/images/order-success-Illustration.png' %}"
+              alt="order-success-image"
+            />
+          </div>
+          <h2
+            class="mb-4 wow animate__animated animate__fadeInUp"
+            data-wow-delay=".2s"
+          >
+            Thanks For You Order
+          </h2>
+          <p
+            class="md:w-[390px] w-[96%] text-center mb-6 wow animate__animated animate__fadeInUp"
+            data-wow-delay=".3s"
+          >
+            We're excited to let you know that we've received your order and
+            it's now being processed.
+          </p>
+          <a class='btn btn-primary btn-large rounded-[80px] px-[19px] py-[11px] wow animate__animated animate__fadeInUp' data-wow-delay='.4s' href='index.html'>Back To Home</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- ========== Order Success Section End ========== -->
+
+    <!-- ========== PAYMENT Section Start ========== -->
+    <div>
+      <div class="container">
+        <div class="grid grid-cols-12 gap-x-6 gap-y-6">
+          <!-- Address part -->
+          <div class="xl:col-span-8 col-span-12">
+            <div class="flex flex-col gap-y-6">
+              <!-- Address -->
+              <div class="border border-gray-300 rounded-2xl">
+                <div class="py-4 px-6 bg-gray-200 rounded-t-2xl">
+                  <h5>Order Details</h5>
+                </div>
+                <!-- Home-Address-details -->
+                <div class="md:px-6 px-3 py-6">
+                  <ul class="flex flex-col gap-y-4">
+                    <li class="flex items-center justify-between">
+                      <p
+                        class="text-light-primary-text font-normal inline-flex items-center gap-x-4"
+                      >
+                        <span class="inline-flex items-center justify-center"
+                          ><i
+                            class="hgi hgi-stroke hgi-delivery-box-01 text-2xl leading-6"
+                          ></i></span
+                        >Order ID
+                      </p>
+                      <span class="font-semibold text-light-primary-text"
+                        >#65937</span
+                      >
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <p
+                        class="text-light-primary-text font-normal inline-flex items-center gap-x-4"
+                      >
+                        <span class="inline-flex items-center justify-center"
+                          ><i
+                            class="hgi hgi-stroke hgi-delivery-box-01 text-2xl leading-6"
+                          ></i></span
+                        >Order status
+                      </p>
+                      <button
+                        class="text-[12px] leading-[18px] rounded-md font-normal px-2 py-[7px] text-warning-dark bg-[rgba(255,193,7,0.16)]"
+                      >
+                        Processing
+                      </button>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <p
+                        class="text-light-primary-text font-normal inline-flex items-center gap-x-4"
+                      >
+                        <span class="inline-flex items-center justify-center"
+                          ><i
+                            class="hgi hgi-stroke hgi-payment-success-01 text-2xl leading-6"
+                          ></i></span
+                        >Amount Payable
+                      </p>
+                      <p class="font-semibold text-light-primary-text">
+                        ₹40:00<span class="text-primary ml-0.5">(Paid)</span>
+                      </p>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <p
+                        class="text-light-primary-text font-normal inline-flex items-center gap-x-4"
+                      >
+                        <span class="inline-flex items-center justify-center"
+                          ><i
+                            class="hgi hgi-stroke hgi-calendar-03 text-2xl leading-6"
+                          ></i></span
+                        >Order Date:
+                      </p>
+                      <span class="font-semibold text-light-primary-text"
+                        >11:12 AM, 24 April, 2027
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Shipping Address -->
+              <div class="border border-gray-300 rounded-2xl">
+                <div class="py-4 px-6 bg-gray-200 rounded-t-2xl">
+                  <h5 class="text-light-primary-text">Shipment Address</h5>
+                </div>
+                <!-- Shipping Home Address-details -->
+                <div class="md:px-6 px-3 py-6">
+                  <ul class="flex flex-col gap-y-5">
+                    <li
+                      class="flex items-center gap-x-3 text-light-primary-text"
+                    >
+                      <span class="inline-flex items-center justify-center"
+                        ><i
+                          class="hgi hgi-stroke hgi-user-square text-2xl leading-6"
+                        ></i
+                      ></span>
+                      Arlene McCoy
+                    </li>
+                    <li
+                      class="flex items-center gap-x-3 text-light-primary-text"
+                    >
+                      <span class="inline-flex items-center justify-center"
+                        ><i
+                          class="hgi hgi-stroke hgi-call text-2xl leading-6"
+                        ></i
+                      ></span>
+                      (555) 123-4567
+                    </li>
+                    <li
+                      class="flex items-center gap-x-3 text-light-primary-text"
+                    >
+                      <span class="inline-flex items-center justify-center"
+                        ><i
+                          class="hgi hgi-stroke hgi-mail-01 text-2xl leading-6"
+                        ></i
+                      ></span>
+                      debbie.baker@example.com
+                    </li>
+                    <li
+                      class="flex items-center gap-x-3 text-light-primary-text"
+                    >
+                      <span class="inline-flex items-center justify-center"
+                        ><i
+                          class="hgi hgi-stroke hgi-location-06 text-2xl leading-6"
+                        ></i
+                      ></span>
+                      1234 Elm Street, Springfield, CA, 90210, United States
+                    </li>
+                    <li
+                      class="flex items-center gap-x-3 text-light-primary-text"
+                    >
+                      <span class="inline-flex items-center justify-center"
+                        ><i
+                          class="hgi hgi-stroke hgi-cargo-ship text-2xl leading-6"
+                        ></i
+                      ></span>
+                      Free Delivery
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!--  FeedBack  -->
+              <div class="border border-gray-300 rounded-2xl">
+                <div class="md:px-6 px-4 py-6">
+                  <h5 class="mb-6">Give as a feedback</h5>
+                  <form class="flex flex-col items-end gap-y-6">
+                    <div class="relative w-full">
+                      <textarea
+                        id="feedback_comment"
+                        class="form-control peer input-group medium rounded-[20px] ps-4 pe-6 resize-none placeholder-transparent focus:placeholder-transparent focus:outline-none"
+                        rows="4"
+                        placeholder="Share your experience*"
+                      ></textarea>
+
+                      <label
+                        for="feedback_comment"
+                        class="absolute left-[14px] top-1/2 -translate-y-1/2 text-xs leading-[18px] transition-all peer-placeholder-shown:text-light-disabled-text peer-focus:text-light-disabled-text peer-placeholder-shown:text-[16px] peer-placeholder-shown:top-6 peer-focus:text-[12px] peer-focus:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:top-0 bg-white peer-focus:px-1 peer-[:not(:placeholder-shown)]:px-1"
+                      >
+                        Share your experience*
+                      </label>
+                    </div>
+                    <div class="relative w-full">
+                      <input
+                        id="name"
+                        type="text"
+                        class="peer form-control input-group medium rounded-[80px] px-3.5 placeholder-transparent focus:placeholder-transparent focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        placeholder="Name *"
+                      />
+                      <label
+                        for="name"
+                        class="absolute left-[14px] top-1/2 -translate-y-1/2 text-xs leading-[18px] transition-all peer-placeholder-shown:text-light-disabled-text peer-focus:text-light-disabled-text peer-placeholder-shown:text-[16px] peer-placeholder-shown:top-1/2 peer-focus:text-[12px] peer-focus:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:bg-white peer-focus:bg-white peer-focus:px-1 peer-[:not(:placeholder-shown)]:px-1"
+                      >
+                        Name *
+                      </label>
+                    </div>
+                    <div class="relative w-full">
+                      <input
+                        id="email"
+                        type="email"
+                        class="peer form-control input-group medium rounded-[80px] px-3.5 placeholder-transparent focus:placeholder-transparent focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        placeholder="Email *"
+                      />
+                      <label
+                        for="email"
+                        class="absolute left-[14px] top-1/2 -translate-y-1/2 text-xs leading-[18px] transition-all peer-placeholder-shown:text-light-disabled-text peer-focus:text-light-disabled-text peer-placeholder-shown:text-[16px] peer-placeholder-shown:top-1/2 peer-focus:text-[12px] peer-focus:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:bg-white peer-focus:bg-white peer-focus:px-1 peer-[:not(:placeholder-shown)]:px-1"
+                      >
+                        Email *
+                      </label>
+                    </div>
+                    <button
+                      class="btn btn-primary btn-large rounded-[80px] px-[35px] py-[11px] w-full md:w-auto"
+                    >
+                      Send Now
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Cart items part -->
+          <div class="xl:col-span-4 col-span-12">
+            <div
+              class="border border-gray-300 rounded-2xl md:px-6 px-3 py-6 flex flex-col gap-y-6"
+            >
+              <!-- cart-items -->
+              <h5>Cart Items</h5>
+              <div class="border border-gray-300 rounded-xl overflow-x-auto">
+                <table class="w-full cart-items-table">
+                  <tbody class="space-y-6">
+                    <tr>
+                      <td class="py-4 px-4 product-thumbnail">
+                        <div
+                          class="w-[60px] h-[60px] rounded-xl bg-[#FFEFF6] overflow-hidden"
+                        >
+                          <img
+                            src="{% static '/images/multi-vendor-slider-image-1.png' %}"
+                            alt="vitamin-c-2"
+                            class="w-full h-full object-cover rounded-xl"
+                          />
+                        </div>
+                      </td>
+                      <td class="py-4 md:pr-4 pr-2 align-bottom w-full">
+                        <div class="flex flex-col gap-y-2">
+                          <a class='text-light-primary-text font-semibold truncate hover:text-primary transition-colors duration-300 product-title' href='product-details.html'>
+                            Fresh Bask Basket Fruits
+                          </a>
+                          <div class="flex items-center justify-between">
+                            <p
+                              class="text-sm leading-[22px] font-normal text-light-secondary-text cart-item-quantity"
+                            >
+                              1 x 120mg Pack
+                            </p>
+                            <div class="flex items-center gap-x-1.5">
+                              <span
+                                class="line-through text-light-disabled-text font-normal product-total-price"
+                                >₹29.95</span
+                              >
+                              <span
+                                class="text-primary font-semibold product-offer-price"
+                                >₹27.49</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-4 px-4 product-thumbnail">
+                        <div
+                          class="w-[60px] h-[60px] rounded-xl bg-[#FFEFF6] overflow-hidden"
+                        >
+                          <img
+                            src="{% static '/images/multi-vendor-slider-image-2.png' %}"
+                            alt="temperature-gun-2"
+                            class="w-full h-full object-cover rounded-xl"
+                          />
+                        </div>
+                      </td>
+                      <td class="py-4 md:pr-4 pr-2 align-bottom w-full">
+                        <div class="flex flex-col gap-y-2">
+                          <a class='text-light-primary-text font-semibold truncate hover:text-primary transition-colors duration-300 product-title' href='product-details.html'>
+                            Fresh Bask Basket Fruits
+                          </a>
+                          <div class="flex items-center justify-between">
+                            <p
+                              class="text-sm leading-[22px] font-normal text-light-secondary-text cart-item-quantity"
+                            >
+                              1 x 120mg Pack
+                            </p>
+                            <div class="flex items-center gap-x-1.5">
+                              <span
+                                class="line-through text-light-disabled-text font-normal product-total-price"
+                                >₹29.95</span
+                              >
+                              <span
+                                class="text-primary font-semibold product-offer-price"
+                                >₹27.49</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-4 px-4 product-thumbnail">
+                        <div
+                          class="w-[60px] h-[60px] rounded-xl bg-[#FFEFF6] overflow-hidden"
+                        >
+                          <img
+                            src="{% static '/images/multi-vendor-slider-image-3.png' %}"
+                            alt="vitamin-c"
+                            class="w-full h-full object-cover rounded-xl"
+                          />
+                        </div>
+                      </td>
+                      <td class="py-4 md:pr-4 pr-2 align-bottom w-full">
+                        <div class="flex flex-col gap-y-2">
+                          <a class='text-light-primary-text font-semibold truncate hover:text-primary transition-colors duration-300 product-title' href='product-details.html'>
+                            Fresh Bask Basket Fruits
+                          </a>
+                          <div class="flex items-center justify-between">
+                            <p
+                              class="text-sm leading-[22px] font-normal text-light-secondary-text cart-item-quantity"
+                            >
+                              1 x 120mg Pack
+                            </p>
+                            <div class="flex items-center gap-x-1.5">
+                              <span
+                                class="line-through text-light-disabled-text font-normal product-total-price"
+                                >₹29.95</span
+                              >
+                              <span
+                                class="text-primary font-semibold product-offer-price"
+                                >₹27.49</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-4 px-4 product-thumbnail">
+                        <div
+                          class="w-[60px] h-[60px] rounded-xl bg-[#FFEFF6] overflow-hidden"
+                        >
+                          <img
+                            src="{% static '/images/multi-vendor-slider-image-4.png' %}"
+                            alt="bp-machine-2"
+                            class="w-full h-full object-cover rounded-xl"
+                          />
+                        </div>
+                      </td>
+                      <td class="py-4 md:pr-4 pr-2 align-bottom w-full">
+                        <div class="flex flex-col gap-y-2">
+                          <a class='text-light-primary-text font-semibold truncate hover:text-primary transition-colors duration-300 product-title' href='product-details.html'>
+                            Fresh Bask Basket Fruits
+                          </a>
+                          <div class="flex items-center justify-between">
+                            <p
+                              class="text-sm leading-[22px] font-normal text-light-secondary-text cart-item-quantity"
+                            >
+                              1 x 120mg Pack
+                            </p>
+                            <div class="flex items-center gap-x-1.5">
+                              <span
+                                class="line-through text-light-disabled-text font-normal product-total-price"
+                                >₹29.95</span
+                              >
+                              <span
+                                class="text-primary font-semibold product-offer-price"
+                                >₹27.49</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- order-summary -->
+              <div class="bg-gray-100 md:px-6 px-4 py-6 rounded-2xl">
+                <div class="flex flex-col gap-y-6">
+                  <h5>Order Summary</h5>
+                  <!-- total -->
+                  <div>
+                    <div
+                      class="flex flex-col gap-y-4 pb-4 border-b border-gray-300"
+                    >
+                      <p class="flex items-center justify-between">
+                        Sub-Total<span class="text-gray-900">₹20.00</span>
+                      </p>
+                      <p class="flex items-center justify-between">
+                        VAT (40%)<span class="text-gray-900">₹4.00</span>
+                      </p>
+                      <p class="flex items-center justify-between">
+                        Discount<span class="text-gray-900">-₹4.00</span>
+                      </p>
+                      <p class="flex items-center justify-between">
+                        Shipment<span class="text-gray-900">₹0.00</span>
+                      </p>
+                      <p class="flex items-center justify-between">
+                        Tax<span class="text-gray-900">₹0.00</span>
+                      </p>
+                    </div>
+                    <h6
+                      class="flex items-center justify-between text-light-primary-text pt-4"
+                    >
+                      Total<span class="text-gray-900">₹20.00</span>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========== PAYMENT Section End ========== -->
+
+    <!-- ========== CTA Info Section Start ========== -->
+    <section class="py-[70px]">
+      <div class="container">
+        <div class="grid grid-cols-12 gap-6">
+          <div class="md:col-span-6 col-span-12 xl:col-span-3">
+            <div
+              class="p-6 border-gray-300 border rounded-2xl text-center wow animate__animated animate__fadeInUp"
+              data-wow-delay=".2s"
+            >
+              <span
+                class="inline-flex items-center justify-center size-14 bg-warning-lighter rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-container-truck text-3xl text-light-primary-text"
+                ></i>
+              </span>
+              <h5 class="pt-3 pb-0.5">Free Shipping</h5>
+              <p>Enjoy the Convenience of Free Shipping on Every Order</p>
+            </div>
+          </div>
+          <div class="md:col-span-6 col-span-12 xl:col-span-3">
+            <div
+              class="p-6 border-gray-300 border rounded-2xl text-center wow animate__animated animate__fadeInUp"
+              data-wow-delay=".3s"
+            >
+              <span
+                class="inline-flex items-center justify-center size-14 bg-warning-lighter rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-customer-support text-3xl text-light-primary-text"
+                ></i>
+              </span>
+              <h5 class="pt-3 pb-0.5">24x7 Support</h5>
+              <p>Round-the-Clock Assistance, Anytime You Need It</p>
+            </div>
+          </div>
+          <div class="md:col-span-6 col-span-12 xl:col-span-3">
+            <div
+              class="p-6 border-gray-300 border rounded-2xl text-center wow animate__animated animate__fadeInUp"
+              data-wow-delay=".4s"
+            >
+              <span
+                class="inline-flex items-center justify-center size-14 bg-warning-lighter rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-delivery-return-02 text-3xl text-light-primary-text"
+                ></i>
+              </span>
+              <h5 class="pt-3 pb-0.5">30 Days Return</h5>
+              <p>
+                Your Satisfaction is Our Priority: Return Any Product Within 30
+                Days
+              </p>
+            </div>
+          </div>
+          <div class="md:col-span-6 col-span-12 xl:col-span-3">
+            <div
+              class="p-6 border-gray-300 border rounded-2xl text-center wow animate__animated animate__fadeInUp"
+              data-wow-delay=".5s"
+            >
+              <span
+                class="inline-flex items-center justify-center size-14 bg-warning-lighter rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-transaction text-3xl text-light-primary-text"
+                ></i>
+              </span>
+              <h5 class="pt-3 pb-0.5">Secure Payment</h5>
+              <p>Seamless Shopping Backed by Safe and Secure Payment Options</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== CTA Info Section End ========== -->
+
+    <!-- ========== Recently Viewed Products Section Start ========== -->
+    <section class="pb-[70px]">
+      <div class="container">
+        <div
+          class="flex items-center md:justify-between justify-center mb-10 wow animate__animated animate__fadeInUp"
+          data-wow-delay="0.2s"
+        >
+          <div>
+            <h3 class="text-light-primary-text">Recently Viewed</h3>
+          </div>
+          <div
+            class="new-branded-products-multi-vendor-nav md:flex items-center justify-center gap-x-6 hidden"
+          ></div>
+        </div>
+        <div class="new-branded-product-multi-vendor-slider-wrapper">
+          <div
+            data-slick='{ "slidesToShow": 5, "slidesToScroll": 1, "loop": true, "autoplay": true, "autoplaySpeed": 7000, "arrows": true, "infinite": true, 
+          "appendArrows": ".new-branded-products-multi-vendor-nav", "responsive": [{"breakpoint": 1441, "settings": {"slidesToShow": 4}}, {"breakpoint": 1025, "settings": {"slidesToShow": 3}}, {"breakpoint": 769, "settings": {"slidesToShow": 2}}, {"breakpoint": 480, "settings": {"slidesToShow": 1}}]}'
+            class="new-branded-product-multi-vendor-slider -mx-3 sellzy-slider"
+          >
+            <!-- 1 -->
+            <div
+              class="border border-gray-300 rounded-2xl product-card-1 p-4 group mx-3 wow animate__animated animate__fadeInUp"
+              data-wow-delay="0.2s"
+            >
+              <div class="product-image-container relative">
+                <div
+                  class="product-image rounded-xl bg-[#FFEFF6] mb-4 overflow-hidden"
+                >
+                  <a href='product-details.html'>
+                    <img
+                      src="{% static '/images/multi-vendor-slider-image-1.png' %}"
+                      alt="product-1"
+                      class="group-hover:scale-110 transition-all transform group-hover:-rotate-3 ease-in-out duration-300"
+                    />
+                  </a>
+                </div>
+                <span
+                  class="product-discount-badge absolute top-[11px] left-0 bg-success-light text-black font-normal text-sm leading-[22px] px-1 after:absolute after:top-0 after:left-full after:z-10 after:w-1 after:h-full after:bg-[url('images/discount-primary-shape.html')] after:bg-contain"
+                  >NEW</span
+                >
+                <div
+                  class="product-btn-actions absolute bottom-0 right-0 left-0 flex justify-center z-9 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 group-hover:bottom-3"
+                >
+                  <ul class="flex items-center gap-x-px">
+                    <li>
+                      <a aria-label='Add to Wishlist' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tl-sm rounded-bl-sm before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5' href='wishlist-style-v1.html'>
+                        <i
+                          class="hgi hgi-stroke hgi-favourite text-2xl leading-6 text-light-secondary-text"
+                        ></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a aria-label='Compare' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5' href='compare.html'>
+                        <i
+                          class="hgi hgi-stroke hgi-reload text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        aria-label="Quick view"
+                        class="quick-view-sidebar-btn product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tr-sm rounded-br-sm before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5"
+                        href="#"
+                      >
+                        <i
+                          class="hgi hgi-stroke hgi-view text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="product-content">
+                <h5 class="text-base leading-6 font-semibold font-dm-sans mb-4">
+                  <a class='hover:text-primary' href='product-details.html'>VitaLife Omega-3 Softgels Heart Support Max Strength</a
+                  >
+                </h5>
+                <div class="rating-section flex items-center mb-4">
+                  <div
+                    class="bg-[url('../images/star-icon.png')] w-[90px] h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                  >
+                    <div
+                      style="width: 80%"
+                      class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                    ></div>
+                  </div>
+                  <span
+                    class="text-sm leading-[22px] font-normal inline-block ml-1"
+                    >(189)</span
+                  >
+                </div>
+                <div class="price-section flex items-center gap-x-3 mb-2">
+                  <span
+                    class="current-price text-base font-semibold text-light-primary-text"
+                    >₹27.49</span
+                  >
+                  <span
+                    class="old-price text-sm leading-[22px] font-normal text-light-disabled-text line-through"
+                    >₹39.99</span
+                  >
+                  <span
+                    class="discount-percentage text-sm leading-[22px] font-semibold text-error"
+                    >10% OFF</span
+                  >
+                </div>
+                <div class="btn-section flex items-center gap-x-4">
+                  <a class='size-11 flex flex-none items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-300' href='wishlist-style-v1.html'>
+                    <i
+                      class="hgi hgi-stroke hgi-favourite text-xl text-light-secondary-text"
+                    ></i>
+                  </a>
+                  <a class='btn btn-primary rounded-full font-semibold text-sm leading-6 px-6.5 py-2 flex-1' href='cart-single-vendor.html'>
+                    <i
+                      class="hgi hgi-stroke hgi-shopping-cart-02 text-xl text-white"
+                    ></i>
+                    <span>Add to Cart</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- 2 -->
+            <div
+              class="border border-gray-300 rounded-2xl product-card-1 p-4 group mx-3 wow animate__animated animate__fadeInUp"
+              data-wow-delay="0.3s"
+            >
+              <div class="product-image-container relative">
+                <div
+                  class="product-image rounded-xl bg-[#FFEFF6] mb-4 overflow-hidden"
+                >
+                  <a href='product-details.html'>
+                    <img
+                      src="{% static '/images/multi-vendor-slider-image-2.png' %}"
+                      alt="product-2"
+                      class="group-hover:scale-110 transition-all transform group-hover:-rotate-3 ease-in-out duration-300"
+                    />
+                  </a>
+                </div>
+                <span
+                  class="product-discount-badge absolute top-[11px] left-0 bg-success-light text-black font-normal text-sm leading-[22px] px-1 after:absolute after:top-0 after:left-full after:z-10 after:w-1 after:h-full after:bg-[url('images/discount-primary-shape.html')] after:bg-contain"
+                  >NEW</span
+                >
+                <div
+                  class="product-btn-actions absolute bottom-0 right-0 left-0 flex justify-center z-9 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 group-hover:bottom-3"
+                >
+                  <ul class="flex items-center gap-x-px">
+                    <li>
+                      <a aria-label='Add to Wishlist' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tl-sm rounded-bl-sm before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5' href='wishlist-style-v1.html'>
+                        <i
+                          class="hgi hgi-stroke hgi-favourite text-2xl leading-6 text-light-secondary-text"
+                        ></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a aria-label='Compare' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5' href='compare.html'>
+                        <i
+                          class="hgi hgi-stroke hgi-reload text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        aria-label="Quick view"
+                        class="quick-view-sidebar-btn product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tr-sm rounded-br-sm before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5"
+                        href="#"
+                      >
+                        <i
+                          class="hgi hgi-stroke hgi-view text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="product-content">
+                <h5 class="text-base leading-6 font-semibold font-dm-sans mb-4">
+                  <a class='hover:text-primary' href='product-details.html'>VitaLife Omega-3 Softgels Heart Support Max Strength</a
+                  >
+                </h5>
+                <div class="rating-section flex items-center mb-4">
+                  <div
+                    class="bg-[url('../images/star-icon.png')] w-[90px] h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                  >
+                    <div
+                      style="width: 80%"
+                      class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                    ></div>
+                  </div>
+                  <span
+                    class="text-sm leading-[22px] font-normal inline-block ml-1"
+                    >(189)</span
+                  >
+                </div>
+                <div class="price-section flex items-center gap-x-3 mb-2">
+                  <span
+                    class="current-price text-base font-semibold text-light-primary-text"
+                    >₹27.49</span
+                  >
+                  <span
+                    class="old-price text-sm leading-[22px] font-normal text-light-disabled-text line-through"
+                    >₹39.99</span
+                  >
+                  <span
+                    class="discount-percentage text-sm leading-[22px] font-semibold text-error"
+                    >10% OFF</span
+                  >
+                </div>
+                <div class="btn-section flex items-center gap-x-4">
+                  <a class='size-11 flex flex-none items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-300' href='wishlist-style-v1.html'>
+                    <i
+                      class="hgi hgi-stroke hgi-favourite text-xl text-light-secondary-text"
+                    ></i>
+                  </a>
+                  <a class='btn btn-primary rounded-full font-semibold text-sm leading-6 px-6.5 py-2 flex-1' href='cart-single-vendor.html'>
+                    <i
+                      class="hgi hgi-stroke hgi-shopping-cart-02 text-xl text-white"
+                    ></i>
+                    <span>Add to Cart</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- 3 -->
+            <div
+              class="border border-gray-300 rounded-2xl product-card-1 p-4 group mx-3 wow animate__animated animate__fadeInUp"
+              data-wow-delay="0.4s"
+            >
+              <div class="product-image-container relative">
+                <div
+                  class="product-image rounded-xl bg-[#FFEFF6] mb-4 overflow-hidden"
+                >
+                  <a href='product-details.html'>
+                    <img
+                      src="{% static '/images/multi-vendor-slider-image-3.png' %}"
+                      alt="product-3"
+                      class="group-hover:scale-110 transition-all transform group-hover:-rotate-3 ease-in-out duration-300"
+                    />
+                  </a>
+                </div>
+                <span
+                  class="product-discount-badge absolute top-[11px] left-0 bg-success-light text-black font-normal text-sm leading-[22px] px-1 after:absolute after:top-0 after:left-full after:z-10 after:w-1 after:h-full after:bg-[url('images/discount-primary-shape.html')] after:bg-contain"
+                  >NEW</span
+                >
+                <div
+                  class="product-btn-actions absolute bottom-0 right-0 left-0 flex justify-center z-9 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 group-hover:bottom-3"
+                >
+                  <ul class="flex items-center gap-x-px">
+                    <li>
+                      <a aria-label='Add to Wishlist' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tl-sm rounded-bl-sm before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5' href='wishlist-style-v1.html'>
+                        <i
+                          class="hgi hgi-stroke hgi-favourite text-2xl leading-6 text-light-secondary-text"
+                        ></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a aria-label='Compare' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5' href='compare.html'>
+                        <i
+                          class="hgi hgi-stroke hgi-reload text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        aria-label="Quick view"
+                        class="quick-view-sidebar-btn product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tr-sm rounded-br-sm before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5"
+                        href="#"
+                      >
+                        <i
+                          class="hgi hgi-stroke hgi-view text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="product-content">
+                <h5 class="text-base leading-6 font-semibold font-dm-sans mb-4">
+                  <a class='hover:text-primary' href='product-details.html'>VitaLife Omega-3 Softgels Heart Support Max Strength</a
+                  >
+                </h5>
+                <div class="rating-section flex items-center mb-4">
+                  <div
+                    class="bg-[url('../images/star-icon.png')] w-[90px] h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                  >
+                    <div
+                      style="width: 80%"
+                      class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                    ></div>
+                  </div>
+                  <span
+                    class="text-sm leading-[22px] font-normal inline-block ml-1"
+                    >(189)</span
+                  >
+                </div>
+                <div class="price-section flex items-center gap-x-3 mb-2">
+                  <span
+                    class="current-price text-base font-semibold text-light-primary-text"
+                    >₹27.49</span
+                  >
+                  <span
+                    class="old-price text-sm leading-[22px] font-normal text-light-disabled-text line-through"
+                    >₹39.99</span
+                  >
+                  <span
+                    class="discount-percentage text-sm leading-[22px] font-semibold text-error"
+                    >10% OFF</span
+                  >
+                </div>
+                <div class="btn-section flex items-center gap-x-4">
+                  <a class='size-11 flex flex-none items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-300' href='wishlist-style-v1.html'>
+                    <i
+                      class="hgi hgi-stroke hgi-favourite text-xl text-light-secondary-text"
+                    ></i>
+                  </a>
+                  <a class='btn btn-primary rounded-full font-semibold text-sm leading-6 px-6.5 py-2 flex-1' href='cart-single-vendor.html'>
+                    <i
+                      class="hgi hgi-stroke hgi-shopping-cart-02 text-xl text-white"
+                    ></i>
+                    <span>Add to Cart</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- 4 -->
+            <div
+              class="border border-gray-300 rounded-2xl product-card-1 p-4 group mx-3 wow animate__animated animate__fadeInUp"
+              data-wow-delay="0.5s"
+            >
+              <div class="product-image-container relative">
+                <div
+                  class="product-image rounded-xl bg-[#FFEFF6] mb-4 overflow-hidden"
+                >
+                  <a href='product-details.html'>
+                    <img
+                      src="{% static '/images/multi-vendor-slider-image-4.png' %}"
+                      alt="product-4"
+                      class="group-hover:scale-110 transition-all transform group-hover:-rotate-3 ease-in-out duration-300"
+                    />
+                  </a>
+                </div>
+                <span
+                  class="product-discount-badge absolute top-[11px] left-0 bg-success-light text-black font-normal text-sm leading-[22px] px-1 after:absolute after:top-0 after:left-full after:z-10 after:w-1 after:h-full after:bg-[url('images/discount-primary-shape.html')] after:bg-contain"
+                  >NEW</span
+                >
+                <div
+                  class="product-btn-actions absolute bottom-0 right-0 left-0 flex justify-center z-9 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 group-hover:bottom-3"
+                >
+                  <ul class="flex items-center gap-x-px">
+                    <li>
+                      <a aria-label='Add to Wishlist' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tl-sm rounded-bl-sm before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5' href='wishlist-style-v1.html'>
+                        <i
+                          class="hgi hgi-stroke hgi-favourite text-2xl leading-6 text-light-secondary-text"
+                        ></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a aria-label='Compare' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5' href='compare.html'>
+                        <i
+                          class="hgi hgi-stroke hgi-reload text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        aria-label="Quick view"
+                        class="quick-view-sidebar-btn product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tr-sm rounded-br-sm before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5"
+                        href="#"
+                      >
+                        <i
+                          class="hgi hgi-stroke hgi-view text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="product-content">
+                <h5 class="text-base leading-6 font-semibold font-dm-sans mb-4">
+                  <a class='hover:text-primary' href='product-details.html'>VitaLife Omega-3 Softgels Heart Support Max Strength</a
+                  >
+                </h5>
+                <div class="rating-section flex items-center mb-4">
+                  <div
+                    class="bg-[url('../images/star-icon.png')] w-[90px] h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                  >
+                    <div
+                      style="width: 80%"
+                      class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                    ></div>
+                  </div>
+                  <span
+                    class="text-sm leading-[22px] font-normal inline-block ml-1"
+                    >(189)</span
+                  >
+                </div>
+                <div class="price-section flex items-center gap-x-3 mb-2">
+                  <span
+                    class="current-price text-base font-semibold text-light-primary-text"
+                    >₹27.49</span
+                  >
+                  <span
+                    class="old-price text-sm leading-[22px] font-normal text-light-disabled-text line-through"
+                    >₹39.99</span
+                  >
+                  <span
+                    class="discount-percentage text-sm leading-[22px] font-semibold text-error"
+                    >10% OFF</span
+                  >
+                </div>
+                <div class="btn-section flex items-center gap-x-4">
+                  <a class='size-11 flex flex-none items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-300' href='wishlist-style-v1.html'>
+                    <i
+                      class="hgi hgi-stroke hgi-favourite text-xl text-light-secondary-text"
+                    ></i>
+                  </a>
+                  <a class='btn btn-primary rounded-full font-semibold text-sm leading-6 px-6.5 py-2 flex-1' href='cart-single-vendor.html'>
+                    <i
+                      class="hgi hgi-stroke hgi-shopping-cart-02 text-xl text-white"
+                    ></i>
+                    <span>Add to Cart</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="border border-gray-300 rounded-2xl product-card-1 p-4 group mx-3 wow animate__animated animate__fadeInUp"
+              data-wow-delay="0.6s"
+            >
+              <div class="product-image-container relative">
+                <div
+                  class="product-image rounded-xl bg-[#FFEFF6] mb-4 overflow-hidden"
+                >
+                  <a href='product-details.html'>
+                    <img
+                      src="{% static '/images/multi-vendor-slider-image-2.png' %}"
+                      alt="product-2"
+                      class="group-hover:scale-110 transition-all transform group-hover:-rotate-3 ease-in-out duration-300"
+                    />
+                  </a>
+                </div>
+                <span
+                  class="product-discount-badge absolute top-[11px] left-0 bg-success-light text-black font-normal text-sm leading-[22px] px-1 after:absolute after:top-0 after:left-full after:z-10 after:w-1 after:h-full after:bg-[url('images/discount-primary-shape.html')] after:bg-contain"
+                  >NEW</span
+                >
+                <div
+                  class="product-btn-actions absolute bottom-0 right-0 left-0 flex justify-center z-9 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 group-hover:bottom-3"
+                >
+                  <ul class="flex items-center gap-x-px">
+                    <li>
+                      <a aria-label='Add to Wishlist' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tl-sm rounded-bl-sm before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5' href='wishlist-style-v1.html'>
+                        <i
+                          class="hgi hgi-stroke hgi-favourite text-2xl leading-6 text-light-secondary-text"
+                        ></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a aria-label='Compare' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5' href='compare.html'>
+                        <i
+                          class="hgi hgi-stroke hgi-reload text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        aria-label="Quick view"
+                        class="quick-view-sidebar-btn product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tr-sm rounded-br-sm before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5"
+                        href="#"
+                      >
+                        <i
+                          class="hgi hgi-stroke hgi-view text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="product-content">
+                <h5 class="text-base leading-6 font-semibold font-dm-sans mb-4">
+                  <a class='hover:text-primary' href='product-details.html'>VitaLife Omega-3 Softgels Heart Support Max Strength</a
+                  >
+                </h5>
+                <div class="rating-section flex items-center mb-4">
+                  <div
+                    class="bg-[url('../images/star-icon.png')] w-[90px] h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                  >
+                    <div
+                      style="width: 80%"
+                      class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                    ></div>
+                  </div>
+                  <span
+                    class="text-sm leading-[22px] font-normal inline-block ml-1"
+                    >(189)</span
+                  >
+                </div>
+                <div class="price-section flex items-center gap-x-3 mb-2">
+                  <span
+                    class="current-price text-base font-semibold text-light-primary-text"
+                    >₹27.49</span
+                  >
+                  <span
+                    class="old-price text-sm leading-[22px] font-normal text-light-disabled-text line-through"
+                    >₹39.99</span
+                  >
+                  <span
+                    class="discount-percentage text-sm leading-[22px] font-semibold text-error"
+                    >10% OFF</span
+                  >
+                </div>
+                <div class="btn-section flex items-center gap-x-4">
+                  <a class='size-11 flex flex-none items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-300' href='wishlist-style-v1.html'>
+                    <i
+                      class="hgi hgi-stroke hgi-favourite text-xl text-light-secondary-text"
+                    ></i>
+                  </a>
+                  <a class='btn btn-primary rounded-full font-semibold text-sm leading-6 px-6.5 py-2 flex-1' href='cart-single-vendor.html'>
+                    <i
+                      class="hgi hgi-stroke hgi-shopping-cart-02 text-xl text-white"
+                    ></i>
+                    <span>Add to Cart</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="border border-gray-300 rounded-2xl product-card-1 p-4 group mx-3"
+            >
+              <div class="product-image-container relative">
+                <div
+                  class="product-image rounded-xl bg-[#FFEFF6] mb-4 overflow-hidden"
+                >
+                  <a href='product-details.html'>
+                    <img
+                      src="{% static '/images/multi-vendor-slider-image-1.png' %}"
+                      alt="product-1"
+                      class="group-hover:scale-110 transition-all transform group-hover:-rotate-3 ease-in-out duration-300"
+                    />
+                  </a>
+                </div>
+                <span
+                  class="product-discount-badge absolute top-[11px] left-0 bg-success-light text-black font-normal text-sm leading-[22px] px-1 after:absolute after:top-0 after:left-full after:z-10 after:w-1 after:h-full after:bg-[url('images/discount-primary-shape.html')] after:bg-contain"
+                  >NEW</span
+                >
+                <div
+                  class="product-btn-actions absolute bottom-0 right-0 left-0 flex justify-center z-9 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 group-hover:bottom-3"
+                >
+                  <ul class="flex items-center gap-x-px">
+                    <li>
+                      <a aria-label='Add to Wishlist' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tl-sm rounded-bl-sm before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5' href='wishlist-style-v1.html'>
+                        <i
+                          class="hgi hgi-stroke hgi-favourite text-2xl leading-6 text-light-secondary-text"
+                        ></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a aria-label='Compare' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5' href='compare.html'>
+                        <i
+                          class="hgi hgi-stroke hgi-reload text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        aria-label="Quick view"
+                        class="quick-view-sidebar-btn product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tr-sm rounded-br-sm before:absolute before:left-[calc(50%-8px)] before:bottom-full before:z-9 before:border-8 before:border-transparent before:border-t-black before:opacity-0 before:invisible before:-mb-3.5 hover:before:opacity-100 hover:before:visible before:transition-all before:duration-300 after:absolute after:bottom-full after:left-1/2 after:-translate-x-1/2 after:rounded-sm after:bg-gray-800 after:whitespace-nowrap after:text-white after:text-xs after:leading-[18px] after:py-[3px] after:px-2 after:content-[attr(aria-label)] after:opacity-0 after:invisible after:transition-all after:duration-300 hover:after:opacity-100 hover:after:visible hover:after:-translate-y-2.5 hover:before:-translate-y-2.5"
+                        href="#"
+                      >
+                        <i
+                          class="hgi hgi-stroke hgi-view text-2xl leading-6 text-light-primary-text"
+                        ></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="product-content">
+                <h5 class="text-base leading-6 font-semibold font-dm-sans mb-4">
+                  <a class='hover:text-primary' href='product-details.html'>VitaLife Omega-3 Softgels Heart Support Max Strength</a
+                  >
+                </h5>
+                <div class="rating-section flex items-center mb-4">
+                  <div
+                    class="bg-[url('../images/star-icon.png')] w-[90px] h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                  >
+                    <div
+                      style="width: 80%"
+                      class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                    ></div>
+                  </div>
+                  <span
+                    class="text-sm leading-[22px] font-normal inline-block ml-1"
+                    >(189)</span
+                  >
+                </div>
+                <div class="price-section flex items-center gap-x-3 mb-2">
+                  <span
+                    class="current-price text-base font-semibold text-light-primary-text"
+                    >₹27.49</span
+                  >
+                  <span
+                    class="old-price text-sm leading-[22px] font-normal text-light-disabled-text line-through"
+                    >₹39.99</span
+                  >
+                  <span
+                    class="discount-percentage text-sm leading-[22px] font-semibold text-error"
+                    >10% OFF</span
+                  >
+                </div>
+                <div class="btn-section flex items-center gap-x-4">
+                  <a class='size-11 flex flex-none items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-300' href='wishlist-style-v1.html'>
+                    <i
+                      class="hgi hgi-stroke hgi-favourite text-xl text-light-secondary-text"
+                    ></i>
+                  </a>
+                  <a class='btn btn-primary rounded-full font-semibold text-sm leading-6 px-6.5 py-2 flex-1' href='cart-single-vendor.html'>
+                    <i
+                      class="hgi hgi-stroke hgi-shopping-cart-02 text-xl text-white"
+                    ></i>
+                    <span>Add to Cart</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Recently Viewed Products Section End ========== -->
+
+    <!-- ========== Subscribe Section Start ========== -->
+    <section
+      class="px-4 md:px-0 max-w-[932px] mx-auto text-center lg:pb-6 pb-[70px] lg:rounded-[164px] -mb-[100px] relative z-10 bg-white xl:before:absolute xl:before:bottom-0 xl:before:left-[-23px] xl:before:h-[100px] xl:before:w-[145px] xl:before:bg-[url('images/footer-left-shape.html')] xl:before:bg-no-repeat xl:before:z-11 xl:after:absolute xl:after:bottom-0 xl:after:right-[-23px] xl:after:h-[100px] xl:after:w-[145px] xl:after:bg-[url('images/footer-right-shape.html')] xl:after:bg-no-repeat xl:after:z-11"
+    >
+      <h3
+        class="mb-4 wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Subscribe to our newsletter
+      </h3>
+      <p
+        class="mb-6 text-dark-secondary-text wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Stay updated! Subscribe to our mailing list for news, updates, and
+        exclusive offers.
+      </p>
+      <form method="POST" action="{% url 'subscribe_newsletter' %}" class="wow animate__animated animate__fadeInUp flex flex-col md:flex-row gap-3 items-center justify-center" data-wow-delay=".2s">
+        {% csrf_token %}
+        <div class="relative w-full md:w-auto">
+          <input
+            type="email"
+            class="w-full md:w-[280px] px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:border-blue-500"
+            placeholder="Enter your email"
+            name="email"
+            id="subscribe-email"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-medium rounded-3xl px-8 py-3 whitespace-nowrap">
+          Subscribe
+        </button>
+      </form>
+    </section>
+      </div>
+    </section>
+    <!-- ========== Subscribe Section End ========== -->
+{% endblock %}

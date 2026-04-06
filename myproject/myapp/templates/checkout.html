@@ -1,0 +1,199 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+<main class="main">
+
+<!-- ================= PAGE HEADER ================= -->
+<div class="bg-gray-100 py-10">
+    <div class="container mx-auto text-center">
+        <h1 class="text-3xl font-bold text-gray-800">
+            Checkout
+        </h1>
+        <p class="text-gray-500 mt-2">
+            Complete your order
+        </p>
+    </div>
+</div>
+
+
+<!-- ================= CHECKOUT SECTION ================= -->
+<section class="py-16">
+<div class="container mx-auto px-4">
+
+<div class="grid grid-cols-12 gap-8">
+
+<!-- ================= LEFT SIDE : ORDER TABLE ================= -->
+<div class="col-span-12 xl:col-span-8">
+
+<div class="overflow-x-auto bg-white rounded-2xl shadow-sm border border-gray-200">
+
+<table class="w-full border-collapse">
+
+    <!-- ===== TABLE HEADER ===== -->
+    <thead class="bg-gray-200">
+        <tr>
+            <th class="text-left font-semibold pl-6 py-4">
+                Product
+            </th>
+            <th class="text-center font-semibold py-4">
+                Unit Price
+            </th>
+            <th class="text-center font-semibold py-4">
+                Quantity
+            </th>
+            <th class="text-center font-semibold py-4">
+                Total Price
+            </th>
+        </tr>
+    </thead>
+
+    <!-- ===== TABLE BODY ===== -->
+    <tbody>
+
+        {% for i in prod %}
+        <tr class="border-b hover:bg-gray-50 transition align-middle">
+
+            <!-- PRODUCT COLUMN -->
+            <td class="py-4 px-6">
+                <div class="flex items-center gap-4">
+                    <!-- FIXED IMAGE BOX -->
+                    <div class="w-20 h-20 rounded-xl bg-gray-100 overflow-hidden flex-shrink-0">
+                        {% if i.img %}
+                        <img src="{{ i.img.url }}" alt="{{ i.name }}" class="w-full h-full object-cover">
+                        {% elif i.pid.image %}
+                        <img src="{{ i.pid.image.url }}" alt="{{ i.pid.name }}" class="w-full h-full object-cover">
+                        {% endif %}
+                    </div>
+                    <!-- PRODUCT NAME -->
+                    <div class="min-w-0">
+                        <p class="font-semibold text-gray-800 truncate">
+                            {{ i.name|default:i.pid.name }}
+                        </p>
+                    </div>
+                </div>
+            </td>
+            <!-- UNIT PRICE -->
+            <td class="text-center py-4">
+                <span class="text-gray-700 font-medium">
+                    ₹{{ i.price|default:i.pid.price|floatformat:2 }}
+                </span>
+            </td>
+            <!-- QUANTITY -->
+            <td class="text-center py-4">
+                <span class="inline-flex items-center justify-center bg-gray-100 w-10 h-10 rounded-lg font-medium">
+                    {{ i.qty }}
+                </span>
+            </td>
+            <!-- TOTAL -->
+            <td class="text-center py-4">
+                <span class="font-semibold text-gray-900">
+                    ₹{{ i.total_price|default:i.price|floatformat:2 }}
+                </span>
+            </td>
+
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4" class="text-center py-8 text-gray-500">
+                No items in checkout
+            </td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+</div>
+</div>
+
+
+<!-- ================= RIGHT SIDE : SUMMARY ================= -->
+<div class="col-span-12 xl:col-span-4">
+
+<div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 shadow-sm">
+
+<h3 class="text-xl font-semibold mb-6">
+    Order Summary
+</h3>
+
+<div class="flex justify-between mb-4 text-gray-700">
+    <span>Subtotal</span>
+    <span>₹{{ sub_total }}</span>
+</div>
+
+<div class="flex justify-between mb-4 text-gray-700">
+    <span>Shipping</span>
+    <span>₹50</span>
+</div>
+
+<hr class="my-6">
+
+<div class="flex justify-between font-semibold text-lg text-gray-900">
+    <span>Total</span>
+    <span>₹{{ total }}</span>
+</div>
+
+{% if response %}
+<button id="rzp-button"
+        class="w-full mt-8 bg-primary text-white py-3 rounded-full hover:opacity-90 transition">
+    Pay with Razorpay
+</button>
+{% else %}
+<div class="mt-6 text-red-500 text-sm">
+    Payment gateway not configured.
+</div>
+{% endif %}
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+</main>
+
+
+<!-- ================= RAZORPAY SCRIPT ================= -->
+{% if response %}
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+var options = {
+    "key": "rzp_test_bilBagOBVTi4lE",
+    "amount": "{{ response.amount }}",
+    "currency": "INR",
+    "name": "My Shop",
+    "description": "Order Payment",
+    "order_id": "{{ response.id }}",
+
+    "handler": function (response){
+        var successUrl = "{% url 'success' %}" +
+            "?payment_id=" + encodeURIComponent(response.razorpay_payment_id) +
+            "&order_id=" + encodeURIComponent(response.razorpay_order_id);
+
+        window.location.href = successUrl;
+    },
+
+    "prefill": {
+        "name": "{{ uid.name }}",
+        "email": "{{ uid.email }}"
+    },
+
+    "theme": {
+        "color": "#4f46e5"
+    }
+};
+
+var rzp1 = new Razorpay(options);
+
+document.getElementById('rzp-button').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+};
+</script>
+{% endif %}
+
+{% endblock %}

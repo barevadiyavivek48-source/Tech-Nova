@@ -1,0 +1,420 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+    <!-- ========== Breadcrumb Section Start ========== -->
+    <div class="container py-12">
+      <div class="breadcrumb">
+        <ul>
+          <li>
+            <a href='index.html'>
+              <span class="inline-flex items-center justify-center">
+                <i
+                  class="hgi hgi-stroke hgi-home-01 text-2xl leading-6"
+                ></i></span
+              >Home</a
+            >
+          </li>
+          <li class="text-light-disabled-text">&#8226;</li>
+          <li><span class="text-sm leading-[22px]">Cart</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ========== Breadcrumb Section End ========== -->
+
+    <!-- ========== Cart vendor Section Start ========== -->
+    <div class="pb-[70px]">
+      <div class="container">
+        <div class="grid grid-cols-12">
+          <div class="xl:col-span-8 col-span-12">
+            <div class="flex items-center justify-between mb-6 xl:px-2 px-0">
+              <div class="flex items-center gap-x-1">
+                <h5>Cart</h5>
+                <p>(3 item)</p>
+              </div>
+              <div class="flex items-center">
+                <a href="{% url 'remove_all_cart' %}"
+                  class="inline-flex gap-x-1 items-center justify-center font-semibold leading-[26px] text-error hover:opacity-70 transition"
+                >
+                  <i
+                    class="hgi hgi-stroke hgi-cancel-01 text-xl leading-5 font-semibold"
+                  ></i>
+                  Remove All
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-12 gap-x-6 gap-y-6">
+          <div class="xl:col-span-8 col-span-12">
+            <div
+              class="wishlist-table-wrapper border-gray-300 rounded-2xl border overflow-x-auto"
+            >
+    <table class="w-full wishlist-table border-collapse">
+    
+    <!-- ================= TABLE HEADER ================= -->
+        <thead class="bg-gray-200">
+            <tr>
+                <th class="text-left font-semibold pl-4 py-3">
+                    Product
+                </th>
+                <th class="text-left font-semibold py-3">
+                    Price
+                </th>
+                <th class="text-left font-semibold py-3">
+                    Quantity
+                </th>
+                <th class="text-left font-semibold py-3">
+                    Total Price
+                </th>
+                <th class="text-center font-semibold pr-4 py-3">
+                    Action
+                </th>
+            </tr>
+        </thead>
+
+    <!-- ================= TABLE BODY ================= -->
+          <tbody>
+
+              {% for i in aid %}
+              <tr class="border-b">
+
+                  <!-- ===== PRODUCT COLUMN ===== -->
+                  <td class="py-4 px-4">
+                      <div class="flex flex-col md:flex-row gap-4">
+
+                          <!-- Product Image -->
+                          <div class="w-[120px] h-[120px] rounded-2xl bg-[#F4F3F5] overflow-hidden">
+                              <img 
+                                  src="{{ i.img.url }}" 
+                                  alt="{{ i.name }}" 
+                                  class="w-full h-full object-cover rounded-2xl"
+                              >
+                          </div>
+
+                          <!-- Product Details -->
+                          <div class="flex flex-col justify-between">
+                              <a 
+                                  href="#" 
+                                  class="font-semibold text-gray-800 hover:text-primary transition"
+                              >
+                                  {{ i.name }}
+                              </a>
+
+                              <!-- Rating Section -->
+                              <div class="flex items-center mt-2">
+                                  <div class="relative w-[90px] h-4 bg-[url('../images/star-icon.png')] bg-repeat-x">
+                                      <div 
+                                          class="absolute top-0 left-0 h-4 bg-[url('../images/star-icon.png')] bg-repeat-x bg-position-[0_-18px]" 
+                                          style="width:80%"
+                                      </div>
+                                  </div>
+                        
+                              </div>
+                          </div>
+
+                      </div>
+                  </td>
+
+                  <!-- ===== PRICE COLUMN ===== -->
+                  <td class="py-4 px-4">
+                      <span class="font-semibold text-gray-800">
+                          ₹{{ i.price }}
+                      </span>
+                  </td>
+
+                  <!-- ===== QUANTITY COLUMN ===== -->
+                  <td class="py-4 px-4">
+                      <div class="flex items-center gap-3">
+
+                          <a href="{% url 'minus' i.id %}" 
+                            class="px-3 py-1 border rounded hover:bg-gray-100">
+                              −
+                          </a>
+
+                          <span class="font-medium">
+                              {{ i.qty }}
+                          </span>
+
+                          <a href="{% url 'plus' i.id %}" 
+                            class="px-3 py-1 border rounded hover:bg-gray-100">
+                              +
+                          </a>
+
+                      </div>
+                  </td>
+
+                  <!-- ===== TOTAL PRICE COLUMN ===== -->
+                  <td class="py-4 px-4">
+                      <span class="font-semibold text-gray-800">
+                          ₹{{ i.total_price }}
+                      </span>
+                  </td>
+
+                  <!-- ===== ACTION COLUMN ===== -->
+                  <td class="py-4 px-4 text-center">
+                      <div class="flex justify-center gap-4">
+
+                          <!-- Add to Wishlist -->
+                          <a href="{% url 'wishlist' %}">
+                              <i class="hgi hgi-stroke hgi-favourite text-xl hover:text-red-500 transition"></i>
+                          </a>
+
+                          <!-- Remove -->
+                          <a href="{% url 'remove_cart' i.id %}">
+                              <i class="hgi hgi-stroke hgi-delete-01 text-xl hover:text-red-600 transition"></i>
+                          </a>
+
+                      </div>
+                  </td>
+
+              </tr>
+              {% empty %}
+              <tr>
+                  <td colspan="5" class="text-center py-6 text-gray-500">
+                      No items in wishlist
+                  </td>
+              </tr>
+              {% endfor %}
+
+          </tbody>
+    </table>
+            </div>
+          </div>
+          <div class="xl:col-span-4 col-span-12">
+            <div
+              class="border border-gray-300 rounded-2xl md:px-6 md:py-6 px-3 py-4 flex flex-col gap-y-6"
+            >
+              <!-- Checkbox -->
+              <!-- Checkout Buttons -->
+              <div class="flex flex-col gap-y-6">
+                <a class='btn btn-primary py-3 w-full rounded-[80px]' href="{% url 'billing' %}">
+                  Proceed to checkout
+                </a>
+                <a class='btn btn-default outline shadow-none w-full py-[11px] rounded-[80px]' href="{% url 'index' %}">
+                  Continue Shopping
+                  <span class="inline-flex items-center justify-center"
+                    ><i
+                      class="hgi hgi-stroke hgi-arrow-right-02 text-[22px] leading-[22px]"
+                    ></i
+                  ></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========== Cart vendor Section End ========== -->
+
+    <!-- ========== Quality Priority Section Start ========== -->
+    <section class="mb-[70px]">
+      <div
+        class="lg:bg-white bg-[#A0E2E0] py-12 lg:pt-0 lg:pb-[23px] text-center lg:max-w-[704px] mx-auto lg:rounded-[164px] lg:-mb-[103px] relative z-10 lg:before:bg-[#A0E2E0] lg:after:bg-[#A0E2E0] lg:before:absolute lg:before:bottom-0 lg:before:left-0 lg:before:h-full lg:before:w-[145px] lg:before:bg-[url('images/slider-left-shape.html')] lg:before:bg-no-repeat lg:before:z-11 lg:after:absolute lg:after:bottom-0 lg:after:right-0 lg:after:h-full lg:after:w-[145px] lg:after:bg-[url('images/slider-right-shape.html')] lg:after:bg-no-repeat lg:after:z-11"
+      >
+        <h3
+          class="mb-2 text-light-primary-text wow animate__animated animate__fadeInUp"
+          data-wow-delay="0.2s"
+        >
+          Quality is our priority
+        </h3>
+        <p
+          class="wow animate__animated animate__fadeInUp"
+          data-wow-delay="0.3s"
+        >
+          Because you deserve nothing less than the best.
+        </p>
+      </div>
+      <div
+        class="xl:max-w-[1728px] w-full mx-auto relative bg-[#A0E2E0] xl:rounded-5xl pb-12 lg:pt-[172px]"
+      >
+        <div class="container">
+          <div class="grid grid-cols-12 gap-6">
+            <div class="md:col-span-6 col-span-12 xl:col-span-3">
+              <div
+                class="p-6 rounded-2xl text-center bg-white wow animate__animated animate__fadeInUp"
+                data-wow-delay="0.2s"
+              >
+                <span
+                  class="inline-flex items-center justify-center size-14 bg-warning-lighter rounded-full"
+                >
+                  <i
+                    class="hgi hgi-stroke hgi-container-truck text-3xl text-light-primary-text"
+                  ></i>
+                </span>
+                <h5 class="pt-3 pb-0.5">Free Shipping</h5>
+                <p>Enjoy the Convenience of Free Shipping on Every Order</p>
+              </div>
+            </div>
+            <div class="md:col-span-6 col-span-12 xl:col-span-3">
+              <div
+                class="p-6 rounded-2xl text-center bg-white wow animate__animated animate__fadeInUp"
+                data-wow-delay="0.3s"
+              >
+                <span
+                  class="inline-flex items-center justify-center size-14 bg-warning-lighter rounded-full"
+                >
+                  <i
+                    class="hgi hgi-stroke hgi-customer-support text-3xl text-light-primary-text"
+                  ></i>
+                </span>
+                <h5 class="pt-3 pb-0.5">24x7 Support</h5>
+                <p>Round-the-Clock Assistance, Anytime You Need It</p>
+              </div>
+            </div>
+            <div class="md:col-span-6 col-span-12 xl:col-span-3">
+              <div
+                class="p-6 rounded-2xl text-center bg-white wow animate__animated animate__fadeInUp"
+                data-wow-delay="0.4s"
+              >
+                <span
+                  class="inline-flex items-center justify-center size-14 bg-warning-lighter rounded-full"
+                >
+                  <i
+                    class="hgi hgi-stroke hgi-delivery-return-02 text-3xl text-light-primary-text"
+                  ></i>
+                </span>
+                <h5 class="pt-3 pb-0.5">30 Days Return</h5>
+                <p>
+                  Your Satisfaction is Our Priority: Return Any Product Within
+                  30 Days
+                </p>
+              </div>
+            </div>
+            <div class="md:col-span-6 col-span-12 xl:col-span-3">
+              <div
+                class="p-6 rounded-2xl text-center bg-white wow animate__animated animate__fadeInUp"
+                data-wow-delay="0.5s"
+              >
+                <span
+                  class="inline-flex items-center justify-center size-14 bg-warning-lighter rounded-full"
+                >
+                  <i
+                    class="hgi hgi-stroke hgi-transaction text-3xl text-light-primary-text"
+                  ></i>
+                </span>
+                <h5 class="pt-3 pb-0.5">Secure Payment</h5>
+                <p>
+                  Seamless Shopping Backed by Safe and Secure Payment Options
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Quality Priority Section End ========== -->
+
+    <!-- ========== New Branded Products Section Start ========== -->
+    <section class="pb-[70px]">
+      <div class="container">
+        <div
+          class="flex items-center md:justify-between justify-center mb-10 wow animate__animated animate__fadeInUp"
+          data-wow-delay="0.2s"
+        >
+          <div>
+            <h3 class="text-light-primary-text">New Branded Products</h3>
+          </div>
+          <div
+            class="new-branded-products-nav md:flex items-center justify-center gap-x-6 hidden"
+          ></div>
+        </div>
+        <div class="new-branded-product-slider-wrapper">
+          <div
+            data-slick='{ "slidesToShow": 6, "slidesToScroll": 1, "loop": true, "autoplay": true, "autoplaySpeed": 7000, "arrows": true, "infinite": true, 
+          "appendArrows": ".new-branded-products-nav", "responsive": [{"breakpoint": 1441, "settings": {"slidesToShow": 4}}, {"breakpoint": 1025, "settings": {"slidesToShow": 3}}, {"breakpoint": 769, "settings": {"slidesToShow": 2}}, {"breakpoint": 480, "settings": {"slidesToShow": 1}}]}'
+            class="new-branded-product-slider -mx-3 sellzy-slider"
+          >
+            <!-- products -->
+            {% for prod in all_products %}
+            <div
+              class="border border-gray-300 rounded-2xl product-card-1 p-4 group mx-3 wow animate__animated animate__fadeInUp"
+              data-wow-delay="0.2s"
+            >
+              <div class="product-image-container relative">
+                <div class="product-image rounded-xl bg-[#F4F3F5] mb-4 overflow-hidden">
+                  <a href="{% url 'product_details' prod.id %}">
+                    {% if prod.image %}
+                    <img src="{{ prod.image.url }}" alt="{{ prod.name }}" class="group-hover:scale-110 transition-all transform group-hover:-rotate-3 ease-in-out duration-300" />
+                    {% else %}
+                    <img src="{% static 'images/no-image.png' %}" alt="No image" class="group-hover:scale-110 transition-all transform group-hover:-rotate-3 ease-in-out duration-300" />
+                    {% endif %}
+                  </a>
+                </div>
+                <div class="product-btn-actions absolute bottom-0 right-0 left-0 flex justify-center z-9 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 group-hover:bottom-3">
+                  <ul class="flex items-center gap-x-px">
+                    <li>
+                      <a aria-label='Add to Wishlist' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tl-sm rounded-bl-sm' href="{% url 'add_to_wishlist' prod.id %}">
+                        <i class="hgi hgi-stroke hgi-favourite text-2xl leading-6 text-light-secondary-text"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a aria-label='Compare' class='product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center' href="#">
+                        <i class="hgi hgi-stroke hgi-reload text-2xl leading-6 text-light-primary-text"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a aria-label="Quick view" class="quick-view-sidebar-btn product-btn-action-item relative size-11 bg-white inline-flex items-center justify-center rounded-tr-sm rounded-br-sm" href="#">
+                        <i class="hgi hgi-stroke hgi-view text-2xl leading-6 text-light-primary-text"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="product-content">
+                <h5 class="text-base leading-6 font-semibold mb-4 font-dm-sans">
+                  <a href="{% url 'product_details' prod.id %}">{{ prod.name }}</a>
+                </h5>
+                <div class="rating-section flex items-center mb-4">
+                  <div class="bg-[url('../images/star-icon.png')] w-[90px] h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]">
+                    <div style="width: 80%" class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"></div>
+                  </div>
+                  <span class="text-sm leading-[22px] font-normal inline-block ml-1">(189)</span>
+                </div>
+                <div class="price-section flex items-center gap-x-3 mb-2">
+                  <span class="current-price text-base font-semibold text-light-primary-text">₹{{ prod.price }}</span>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!-- ========== New Branded Products Section End ========== -->
+
+    <!-- ========== Subscribe Section Start ========== -->
+    <section
+      class="px-4 md:px-0 max-w-[932px] mx-auto text-center lg:pb-6 pb-[70px] lg:rounded-[164px] -mb-[100px] relative z-10 bg-white xl:before:absolute xl:before:bottom-0 xl:before:left-[-23px] xl:before:h-[100px] xl:before:w-[145px] xl:before:bg-[url('images/footer-left-shape.html')] xl:before:bg-no-repeat xl:before:z-11 xl:after:absolute xl:after:bottom-0 xl:after:right-[-23px] xl:after:h-[100px] xl:after:w-[145px] xl:after:bg-[url('images/footer-right-shape.html')] xl:after:bg-no-repeat xl:after:z-11"
+    >
+      <h3
+        class="mb-4 wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Subscribe to our newsletter
+      </h3>
+      <p
+        class="mb-6 text-dark-secondary-text wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Stay updated! Subscribe to our mailing list for news, updates, and
+        exclusive offers.
+      </p>
+      <form method="POST" action="{% url 'subscribe_newsletter' %}" class="wow animate__animated animate__fadeInUp flex flex-col md:flex-row gap-3 items-center justify-center" data-wow-delay=".2s">
+        {% csrf_token %}
+        <div class="relative w-full md:w-auto">
+          <input
+            type="email"
+            class="w-full md:w-[280px] px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:border-blue-500"
+            placeholder="Enter your email"
+            name="email"
+            id="email"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-medium rounded-3xl px-8 py-3 whitespace-nowrap">
+          Subscribe
+        </button>
+      </form>
+    </section>
+    <!-- ========== Subscribe Section End ========== -->
+{% endblock %}

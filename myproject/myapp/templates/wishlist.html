@@ -1,0 +1,234 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+    <!-- ========== Breadcrumb Section Start ========== -->
+    <div class="container py-12">
+      <div class="breadcrumb">
+        <ul>
+          <li>
+            <a href='index.html'><span class="inline-flex items-center justify-center">
+                <i
+                  class="hgi hgi-stroke hgi-home-01 text-2xl leading-6"
+                ></i>
+                  </a>
+                </li>
+                <li class="group">
+                  <a
+                    href="#"
+                    class="w-full inline-flex items-center gap-x-4 text-light-secondary-text font-semibold p-4 group-hover:text-white group-hover:bg-primary rounded-lg transition-colors ease-in-out duration-300"
+                    ><span class="inline-flex items-center justify-center"
+                      ><i
+                        class="hgi hgi-stroke hgi-login-circle-02 text-2xl leading-6"
+                      ></i
+                    ></span>
+                    Log Out
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="xl:col-span-9 col-span-12">
+            <div
+              class="flex items-start md:items-center justify-between flex-col md:flex-row gap-y-5 pb-6"
+            >
+              <div>
+                <h3>Wishlist</h3>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-12">
+              <div class="col-span-12">
+                <div
+                  class="wishlist-table-wrapper border-gray-300 rounded-2xl border overflow-x-auto"
+                >
+                  <table class="w-full wishlist-table">
+                    <thead class="bg-gray-200">
+                      <tr>
+                        <th class="pl-4 py-2.5 product-checkbox">
+                          <div
+                            class="has-[input:checked]:hover:bg-primary/8 flex items-center justify-center w-10 h-10 bg-transparent rounded-full hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                          >
+                          </div>
+                        </th>
+                        <th class="text-left font-semibold product">
+                          <p class="product-name">Product</p>
+                        </th>
+                        <th
+                          class="text-left lg:text-center xl:text-left py-2.5 font-semibold product-price"
+                        >
+                          Price
+                        </th>
+                        <th
+                          class="text-left lg:text-center xl:text-left py-2.5 font-semibold product-actions"
+                        >
+                          Buy Action
+                        </th>
+                        <th
+                          class="text-left py-2.5 font-semibold pr-4 product-remove"
+                        >
+                          Remove
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for i in wid %}
+                      <tr class="py-4">
+                        <td
+                          class="py-4 pl-4 hidden lg:table-cell product-checkbox"
+                        >
+                          <div
+                            class="has-[input:checked]:hover:bg-primary/8 flex items-center justify-center w-10 h-10 bg-transparent rounded-full hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                          >
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="py-4">
+                        <td
+                          class="py-4 pl-4 hidden lg:table-cell product-checkbox"
+                        >
+                          <div
+                            class="has-[input:checked]:hover:bg-primary/8 flex items-center justify-center w-10 h-10 bg-transparent rounded-full hover:bg-[#919EAB]/8 transition-colors duration-300 ease-in-out"
+                          >
+                          </div>
+                        </td>
+
+                        <td
+                          data-title="Product"
+                          class="py-4 px-3 lg:px-0 product"
+                        >
+                          <div
+                            class="flex gap-x-4 gap-y-4 flex-col md:flex-row items-end md:items-start"
+                          >
+                            <div
+                              class="product-thumbnail max-w-[100px] h-[100px] rounded-2xl bg-gray-300"
+                            >
+                              <img
+                                src="{{i.img.url}}"
+                                alt="bp-machine"
+                                class="rounded-2xl object-cover w-full h-full"
+                              />
+                            </div>
+                            <div
+                              class="flex flex-col gap-y-3 items-end md:items-start"
+                            >
+                              <a class='text-light-primary-text font-semibold truncate hover:text-primary transition-colors duration-300' href='product-details.html'>
+                                {{i.name}}
+                              </a>
+                              <p
+                                class="text-sm leading-[22px] font-medium text-primary product-category"
+                              >
+                                {{i.desc}}
+                              </p>
+                              <div class="rating-section flex items-center">
+                                <div
+                                  class="bg-[url('../images/star-icon.png')] w-[90px] h-4.5 bg-repeat-x overflow-hidden bg-position-[0_0]"
+                                >
+                                  <div
+                                    style="width: 80%"
+                                    class="bg-[url('../images/star-icon.png')] h-4.5 bg-repeat-x bg-position-[0_-18px]"
+                                  ></div>
+                                </div>
+                                <span
+                                  class="text-sm leading-[22px] font-normal inline-block ml-1"
+                                  >(118)</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          data-title="Price"
+                          class="capitalize py-4 px-3 lg:px-0 product-price"
+                        >
+                          <div
+                            class="flex items-center flex-row lg:flex-col xl:flex-row gap-x-3"
+                          >
+                            <span
+                              class="text-light-primary-text font-semibold product-offer-price"
+                              >₹{{i.price}}</span
+                            >
+                          </div>
+                        </td>
+                        <td
+                          data-title="Buy Action"
+                          class="capitalize py-4 px-3 lg:px-0 product-actions"
+                        >
+                          <div
+                            class="flex items-center flex-row lg:flex-col xl:flex-row gap-x-2 md:gap-4"
+                          >
+      
+                            <a class='btn btn-primary font-semibold md:px-6 px-2.5 py-[11px] rounded-[80px] md:text-base md:leading-[26px] text-[13px] leading-[22px] product-add-to-cart' href="{% url 'add_to_cart' i.id %}">
+                              <span
+                                class="inline-flex items-center justify-center"
+                                ><i
+                                  class="hgi hgi-stroke hgi-shopping-cart-02 md:text-2xl text-xl md:leading-6 leading-5" 
+                                ></i
+                              ></span>
+                              Add to Cart
+                            </a>
+                          </div>
+                        </td>
+                        <td
+                          data-title="Remove"
+                          class="capitalize text-center py-4 px-3 lg:px-0 pr-4 product-remove"
+                        >
+                          <button>
+                            <span
+                              class="inline-flex items-center justify-center"
+                              ><a href="{% url 'remove_wishlist' i.id %}">
+                              <i class="hgi hgi-stroke hgi-delete-01 text-xl hover:text-red-600 transition"></i>
+                          </a></span>
+                          </button>
+                        </td>
+                      </tr>
+                      {% endfor %}                     
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========== WISHLIST Section End ========== -->
+
+    <!-- ========== Subscribe Section Start ========== -->
+    <section
+      class="px-4 md:px-0 max-w-[932px] mx-auto text-center lg:pb-6 pb-[70px] lg:rounded-[164px] -mb-[100px] relative z-10 bg-white xl:before:absolute xl:before:bottom-0 xl:before:left-[-23px] xl:before:h-[100px] xl:before:w-[145px] xl:before:bg-[url('images/footer-left-shape.html')] xl:before:bg-no-repeat xl:before:z-11 xl:after:absolute xl:after:bottom-0 xl:after:right-[-23px] xl:after:h-[100px] xl:after:w-[145px] xl:after:bg-[url('images/footer-right-shape.html')] xl:after:bg-no-repeat xl:after:z-11"
+    >
+      <h3
+        class="mb-4 wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Subscribe to our newsletter
+      </h3>
+      <p
+        class="mb-6 text-dark-secondary-text wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Stay updated! Subscribe to our mailing list for news, updates, and
+        exclusive offers.
+      </p>
+      <form method="POST" action="{% url 'subscribe_newsletter' %}" class="wow animate__animated animate__fadeInUp flex flex-col md:flex-row gap-3 items-center justify-center" data-wow-delay=".2s">
+        {% csrf_token %}
+        <div class="relative w-full md:w-auto">
+          <input
+            type="email"
+            class="w-full md:w-[280px] px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:border-blue-500"
+            placeholder="Enter your email"
+            name="email"
+            id="email"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-medium rounded-3xl px-8 py-3 whitespace-nowrap">
+          Subscribe
+        </button>
+      </form>
+    </section>
+      </div>
+    </section>
+    <!-- ========== Subscribe Section End ========== -->
+{% endblock %}

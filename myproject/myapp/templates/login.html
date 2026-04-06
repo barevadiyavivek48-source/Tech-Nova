@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – Sellzy</title>
+  <link rel="shortcut icon" href="{% static '/images/favicon.png' %}" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static '/css/vendor/hugeicons/hgi-stroke-rounded.css' %}" />
+  <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { background: #f4f6f9; min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: 'DM Sans', sans-serif; }
+    .auth-card { background: #fff; border-radius: 1.25rem; box-shadow: 0 8px 32px rgba(0,0,0,0.10); padding: 2.5rem 2rem; width: 100%; max-width: 420px; }
+    .logo-wrap { text-align: center; margin-bottom: 1.75rem; }
+    .logo-wrap img { width: 120px; }
+    .auth-card h2 { font-size: 1.6rem; font-weight: 700; margin: 0 0 0.25rem; color: #161c24; }
+    .auth-card p.subtitle { color: #919eab; margin: 0 0 1.75rem; font-size: 0.95rem; }
+    .form-field { position: relative; margin-bottom: 1.25rem; }
+    .form-field input {
+      width: 100%; padding: 0.9rem 1rem 0.9rem 2.75rem;
+      border: 1.5px solid #dde1e7; border-radius: 50px;
+      font-size: 0.95rem; outline: none;
+      transition: border-color .2s; background: #fff;
+    }
+    .form-field input:focus { border-color: #6244e5; }
+    .form-field .field-icon {
+      position: absolute; left: 0.9rem; top: 50%; transform: translateY(-50%);
+      color: #919eab; font-size: 1.1rem; pointer-events: none;
+    }
+    .btn-auth {
+      width: 100%; padding: 0.85rem; border-radius: 50px;
+      background: #6244e5; color: #fff; font-size: 1rem;
+      font-weight: 600; border: none; cursor: pointer;
+      transition: background .2s; margin-top: 0.25rem;
+    }
+    .btn-auth:hover { background: #4f35c4; }
+    .auth-footer { text-align: center; margin-top: 1.25rem; font-size: 0.9rem; color: #333; }
+    .auth-footer a { color: #6244e5; font-weight: 600; text-decoration: none; }
+    .message-list { margin-bottom: 1rem; list-style: none; padding: 0; }
+    .message-list li {
+      border-radius: 10px; padding: 0.65rem 1rem;
+      margin-bottom: 0.5rem; font-size: 0.875rem;
+      border: 1px solid transparent;
+    }
+    .message-error { background: #fff0f0; border-color: #ffb3b3; color: #c00; }
+    .message-success { background: #f0fff4; border-color: #9ae6b4; color: #1f7a3f; }
+    .message-warning { background: #fffbea; border-color: #f6e05e; color: #8a6d1f; }
+    .message-info { background: #eff8ff; border-color: #90cdf4; color: #1a5f9e; }
+  </style>
+</head>
+<body>
+  <div class="auth-card">
+    <div class="logo-wrap">
+      <img src="{% static '/images/logo.png' %}" alt="Sellzy Logo" />
+    </div>
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Sign in to your account to continue</p>
+
+    {% if messages %}
+      <ul class="message-list">
+        {% for message in messages %}
+          <li class="{% if 'error' in message.tags %}message-error{% elif 'success' in message.tags %}message-success{% elif 'warning' in message.tags %}message-warning{% else %}message-info{% endif %}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <div class="form-field">
+        <i class="hgi hgi-stroke hgi-mail-01 field-icon"></i>
+        <input type="email" name="email" id="email" placeholder="Email" required autocomplete="email" />
+      </div>
+      <div class="form-field">
+        <i class="hgi hgi-stroke hgi-lock-password field-icon"></i>
+        <input type="password" name="password" id="password" placeholder="Password" required autocomplete="current-password" />
+      </div>
+      <button type="submit" class="btn-auth">Sign In</button>
+    </form>
+
+    <div class="auth-footer">
+      Don't have an account? <a href="{% url 'register' %}">Sign Up</a>
+    </div>
+  </div>
+</body>
+</html>

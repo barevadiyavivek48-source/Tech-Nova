@@ -1,0 +1,423 @@
+{% extends "index.html" %}
+{% load static %}
+
+{# Override header section to remove user/customer links/text for vendor pages #}
+{% block header %}
+<header>
+  <div class="bg-primary header-top">
+    <div class="container">
+      <div class="flex items-center xl:justify-between justify-center">
+        <div class="xl:flex items-center gap-x-6 hidden">
+          <p class="flex items-center gap-x-2 text-white text-sm leading-[22px]">
+            <span><i class="hgi hgi-stroke hgi-customer-support text-xl text-white"></i></span>
+            Need Support ?
+            <span>Call Us</span>
+            <a href="#" class="bg-warning py-px px-2 text-xs leading-4.5 rounded-[60px] text-gray-800">9664729242</a>
+          </p>
+        </div>
+        <div class="text-center py-3.5">
+          <p class="flex items-center gap-x-[7px] text-white text-sm leading-[22px] font-dm-sans">
+            <span class="inline-flex items-center"><i class="hgi hgi-stroke hgi-discount-01 text-white text-xl"></i></span>
+            Vendor Account
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- header-middle and header-bottom can be omitted or replaced with vendor-specific navigation if needed -->
+</header>
+{% endblock %}
+
+{% block content %}
+    <!-- ========== Breadcrumb Section Start ========== -->
+    <div class="py-12">
+      <div class="container">
+        <div class="breadcrumb">
+          <ul>
+            <li>
+              <a href='index.html'>
+                <span>
+                  <i class="hgi hgi-stroke hgi-home-01 text-[20px]"></i>
+                </span>
+                Home
+              </a>
+            </li>
+            <li class="text-light-disabled-text">&#8226;</li>
+            <li><span>Vendor Page</span></li>
+          </ul>
+              <!-- Removed bio, logo, facebook, instagram, twitter fields -->
+            <a
+              href="#"
+              class="btn btn-large btn-primary rounded-[100px] py-[11px]"
+              >Learn More</a
+            >
+          </div>
+          <div
+            class="lg:col-span-6 col-span-12 bg-white rounded-2xl wow animate__animated animate__fadeInUp"
+            data-wow-delay=".3s"
+          >
+            <h5 class="border-b border-[#919EAB3D] pl-6 pt-6 pb-4">
+              Vendor Account
+            </h5>
+            <form method="post" enctype="multipart/form-data" class="p-6">
+              {% csrf_token %}
+              <div class="mb-4">
+                <label for="shop_name">Shop Name</label>
+                <input type="text" name="shop_name" id="shop_name" class="form-control" value="{{ profile.shop_name }}" required />
+              </div>
+              <div class="mb-4">
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address" class="form-control" value="{{ profile.address }}" />
+              </div>
+              <div class="mb-4">
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" id="phone" class="form-control" value="{{ profile.phone }}" />
+              </div>
+              <div class="mb-4">
+                <label for="bio">Bio</label>
+                <textarea name="bio" id="bio" class="form-control">{{ profile.bio }}</textarea>
+              </div>
+              <div class="mb-4">
+                <label for="website">Website</label>
+                <input type="url" name="website" id="website" class="form-control" value="{{ profile.website }}" />
+              </div>
+              <div class="mb-4">
+                <label for="logo">Logo</label>
+                {% if profile.logo %}
+                  <img src="{{ profile.logo.url }}" alt="Logo" style="max-height:80px;" /><br>
+                {% endif %}
+                <input type="file" name="logo" id="logo" class="form-control" />
+              </div>
+              <button type="submit" class="btn btn-large btn-primary rounded-[100px] w-full py-[11px]">Save Profile</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Hero Section End ========== -->
+
+    <!-- ========== Sell On Section Start ========== -->
+    <section class="pb-[70px]">
+      <div class="container">
+        <div
+          class="text-center w-full md:w-[734px] mx-auto pb-10 wow animate__animated animate__fadeInUp"
+          data-wow-delay=".2s"
+        >
+          <p class="font-semibold">Why Choose Us</p>
+          <h3 class="py-3">Why Sell On Our Company?</h3>
+          <p>
+            Grow faster with a platform built for your success. Get instant
+            access to thousands of customers, powerful tools to manage your
+            store, and a team that&apos;s always ready to help you win.
+          </p>
+        </div>
+        <div class="grid grid-cols-12 gap-6">
+          <div
+            class="md:col-span-6 col-span-12 xl:col-span-3 wow animate__animated animate__fadeInUp"
+            data-wow-delay=".2s"
+          >
+            <div class="p-10 border-[#919EAB3D] border rounded-xl text-center">
+              <span
+                class="inline-flex items-center justify-center size-[72px] bg-warning-lighter rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-purse-01 text-[32px] border-[#161C24]"
+                ></i>
+              </span>
+              <h5 class="pt-4 pb-2">Lowest cost</h5>
+              <p>
+                Contrary to popular belief, Lorem Ipsum is not simply random
+                text.
+              </p>
+            </div>
+          </div>
+          <div
+            class="md:col-span-6 col-span-12 xl:col-span-3 wow animate__animated animate__fadeInUp"
+            data-wow-delay=".3s"
+          >
+            <div class="p-10 border-[#919EAB3D] border rounded-xl text-center">
+              <span
+                class="inline-flex items-center justify-center size-[72px] bg-warning-lighter rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-analytics-up text-[32px] border-[#161C24]"
+                ></i>
+              </span>
+              <h5 class="pt-4 pb-2">High Growth Rate</h5>
+              <p>
+                Contrary to popular belief, Lorem Ipsum is not simply random
+                text.
+              </p>
+            </div>
+          </div>
+          <div
+            class="md:col-span-6 col-span-12 xl:col-span-3 wow animate__animated animate__fadeInUp"
+            data-wow-delay=".4s"
+          >
+            <div class="p-10 border-[#919EAB3D] border rounded-xl text-center">
+              <span
+                class="inline-flex items-center justify-center size-[72px] bg-warning-lighter rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-pickup-01 text-[32px] border-[#161C24]"
+                ></i>
+              </span>
+              <h5 class="pt-4 pb-2">Dedicated Pickup</h5>
+              <p>
+                Contrary to popular belief, Lorem Ipsum is not simply random
+                text.
+              </p>
+            </div>
+          </div>
+          <div
+            class="md:col-span-6 col-span-12 xl:col-span-3 wow animate__animated animate__fadeInUp"
+            data-wow-delay=".5s"
+          >
+            <div class="p-10 border-[#919EAB3D] border rounded-xl text-center">
+              <span
+                class="inline-flex items-center justify-center size-[72px] bg-warning-lighter rounded-full"
+              >
+                <i
+                  class="hgi hgi-stroke hgi-hand-prayer text-[32px] border-[#161C24]"
+                ></i>
+              </span>
+              <h5 class="pt-4 pb-2">Most Approachable</h5>
+              <p>
+                Contrary to popular belief, Lorem Ipsum is not simply random
+                text.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Sell On Section End ========== -->
+
+    <!-- ========== Focus on Section Start ========== -->
+    <section class="pb-[70px]">
+      <div class="container">
+        <div
+          class="bg-[#FFEB69] rounded-5xl p-10 xl:py-[100px] xl:px-[114px] grid grid-cols-12 items-center xl:gap-x-0 lg:gap-x-10 lg:gap-y-0 gap-y-10"
+        >
+          <div
+            class="col-span-12 lg:col-span-6 lg:max-w-[642px] row-start-2 lg:row-start-auto wow animate__animated animate__fadeInUp"
+            data-wow-delay=".2s"
+          >
+            <div>
+              <p
+                class="text-primary bg-[#00AB5514] py-0.5 px-3 inline-flex gap-x-2.5 items-center rounded-full font-semibold"
+              >
+                <span class="w-[15px] h-[15px] rounded-full bg-primary"> </span>
+                Features
+              </p>
+            </div>
+            <h3 class="py-3">Focus on Customer Satisfaction</h3>
+            <p class="pb-10">
+              Experience the ultimate convenience with our Faster Free Delivery
+              service—designed to bring your orders to your doorstep quickly and
+              without any extra cost. Whether you&apos;re ordering essentials or
+              gifts, we make sure you get them faster than ever. Why You'll Love
+              It:
+            </p>
+            <ul class="pb-6 space-y-4">
+              <li class="flex gap-x-4">
+                <span
+                  class="inline-flex flex-none items-center justify-center size-6 bg-black text-white rounded-full"
+                >
+                  <i class="hgi hgi-stroke hgi-tick-02"></i>
+                </span>
+                <p>
+                  Absolutely Free: No delivery fees, no hidden charges—just
+                  fast, reliable service.
+                </p>
+              </li>
+              <li class="flex gap-x-4">
+                <span
+                  class="inline-flex flex-none items-center justify-center size-6 bg-black text-white rounded-full"
+                >
+                  <i class="hgi hgi-stroke hgi-tick-02"></i>
+                </span>
+                <p>
+                  Real-Time Tracking: Stay updated every step of the way with
+                  live order tracking.
+                </p>
+              </li>
+              <li class="flex gap-x-4">
+                <span
+                  class="inline-flex flex-none items-center justify-center size-6 bg-black text-white rounded-full"
+                >
+                  <i class="hgi hgi-stroke hgi-tick-02"></i>
+                </span>
+                <p>
+                  Reliable Delivery Partners: We&apos;ve partnered with trusted
+                  couriers to ensure your packages
+                </p>
+              </li>
+            </ul>
+            <p>
+              Say goodbye to long waits and shipping fees. With Faster Free
+              Delivery, we&apos;re raising the standard—fast, seamless, and 100%
+              free.
+            </p>
+          </div>
+          <div
+            class="col-span-12 lg:col-span-6 w-full row-start-1 lg:row-start-auto wow animate__animated animate__fadeInUp"
+            data-wow-delay=".3s"
+          >
+            <img
+              src="{% static '/images/red-shirt-female.png' %}"
+              alt="Red Shirt Female"
+              class="rounded-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Focus on Section End ========== -->
+
+    <!-- ========== Works Section Start ========== -->
+    <section class="pb-[70px]">
+      <div class="container">
+        <div
+          class="flex flex-col lg:flex-row justify-between items-center lg:gap-y-0 gap-y-10"
+        >
+          <div
+            class="w-full lg:w-5/12 order-1 lg:order-2 rounded-5xl lg:min-h-[536px] wow animate__animated animate__fadeInUp"
+            data-wow-delay=".2s"
+          >
+            <img
+              src="{% static '/images/2-girls.jpg' %}"
+              alt="2 Girls"
+              class="object-cover rounded-5xl"
+            />
+          </div>
+          <div
+            class="w-full lg:w-1/2 order-2 wow animate__animated animate__fadeInUp"
+            data-wow-delay=".3s"
+          >
+            <div>
+              <p
+                class="text-primary bg-[#00AB5514] py-0.5 px-3 inline-flex gap-x-2.5 items-center rounded-full font-semibold"
+              >
+                <span class="w-[15px] h-[15px] rounded-full bg-primary"> </span>
+                Partner Process
+              </p>
+            </div>
+            <h3 class="py-3">How It Works</h3>
+            <p class="pb-10">
+              Getting started is simple. Apply to become a vendor, set up your
+              store, and start selling. We&apos;ll guide you through every step,
+              so you can focus on growing your business.
+            </p>
+            <div class="accordion">
+              <div class="accordion-item">
+                <div class="accordion-header active">
+                  <h4>1. Submit your application</h4>
+                  <i class="hgi hgi-stroke hgi-minus-sign"></i>
+                  <i class="hgi hgi-stroke hgi-plus-sign"></i>
+                </div>
+                <div class="accordion-body">
+                  <p>
+                    We're always here to help you. Whether you have a question,
+                    need support, or just want to learn more about our services,
+                    our team is ready to assist you every step of the way.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <h4>2. Get verified</h4>
+                  <i class="hgi hgi-stroke hgi-minus-sign"></i>
+                  <i class="hgi hgi-stroke hgi-plus-sign"></i>
+                </div>
+                <div class="accordion-body">
+                  <p>
+                    We're always here to help you. Whether you have a question,
+                    need support, or just want to learn more about our services,
+                    our team is ready to assist you every step of the way.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <h4>3. Set up your shop</h4>
+                  <i class="hgi hgi-stroke hgi-minus-sign"></i>
+                  <i class="hgi hgi-stroke hgi-plus-sign"></i>
+                </div>
+                <div class="accordion-body">
+                  <p>
+                    We're always here to help you. Whether you have a question,
+                    need support, or just want to learn more about our services,
+                    our team is ready to assist you every step of the way.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <h4>4. Start selling and growing</h4>
+                  <i class="hgi hgi-stroke hgi-minus-sign"></i>
+                  <i class="hgi hgi-stroke hgi-plus-sign"></i>
+                </div>
+                <div class="accordion-body">
+                  <p>
+                    We're always here to help you. Whether you have a question,
+                    need support, or just want to learn more about our services,
+                    our team is ready to assist you every step of the way.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Works Section End ========== -->
+
+    <!-- ========== Subscribe Section Start ========== -->
+    <section
+      class="px-4 md:px-0 max-w-[932px] mx-auto text-center lg:pb-6 pb-[70px] lg:rounded-[164px] -mb-[100px] relative z-10 bg-white xl:before:absolute xl:before:bottom-0 xl:before:left-[-23px] xl:before:h-[100px] xl:before:w-[145px] xl:before:bg-[url('images/footer-left-shape.html')] xl:before:bg-no-repeat xl:before:z-11 xl:after:absolute xl:after:bottom-0 xl:after:right-[-23px] xl:after:h-[100px] xl:after:w-[145px] xl:after:bg-[url('images/footer-right-shape.html')] xl:after:bg-no-repeat xl:after:z-11"
+    >
+      <h3
+        class="mb-4 wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Subscribe to our newsletter
+      </h3>
+      <p
+        class="mb-6 text-dark-secondary-text wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        Stay updated! Subscribe to our mailing list for news, updates, and
+        exclusive offers.
+      </p>
+      <div
+        class="input-group medium w-full md:max-w-[420px] mx-auto pl-4 py-1.5 pr-2.5 rounded-[100px] wow animate__animated animate__fadeInUp"
+        data-wow-delay=".2s"
+      >
+        <div
+          class="input-group-addon inline-flex items-center"
+          data-align="inline-start"
+        >
+          <i class="hgi hgi-stroke hgi-mail-02 text-2xl"></i>
+        </div>
+        <input
+          type="text"
+          class="peer form-control placeholder-transparent focus:placeholder-transparent"
+          placeholder="Enter your email"
+          name="email"
+          id="email"
+        />
+        <label
+          class="absolute left-12 peer-focus:left-[14px] top-1/2 -translate-y-1/2 text-xs leading-[18px] transition-all peer-placeholder-shown:text-light-disabled-text peer-placeholder-shown:text-[16px] peer-placeholder-shown:top-1/2 peer-focus:text-[12px] peer-focus:top-0 peer-[:not(:placeholder-shown)]:text-[12px] peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:left-[14px] bg-white peer-focus:px-1 peer-[:not(:placeholder-shown)]:px-1"
+          for="email"
+          >Enter your email</label
+        >
+        <div class="input-group-addon" data-align="inline-end">
+          <button class="btn btn-primary btn-medium rounded-3xl">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Subscribe Section End ========== -->
+{% endblock %}
