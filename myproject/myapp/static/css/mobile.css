@@ -133,28 +133,28 @@
   }
   
   .product-image {
-    max-height: 180px !important;
+    max-height: 240px !important;
     width: 100% !important;
   }
   
   .product-img {
-    max-height: 180px !important;
+    max-height: 240px !important;
     object-fit: cover !important;
   }
   
   /* ========== Hero Slider ========== */
   .single-hero-slider-item {
-    height: 280px !important;
-    min-height: 280px !important;
+    height: 350px !important;
+    min-height: 350px !important;
   }
   
   .home-five-hero-slider {
-    height: 280px !important;
+    height: 350px !important;
   }
   
   /* Reduce product card padding for compact layout */
   .product-card-1 {
-    padding: 8px !important;
+    padding: 10px !important;
   }
   
   /* ========== Grids ========== */
