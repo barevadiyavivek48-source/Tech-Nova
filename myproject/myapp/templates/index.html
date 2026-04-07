@@ -3214,12 +3214,12 @@
               <div class="col-span-1 wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
                 <div class="border border-gray-300 rounded-2xl product-card-1 p-4 group">
                   <div class="product-image-container relative h-60 flex items-center justify-center overflow-hidden">
-                    <a href="{% url 'product_details' product.id %}">
+                    <a href="{% url 'product_details' product.id %}" class="block w-full h-full">
                       <div class="product-image rounded-xl mb-4 overflow-hidden w-full h-full">
                         {% if product.image %}
-                          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-full object-cover group-hover:scale-110 transition-all transform group-hover:-rotate-3 ease-in-out duration-300" />
+                          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-full object-contain group-hover:scale-110 transition-all transform group-hover:-rotate-3 ease-in-out duration-300" style="object-fit: contain; object-position: center;" />
                         {% else %}
-                          <img src="{% static '/images/placeholder.png' %}" alt="No Image" class="w-full h-full object-cover group-hover:scale-110 transition-all transform group-hover:-rotate-3 ease-in-out duration-300" />
+                          <img src="{% static '/images/placeholder.png' %}" alt="No Image" class="w-full h-full object-contain group-hover:scale-110 transition-all transform group-hover:-rotate-3 ease-in-out duration-300" style="object-fit: contain; object-position: center;" />
                         {% endif %}
                       </div>
                     </a>
